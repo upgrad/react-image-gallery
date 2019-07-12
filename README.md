@@ -60,11 +60,13 @@ class Example extends Component {
 
 | Key  | Purpose |
 | ------------- | ------------- |
-| server  | A url for the server APIs  |
+| server  | A url for the server APIs. Refer the middleware [express-s3-image-resources](https://github.com/upgrad/express-s3-image-resources/) to know how to configure the APIs for this gallery |
 | s3.bucket  | A bucket name from which images are to be rendered by awesome gallery  |
 | s3.path  | A path in the bucket from which the images are to be fetched and rendered |
 | cdn  | A path to the cdn which needs to suffixed along with the image that gets selected  |
 | style  | A object which contains normal UI options like width and alignment of gallery component  |
+
+The s3 Path and s3 Bucket parameters will be used on server side by the [express-s3-image-resources middleware](https://github.com/upgrad/express-s3-image-resources/) to fetch the images from aws. This NPM doesn't require you to pass any aws credentials.
 
 ## License
 
