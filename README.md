@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save awesome-react-gallery
+npm install --save upgrad/react-image-gallery
 ```
 
 ## Usage
