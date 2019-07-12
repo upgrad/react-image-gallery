@@ -27,12 +27,12 @@ class Example extends Component {
       style: {
         width: 60,
         align: "left"
-	  },
-	  s3: {
-			bucket: "xxxx-xxxx-xxxx",
-			path: "XXXXX/XXXX/XXXXX"
-	  },
-	  cdn: "XXXXX/XXXX/XXXXX"
+      },
+      s3: {
+        bucket: "xxxx-xxxx-xxxx",
+        path: "XXXXX/XXXX/XXXXX"
+      },
+      cdn: "XXXXX/XXXX/XXXXX"
   }
 
   onImageReceive = data => {
@@ -58,11 +58,13 @@ class Example extends Component {
 
 ## Config
 
-`server` is the url for the server APIs.\
-`s3.bucket` is the bucket name from which images are to be rendered by awesome gallery.\
-`s3.path` is the path in the bucket from which the images are to be fetched and rendered.\
-`cdn` is the path to the cdn which needs to suffixed along with the image that gets selected.\
-`style` is a object which contains normal UI options like width and alignment of gallery component.\
+| Key  | Purpose |
+| ------------- | ------------- |
+| server  | A url for the server APIs  |
+| s3.bucket  | A bucket name from which images are to be rendered by awesome gallery  |
+| s3.path  | A path in the bucket from which the images are to be fetched and rendered |
+| cdn  | A path to the cdn which needs to suffixed along with the image that gets selected  |
+| style  | A object which contains normal UI options like width and alignment of gallery component  |
 
 ## License
 
