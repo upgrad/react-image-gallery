@@ -67,7 +67,7 @@ export default class Gallery extends Component {
 							{this.state.isGrid ? "Upload New" : "Search Image"}
 						</div>
 					</div>
-					{spriteNote()}
+					{this.spriteNote()}
 					{this.state.isGrid ? <Grid {...this.props.config} select={this.selectFinal} /> : <Uploader {...this.props.config} select={this.selectFinal} />}
 				</div>
 			</div>
