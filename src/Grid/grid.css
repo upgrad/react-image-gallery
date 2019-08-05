@@ -1,50 +1,114 @@
+.searchWrapper {
+	position: relative;
+}
+.searchIcon {
+	position: absolute;
+	left: 26px;
+	top: 26px;
+}
 .searchBar {
-    margin-top: 100px;
-    width: 95%;
-	margin: 15px 2.5%;
-	padding: 10px 15px;
-    background: #ffffff;
-    box-sizing: border-box;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0877491);
-    border-radius: 4px;
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 13px;
-    line-height: 19px;
+	margin-top: 100px;
+	width: 95%;
+	margin: 16px 16px;
+	padding: 10px 36px;
+	background: #ffffff;
+	box-sizing: border-box;
+	border: 1px solid #e7e8f0;
+	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0877491);
+	border-radius: 4px;
+	font-style: normal;
+	font-size: 13px;
+	line-height: 19px;
 }
 
 .grid {
-    display: flex;
-    flex-wrap: wrap;
-    overflow-x: scroll;
-    justify-content: center;
-    margin: 10px;
-    height: 80%;
+	display: flex;
+	flex-wrap: wrap;
+	overflow-x: scroll;
+	justify-content: center;
+	margin: 0;
+	height: 73vh;
 }
 
 .grid .gridImageWrapper {
-    margin: 5px;
-    width: 150px;
-    height: 150px;
-    border: 1px solid grey;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(255, 255, 255, 1);
-    background-size: 20px 20px;
-    background-image:
-        linear-gradient(to right, rgba(0, 0, 0, 0.3) 50%, transparent 50%, transparent),
-        linear-gradient(to right, transparent 0%, transparent 50%, rgba(0, 0, 0, 0.0) 50%),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 50%, transparent 50%, transparent),
-        linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(0, 0, 0, 0.0) 50%),
-        linear-gradient(to bottom, rgba(255, 255, 255, 1) 50%, transparent 50%, transparent),
-        linear-gradient(to right, transparent 0%, transparent 50%, rgba(0, 0, 0, 0.5) 50%),
-        none;
+	margin: 5px;
+	width: 45%;
+	height: 150px;
+	border: 1px solid grey;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(255, 255, 255, 1);
+
+	background-image: -moz-linear-gradient(
+			45deg,
+			#f1f1f1 25%,
+			transparent 25%,
+			transparent 75%,
+			#f1f1f1 75%,
+			#f1f1f1 100%
+		),
+		-moz-linear-gradient(45deg, #f1f1f1 25%, transparent 25%, transparent
+					75%, #f1f1f1 75%, #f1f1f1 100%);
+	background-image: -webkit-linear-gradient(
+			45deg,
+			#f1f1f1 25%,
+			transparent 25%,
+			transparent 75%,
+			#f1f1f1 75%,
+			#f1f1f1 100%
+		),
+		-webkit-linear-gradient(45deg, #f1f1f1 25%, transparent 25%, transparent
+					75%, #f1f1f1 75%, #f1f1f1 100%);
+	background-size: 20px 20px;
+	background-position: 0 0, 50px 50px;
+
+	border: 1px solid #e5e5e5;
+	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
+	border-radius: 3px;
+	overflow: hidden;
+}
+
+.grid .gridImageDarkWrapper {
+	background-size: 20px 20px;
+	background-position: bottom;
+	background-color: #ffffff;
+	background-image: linear-gradient(
+			to right,
+			rgba(0, 0, 0, 0.3) 50%,
+			transparent 50%,
+			transparent
+		),
+		linear-gradient(
+			to right,
+			transparent 0%,
+			transparent 50%,
+			rgba(0, 0, 0, 0) 50%
+		),
+		linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.3) 50%,
+			transparent 50%,
+			transparent
+		),
+		linear-gradient(
+			to bottom,
+			transparent 0%,
+			transparent 50%,
+			rgba(0, 0, 0, 0) 50%
+		),
+		linear-gradient(to bottom, #ffffff 50%, transparent 50%, transparent),
+		linear-gradient(
+			to right,
+			transparent 0%,
+			transparent 50%,
+			rgba(0, 0, 0, 0.5) 50%
+		),
+		none;
 }
 
 .grid .gridImageWrapper .gridImage {
-    padding: 5px;
-    box-sizing: border-box;
-    max-width: 100%;
+	padding: 5px;
+	box-sizing: border-box;
+	height: auto;
 }

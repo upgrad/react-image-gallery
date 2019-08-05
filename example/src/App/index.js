@@ -25,8 +25,9 @@ export default class App extends Component {
 				bucket: S3_BUCKET,
 				path: S3_PATH
 			},
-			cdn: CDN_URL
+			cdn: CDN_URL + "/" + S3_PATH
 		};
+		this.onImageReceive = this.onImageReceive.bind(this);
 	}
 
 	onImageReceive = data => {
@@ -50,9 +51,23 @@ export default class App extends Component {
 				>
 					UPLOAD
 				</button>
-				<img alt="Sample Image background" src="https://sample-videos.com/img/Sample-jpg-image-2mb.jpg" className="imageStyle" />
-				{this.state.image ? <img alt="S3 Image" src={this.state.image} className="s3image" /> : null}
-				{this.state.gallery ? <Gallery onClose={this.onImageReceive} config={this.config} /> : null}
+				<img
+					alt="Sample Image background"
+					src="https://sample-videos.com/img/Sample-jpg-image-2mb.jpg"
+					className="imageStyle"
+				/>
+				{this.state.image ? (
+					<img
+						alt="S3 Image"
+						src={this.state.image}
+						className="s3image"
+					/>
+				) : null}
+				<Gallery
+					isActive={this.state.gallery}
+					onClose={this.onImageReceive}
+					config={this.config}
+				/>
 			</div>
 		);
 	}

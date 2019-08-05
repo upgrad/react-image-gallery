@@ -59,18 +59,42 @@ export default class Uploader extends Component {
 	render() {
 		return (
 			<div className={styles.uploader}>
-				<h1 className={styles.heading}>Upload a new Image</h1>
 				<form>
-					<label className={styles.titleLabel}>Image Tag</label>
-					<input onChange={this.changeListener} name="title" className={styles.title} type="text" placeholder="upgrad_logo" />
-					<label onDrop={this.drop} onDragOver={this.dragOver} htmlFor="upload-file" className={styles.fileUploader}>
+					<label
+						onDrop={this.drop}
+						onDragOver={this.dragOver}
+						htmlFor="upload-file"
+						className={styles.fileUploader}
+					>
 						<span className={styles.info}>
 							Drop an image here or <a>choose a image</a>
 						</span>
 					</label>
-					<input id="upload-file" encType="multipart/form-data" onChange={this.changeListener} name="file" className={styles.hide} type="file" />
-					<button className={styles.submit} onClick={this.upload}>
-						{this.state.loading?'Uploading Image ...':'SUBMIT'}
+					<input
+						id="upload-file"
+						encType="multipart/form-data"
+						onChange={this.changeListener}
+						name="file"
+						className={styles.hide}
+						type="file"
+					/>
+					<label className={styles.titleLabel}>
+						Image Tag
+					</label>
+					<input
+						onChange={this.changeListener}
+						name="title"
+						className={styles.title}
+						type="text"
+						placeholder="example, adidas_white_logo"
+					/>
+					<button
+						className={styles.submit}
+						onClick={this.upload}
+					>
+						{this.state.loading
+							? "Uploading Image ..."
+							: "SUBMIT"}
 					</button>
 				</form>
 			</div>

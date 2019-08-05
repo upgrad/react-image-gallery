@@ -28,12 +28,12 @@ function styleInject(css, ref) {
   }
 }
 
-var css = "@import url(\"https://fonts.googleapis.com/css?family=Poppins&display=swap\");\n\n.styles_header__3PFGX {\n    width: 100%;\n    height: 50px;\n    background: #ffffff;\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: 0px 2.5%;\n    box-sizing: border-box;\n\n    font-family: Poppins;\n    font-style: normal;\n    font-weight: 600;\n    font-size: 18px;\n    line-height: 24px;\n\n\tdisplay: flex;\n    align-items: center;\n    letter-spacing: 0.168px;\n\n    color: rgba(0, 0, 0, 0.702191);\n    border-bottom: 0.5px solid rgb(0, 0, 0, 0.1);\n}\n\n.styles_wrapper__3KXDn {\n    width: 100%;\n    height: 100vh;\n    display: flex;\n    align-items: center;\n\tjustify-content: flex-end;\n\tposition:fixed;\n\tleft:0;\n\ttop:0;\n}\n\n.styles_overlay__CLSq- {\n    width: inherit;\n    height: inherit;\n    background-color: black;\n    opacity: 0.5;\n    position: absolute;\n    z-index: 1;\n}\n\n.styles_modal__gNwvD {\n\t-webkit-transition: width 1s; /* Safari */\n\ttransition: width 1s;\n    height: 100vh;\n    width: 70%;\n    opacity: 1;\n    z-index: 2;\n    display: flex;\n    flex-direction: column;\n    background: #f4f4f4;\n    border: 0.5px solid rgba(0, 0, 0, 0.0485734);\n    box-sizing: border-box;\n    box-shadow: 7px 16px 37px rgba(0, 0, 0, 0.239781);\n}\n\n.styles_newUpload__1xuw5 {\n    padding: 5px 15px;\n    background-color: green;\n    font-size: 14px;\n    text-align: center;\n    color: white;\n    cursor: pointer;\n}\n\ninput:focus {\n    border: 1px solid green;\n    outline: none;\n}\n\ninput {\n    border: 1px solid black;\n}\n\n.styles_note__2WdlX {\n\tfont-size:12px;\n\tcolor:darkred;\n\tmargin-left:20px;\n}";
-var styles = { "header": "styles_header__3PFGX", "wrapper": "styles_wrapper__3KXDn", "overlay": "styles_overlay__CLSq-", "modal": "styles_modal__gNwvD", "newUpload": "styles_newUpload__1xuw5", "note": "styles_note__2WdlX" };
+var css = "@import url(\"https://fonts.googleapis.com/css?family=Lato:400,700&display=swap\");\n\n* {\n\tbox-sizing: border-box;\n}\n.styles_wrapper__3KXDn {\n\t/* position: fixed;\n\tleft: 0;\n\ttop: 0;\n\tz-index: 9999;\n\twidth: 100%;\n\theight: 100vh;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: flex-end;\n\n\tletter-spacing: normal;\n\tfont-family: \"Lato\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial,\n\t\tsans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n\t-ms-text-size-adjust: 100%;\n\t-webkit-text-size-adjust: 100%;\n\t-moz-osx-font-smoothing: grayscale;\n\t-webkit-font-smoothing: antialiased;\n\ttext-rendering: geometricPrecision;\n\tfont-variant-ligatures: common-ligatures; */\n}\n\n.styles_overlay__CLSq- {\n\twidth: inherit;\n\theight: inherit;\n\tbackground-color: black;\n\topacity: 0.5;\n\tposition: absolute;\n\tz-index: 1;\n\tdisplay: none;\n}\n.styles_isOverlayActive__298UW {\n\tdisplay: block;\n}\n\n.styles_modal__gNwvD {\n\tposition: fixed;\n\tright: 0;\n\ttop: 0;\n\tz-index: 9999;\n\n\tletter-spacing: normal;\n\tfont-family: \"Lato\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial,\n\t\tsans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n\t-ms-text-size-adjust: 100%;\n\t-webkit-text-size-adjust: 100%;\n\t-moz-osx-font-smoothing: grayscale;\n\t-webkit-font-smoothing: antialiased;\n\ttext-rendering: geometricPrecision;\n\tfont-variant-ligatures: common-ligatures;\n\n\theight: 100vh;\n\tmin-width: 576px;\n\twidth: 30%;\n\topacity: 1;\n\tz-index: 2;\n\tdisplay: flex;\n\tflex-direction: column;\n\tbackground: #FFF;\n\tborder: 1px solid rgba(0, 0, 0, 0.0485734);\n\tbox-sizing: border-box;\n\tbox-shadow: 7px 16px 37px rgba(0, 0, 0, 0.239781);\n\ttransition: transform 200ms cubic-bezier(0.4, 0.14, 0.3, 1);\n\ttransform: translateX(720px);\n}\n.styles_isModalActive__3XSNX {\n\ttransform: translateX(0);\n}\n\n.styles_header__3PFGX {\n\tflex-direction: column;\n\twidth: 100%;\n\theight: 86px;\n\tbackground: #ffffff;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: space-between;\n\tpadding: 16px;\n\tbox-sizing: border-box;\n\n\tfont-weight: 600;\n\tfont-size: 18px;\n\tline-height: 24px;\n\n\tdisplay: flex;\n\talign-items: flex-start;\n\tletter-spacing: 0.168px;\n\n\tcolor: rgba(0, 0, 0, 0.7);\n\tborder-bottom: 1px solid #E7E8F0;\n}\n\n.styles_navList__33BO0 {\n\tmin-width: 400px;\n\tdisplay: flex;\n\tflex-direction: row;\n\tpadding: 0;\n\tmargin: 0;\n\tmargin-top: 12px;\n\tmargin-left: -16px;\n}\n.styles_navList__33BO0 li {\n\tlist-style: none;\n}\n.styles_navItem__XZgfa {\n\tlist-style: none;\n\tposition: relative;\n\tdisplay: inline-block;\n\theight: 34px;\n\ttext-align: center;\n\tfont-size: 14px;\n\tfont-weight: 600;\n\tcolor: #aaa;\n\tpadding: 4px 16px;\n\tborder-bottom: 2px solid transparent;\n\ttransition: all 200ms cubic-bezier(0.4, 0.14, 0.3, 1);\n\tcursor: pointer;\n}\n\n.styles_navItem__XZgfa:hover {\n\tcolor: #a1a1a1;\n}\n.styles_navItemActive__17Uio {\n\tborder-color: #298EE2;\n\tcolor: #4A4A4A;\n}\n\n.styles_closeBtn__1A6KW {\n\tposition: absolute;\n    right: 16px;\n    top: 12px;\n    width: 32px;\n    height: 32px;\n    cursor: pointer;\n    background-color: rgba(217, 217, 217, 0.4);\n    border-radius: 50%;\n    padding: 6px;\n}\n.styles_closeBtn__1A6KW svg path {\n\tfill: #b4b7bc;\n}\n\n.styles_note__2WdlX {\n\tfont-size: 12px;\n    color: #EC454D;\n    font-weight: 600;\n    margin: 12px;\n    border-radius: 4px;\n    padding: 16px;\n    background: rgba(236, 69, 77, 0.1);\n}\n\n\n\n/* Misc */\n\ninput {\n\tborder: 1px solid #e0e0e0;\n    border-radius: 4px;\n    padding: 0 10px;\n    height: 40px;\n    color: #4C4C56;\n    resize: none;\n    width: 100%;\n    font-size: 14px;\n    margin-bottom: 20px;\n    transition: 200ms cubic-bezier(0.4, 0.14, 0.3, 1) all;\n}\ninput:focus {\n\tborder: 1px solid #298EE2;\n\toutline: none;\n}\n";
+var styles = { "wrapper": "styles_wrapper__3KXDn", "overlay": "styles_overlay__CLSq-", "isOverlayActive": "styles_isOverlayActive__298UW", "modal": "styles_modal__gNwvD", "isModalActive": "styles_isModalActive__3XSNX", "header": "styles_header__3PFGX", "navList": "styles_navList__33BO0", "navItem": "styles_navItem__XZgfa", "navItemActive": "styles_navItemActive__17Uio", "closeBtn": "styles_closeBtn__1A6KW", "note": "styles_note__2WdlX" };
 styleInject(css);
 
-var css$1 = ".grid_searchBar__1qck2 {\n    margin-top: 100px;\n    width: 95%;\n\tmargin: 15px 2.5%;\n\tpadding: 10px 15px;\n    background: #ffffff;\n    box-sizing: border-box;\n    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0877491);\n    border-radius: 4px;\n    font-family: Poppins;\n    font-style: normal;\n    font-weight: bold;\n    font-size: 13px;\n    line-height: 19px;\n}\n\n.grid_grid__vYO3q {\n    display: flex;\n    flex-wrap: wrap;\n    overflow-x: scroll;\n    justify-content: center;\n    margin: 10px;\n    height: 80%;\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 {\n    margin: 5px;\n    width: 150px;\n    height: 150px;\n    border: 1px solid grey;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background-color: rgba(255, 255, 255, 1);\n    background-size: 20px 20px;\n    background-image:\n        linear-gradient(to right, rgba(0, 0, 0, 0.3) 50%, transparent 50%, transparent),\n        linear-gradient(to right, transparent 0%, transparent 50%, rgba(0, 0, 0, 0.0) 50%),\n        linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 50%, transparent 50%, transparent),\n        linear-gradient(to bottom, transparent 0%, transparent 50%, rgba(0, 0, 0, 0.0) 50%),\n        linear-gradient(to bottom, rgba(255, 255, 255, 1) 50%, transparent 50%, transparent),\n        linear-gradient(to right, transparent 0%, transparent 50%, rgba(0, 0, 0, 0.5) 50%),\n        none;\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 .grid_gridImage__2ye62 {\n    padding: 5px;\n    box-sizing: border-box;\n    max-width: 100%;\n}";
-var styles$1 = { "searchBar": "grid_searchBar__1qck2", "grid": "grid_grid__vYO3q", "gridImageWrapper": "grid_gridImageWrapper__SoCX8", "gridImage": "grid_gridImage__2ye62" };
+var css$1 = ".grid_searchWrapper__3-vIN {\n\tposition: relative;\n}\n.grid_searchIcon__SWJt1 {\n\tposition: absolute;\n\tleft: 26px;\n\ttop: 26px;\n}\n.grid_searchBar__1qck2 {\n\tmargin-top: 100px;\n\twidth: 95%;\n\tmargin: 16px 16px;\n\tpadding: 10px 36px;\n\tbackground: #ffffff;\n\tbox-sizing: border-box;\n\tborder: 1px solid #e7e8f0;\n\tbox-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0877491);\n\tborder-radius: 4px;\n\tfont-style: normal;\n\tfont-size: 13px;\n\tline-height: 19px;\n}\n\n.grid_grid__vYO3q {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\toverflow-x: scroll;\n\tjustify-content: center;\n\tmargin: 0;\n\theight: 73vh;\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 {\n\tmargin: 5px;\n\twidth: 45%;\n\theight: 150px;\n\tborder: 1px solid grey;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n\tbackground-color: rgba(255, 255, 255, 1);\n\n\tbackground-image: -moz-linear-gradient(\n\t\t\t45deg,\n\t\t\t#f1f1f1 25%,\n\t\t\ttransparent 25%,\n\t\t\ttransparent 75%,\n\t\t\t#f1f1f1 75%,\n\t\t\t#f1f1f1 100%\n\t\t),\n\t\t-moz-linear-gradient(45deg, #f1f1f1 25%, transparent 25%, transparent\n\t\t\t\t\t75%, #f1f1f1 75%, #f1f1f1 100%);\n\tbackground-image: -webkit-linear-gradient(\n\t\t\t45deg,\n\t\t\t#f1f1f1 25%,\n\t\t\ttransparent 25%,\n\t\t\ttransparent 75%,\n\t\t\t#f1f1f1 75%,\n\t\t\t#f1f1f1 100%\n\t\t),\n\t\t-webkit-linear-gradient(45deg, #f1f1f1 25%, transparent 25%, transparent\n\t\t\t\t\t75%, #f1f1f1 75%, #f1f1f1 100%);\n\tbackground-size: 20px 20px;\n\tbackground-position: 0 0, 50px 50px;\n\n\tborder: 1px solid #e5e5e5;\n\tbox-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);\n\tborder-radius: 3px;\n\toverflow: hidden;\n}\n\n.grid_grid__vYO3q .grid_gridImageDarkWrapper__1for2 {\n\tbackground-size: 20px 20px;\n\tbackground-position: bottom;\n\tbackground-color: #ffffff;\n\tbackground-image: linear-gradient(\n\t\t\tto right,\n\t\t\trgba(0, 0, 0, 0.3) 50%,\n\t\t\ttransparent 50%,\n\t\t\ttransparent\n\t\t),\n\t\tlinear-gradient(\n\t\t\tto right,\n\t\t\ttransparent 0%,\n\t\t\ttransparent 50%,\n\t\t\trgba(0, 0, 0, 0) 50%\n\t\t),\n\t\tlinear-gradient(\n\t\t\tto bottom,\n\t\t\trgba(0, 0, 0, 0.3) 50%,\n\t\t\ttransparent 50%,\n\t\t\ttransparent\n\t\t),\n\t\tlinear-gradient(\n\t\t\tto bottom,\n\t\t\ttransparent 0%,\n\t\t\ttransparent 50%,\n\t\t\trgba(0, 0, 0, 0) 50%\n\t\t),\n\t\tlinear-gradient(to bottom, #ffffff 50%, transparent 50%, transparent),\n\t\tlinear-gradient(\n\t\t\tto right,\n\t\t\ttransparent 0%,\n\t\t\ttransparent 50%,\n\t\t\trgba(0, 0, 0, 0.5) 50%\n\t\t),\n\t\tnone;\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 .grid_gridImage__2ye62 {\n\tpadding: 5px;\n\tbox-sizing: border-box;\n\theight: auto;\n}\n";
+var styles$1 = { "searchWrapper": "grid_searchWrapper__3-vIN", "searchIcon": "grid_searchIcon__SWJt1", "searchBar": "grid_searchBar__1qck2", "grid": "grid_grid__vYO3q", "gridImageWrapper": "grid_gridImageWrapper__SoCX8", "gridImageDarkWrapper": "grid_gridImageDarkWrapper__1for2", "gridImage": "grid_gridImage__2ye62" };
 styleInject(css$1);
 
 var bind = function bind(fn, thisArg) {
@@ -1377,6 +1377,31 @@ var Grid = function (_Component) {
 
 		var _this = possibleConstructorReturn(this, (Grid.__proto__ || Object.getPrototypeOf(Grid)).call(this, props));
 
+		_this.freeSearch = function () {
+			// TODO: Need a delimiter that can do a default search
+			var query = "a";
+			axios$1.post(_this.props.server + "/search/" + query + "?disableCache=" + _this.state.disableCache, {
+				s3Bucket: _this.props.s3.bucket,
+				s3Path: _this.props.s3.path
+			}).then(function (response) {
+				var images = response.data.map(function (image) {
+					image.url = _this.props.cdn + "/" + image.slug;
+					return image;
+				});
+
+				_this.setState({
+					images: images,
+					isGrid: true,
+					disableCache: false
+				});
+			}).catch(function (error) {
+				this.setState({
+					images: [],
+					isGrid: true
+				});
+			}).finally(function () {});
+		};
+
 		_this.state = {
 			images: [],
 			disableCache: true
@@ -1386,6 +1411,11 @@ var Grid = function (_Component) {
 	}
 
 	createClass(Grid, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {
+			this.freeSearch();
+		}
+	}, {
 		key: "search",
 		value: function search(event) {
 			var _this2 = this;
@@ -1423,8 +1453,26 @@ var Grid = function (_Component) {
 				null,
 				React.createElement(
 					"div",
-					null,
-					React.createElement("input", { placeholder: "Search for an existing image", className: styles$1.searchBar, onKeyUp: this.search })
+					{ className: styles$1.searchWrapper },
+					React.createElement(
+						"svg",
+						{
+							fill: "none",
+							preserveAspectRatio: "xMidYMid meet",
+							height: "20",
+							width: "20",
+							className: styles$1.searchIcon
+						},
+						React.createElement("path", {
+							d: "M12.9167 11.6667H12.2583L12.025 11.4417C12.8417 10.4917 13.3333 9.25833 13.3333 7.91667C13.3333 4.925 10.9083 2.5 7.91667 2.5C4.925 2.5 2.5 4.925 2.5 7.91667C2.5 10.9083 4.925 13.3333 7.91667 13.3333C9.25833 13.3333 10.4917 12.8417 11.4417 12.025L11.6667 12.2583V12.9167L15.8333 17.075L17.075 15.8333L12.9167 11.6667ZM7.91667 11.6667C5.84167 11.6667 4.16667 9.99167 4.16667 7.91667C4.16667 5.84167 5.84167 4.16667 7.91667 4.16667C9.99167 4.16667 11.6667 5.84167 11.6667 7.91667C11.6667 9.99167 9.99167 11.6667 7.91667 11.6667Z",
+							fill: "#90A0B7"
+						})
+					),
+					React.createElement("input", {
+						placeholder: "Search for an existing image",
+						className: styles$1.searchBar,
+						onKeyUp: this.search
+					})
 				),
 				React.createElement(
 					"div",
@@ -1432,10 +1480,18 @@ var Grid = function (_Component) {
 					this.state.images && this.state.images.length ? this.state.images.map(function (image) {
 						return React.createElement(
 							"div",
-							{ key: image.slug, className: styles$1.gridImageWrapper, onClick: function onClick() {
+							{
+								key: image.slug,
+								className: styles$1.gridImageWrapper + " " + (/white/.test(image.url) ? styles$1.gridImageDarkWrapper : ""),
+								onClick: function onClick() {
 									return _this3.props.select(image.slug);
-								} },
-							React.createElement("img", { alt: image.url, className: styles$1.gridImage, src: image.url })
+								}
+							},
+							React.createElement("img", {
+								alt: image.url,
+								className: styles$1.gridImage,
+								src: image.url
+							})
 						);
 					}) : React.createElement(
 						"span",
@@ -1456,7 +1512,7 @@ Grid.propTypes = {
 	select: PropTypes.func
 };
 
-var css$2 = ".uploader_uploader__1RhpY {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n    margin: 10px;\n    height: 80%;\n}\n\n.uploader_uploader__1RhpY form {\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    width: 340px;\n}\n\n.uploader_uploader__1RhpY form .uploader_titleLabel__3dNsX {\n    font-family: Poppins;\n    font-style: normal;\n    font-weight: bold;\n    font-size: 12px;\n    line-height: 24px;\n    letter-spacing: 1px;\n    text-transform: uppercase;\n    color: #adb1b3;\n}\n\n.uploader_uploader__1RhpY form .uploader_title__6XJq_ {\n    padding: 10px 15px;\n    background: #ffffff;\n    box-sizing: border-box;\n    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0877491);\n    border-radius: 4px;\n    font-family: Poppins;\n    font-style: normal;\n    font-weight: bold;\n    font-size: 13px;\n    line-height: 19px;\n}\n\n.uploader_uploader__1RhpY form .uploader_fileUploader__2jVN9 {\n    background: #eeeeee;\n    border: 1px dashed #c4c4c4;\n    box-sizing: border-box;\n    width: 100%;\n    height: 141px;\n    margin-top: 23.08px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n}\n\n.uploader_uploader__1RhpY form .uploader_fileUploader__2jVN9 .uploader_info__3NSEz {\n    font-family: Poppins;\n    font-style: normal;\n    font-weight: normal;\n    font-size: 14px;\n    line-height: 21px;\n    text-align: justify;\n    color: #000000;\n}\n\n.uploader_uploader__1RhpY form .uploader_file__1ekDC {\n    margin-top: 10px;\n}\n\n.uploader_uploader__1RhpY form .uploader_submit__2mAIq {\n    background: #48dd84;\n    border-radius: 4px;\n    margin-top: 10px;\n    height: 40px;\n    color: white;\n    margin-top: 20px;\n    cursor: pointer;\n    font-family: Poppins;\n    font-style: normal;\n    font-weight: bold;\n    font-size: 13px;\n    line-height: 19px;\n    text-align: center;\n    text-transform: uppercase;\n}\n\n.uploader_heading__1Ox1s {\n    font-family: Poppins;\n    font-style: normal;\n    font-weight: 600;\n    font-size: 24px;\n\tline-height: 36px;\n\tmargin-bottom: 15px;\n    text-align: justify;\n    color: rgba(0, 0, 0, 0.4);\n}\n\n.uploader_hide__1T76k {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n}";
+var css$2 = ".uploader_uploader__1RhpY {\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    margin: 10px;\n    height: 80%;\n}\n\n.uploader_uploader__1RhpY form {\n    display: flex;\n    flex-direction: column;\n\tjustify-content: flex-start;\n\talign-items: left;\n    width: 340px;\n}\n\n.uploader_uploader__1RhpY form .uploader_titleLabel__3dNsX {\n    font-style: normal;\n    font-weight: bold;\n    font-size: 12px;\n    line-height: 24px;\n    letter-spacing: 1px;\n    text-transform: uppercase;\n\tcolor: #adb1b3;\n\tmargin-top: 24px;\n}\n\n.uploader_uploader__1RhpY form .uploader_title__6XJq_ {\n    padding: 10px 15px;\n    background: #ffffff;\n    box-sizing: border-box;\n    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0877491);\n    border-radius: 4px;\n    font-style: normal;\n    font-size: 13px;\n    line-height: 19px;\n}\n\n.uploader_uploader__1RhpY form .uploader_fileUploader__2jVN9 {\n\tbackground: rgba(86, 204, 242, 0.1);\n\tborder: 2px dashed rgba(86, 204, 242, 0.5);\n    box-sizing: border-box;\n    width: 100%;\n    height: 140px;\n    margin-top: 24px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n}\n\n.uploader_uploader__1RhpY form .uploader_fileUploader__2jVN9 .uploader_info__3NSEz {\n    font-style: normal;\n    font-size: 14px;\n    line-height: 21px;\n    text-align: justify;\n    color: #000000;\n}\n.uploader_uploader__1RhpY form .uploader_fileUploader__2jVN9 .uploader_info__3NSEz a {\n    text-decoration: underline;\n    color: #2F80ED;\n}\n\n\n.uploader_uploader__1RhpY form .uploader_file__1ekDC {\n    margin-top: 10px;\n}\n\n.uploader_uploader__1RhpY form .uploader_submit__2mAIq {\n\tborder: none;\n    background: #2FCB53;\n    border-radius: 4px;\n    margin-top: 10px;\n\theight: 40px;\n\twidth: 240px;\n    color: white;\n\tmargin: 20px auto 0;\n    cursor: pointer;\n    font-style: normal;\n    font-weight: bold;\n    font-size: 14px;\n    line-height: 19px;\n    text-align: center;\n    text-transform: uppercase;\n}\n.uploader_uploader__1RhpY form .uploader_submit__2mAIq:focus {\n\toutline: transparent;\n}\n.uploader_heading__1Ox1s {\n    font-style: normal;\n    font-weight: 600;\n    font-size: 24px;\n\tline-height: 36px;\n\tmargin-bottom: 15px;\n    text-align: justify;\n    color: rgba(0, 0, 0, 0.4);\n}\n\n.uploader_hide__1T76k {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n}\n";
 var styles$2 = { "uploader": "uploader_uploader__1RhpY", "titleLabel": "uploader_titleLabel__3dNsX", "title": "uploader_title__6XJq_", "fileUploader": "uploader_fileUploader__2jVN9", "info": "uploader_info__3NSEz", "file": "uploader_file__1ekDC", "submit": "uploader_submit__2mAIq", "heading": "uploader_heading__1Ox1s", "hide": "uploader_hide__1T76k" };
 styleInject(css$2);
 
@@ -1522,22 +1578,16 @@ var Uploader = function (_Component) {
 				"div",
 				{ className: styles$2.uploader },
 				React.createElement(
-					"h1",
-					{ className: styles$2.heading },
-					"Upload a new Image"
-				),
-				React.createElement(
 					"form",
 					null,
 					React.createElement(
 						"label",
-						{ className: styles$2.titleLabel },
-						"Image Tag"
-					),
-					React.createElement("input", { onChange: this.changeListener, name: "title", className: styles$2.title, type: "text", placeholder: "upgrad_logo" }),
-					React.createElement(
-						"label",
-						{ onDrop: this.drop, onDragOver: this.dragOver, htmlFor: "upload-file", className: styles$2.fileUploader },
+						{
+							onDrop: this.drop,
+							onDragOver: this.dragOver,
+							htmlFor: "upload-file",
+							className: styles$2.fileUploader
+						},
 						React.createElement(
 							"span",
 							{ className: styles$2.info },
@@ -1549,11 +1599,33 @@ var Uploader = function (_Component) {
 							)
 						)
 					),
-					React.createElement("input", { id: "upload-file", encType: "multipart/form-data", onChange: this.changeListener, name: "file", className: styles$2.hide, type: "file" }),
+					React.createElement("input", {
+						id: "upload-file",
+						encType: "multipart/form-data",
+						onChange: this.changeListener,
+						name: "file",
+						className: styles$2.hide,
+						type: "file"
+					}),
+					React.createElement(
+						"label",
+						{ className: styles$2.titleLabel },
+						"Image Tag"
+					),
+					React.createElement("input", {
+						onChange: this.changeListener,
+						name: "title",
+						className: styles$2.title,
+						type: "text",
+						placeholder: "example, adidas_white_logo"
+					}),
 					React.createElement(
 						"button",
-						{ className: styles$2.submit, onClick: this.upload },
-						this.state.loading ? 'Uploading Image ...' : 'SUBMIT'
+						{
+							className: styles$2.submit,
+							onClick: this.upload
+						},
+						this.state.loading ? "Uploading Image ..." : "SUBMIT"
 					)
 				)
 			);
@@ -1586,7 +1658,7 @@ var Gallery = function (_Component) {
 			});
 			setTimeout(function () {
 				return _this.props.onClose(data);
-			}, 1000);
+			}, 200);
 		};
 
 		_this.state = {
@@ -1619,32 +1691,84 @@ var Gallery = function (_Component) {
 
 			return React.createElement(
 				"div",
-				{ className: styles.wrapper, style: { justifyContent: this.state.style.align } },
-				React.createElement("div", { className: styles.overlay, onClick: function onClick() {
-						return _this2.selectFinal();
-					} }),
+				{
+					className: styles.modal + " " + (this.props.isActive ? styles.isModalActive : "")
+				},
 				React.createElement(
 					"div",
-					{ className: styles.modal, style: { width: this.state.style.width + "%" } },
+					{ className: styles.header },
 					React.createElement(
 						"div",
-						{ className: styles.header },
+						{ className: styles.title },
+						"Image Gallery"
+					),
+					React.createElement(
+						"ul",
+						{ className: styles.navList },
 						React.createElement(
-							"span",
+							"li",
 							null,
-							"Image Gallery"
+							React.createElement(
+								"div",
+								{
+									onClick: function onClick() {
+										return _this2.setState({
+											isGrid: !_this2.state.isGrid
+										});
+									},
+									className: styles.navItem + " " + (this.state.isGrid ? styles.navItemActive : "")
+								},
+								"Search"
+							)
 						),
 						React.createElement(
-							"div",
-							{ className: styles.newUpload, onClick: function onClick() {
-									return _this2.setState({ isGrid: !_this2.state.isGrid });
-								} },
-							this.state.isGrid ? "Upload New" : "Search Image"
+							"li",
+							null,
+							React.createElement(
+								"div",
+								{
+									onClick: function onClick() {
+										return _this2.setState({
+											isGrid: !_this2.state.isGrid
+										});
+									},
+									className: styles.navItem + " " + (!this.state.isGrid ? styles.navItemActive : "")
+								},
+								"Upload New"
+							)
 						)
 					),
-					this.spriteNote(),
-					this.state.isGrid ? React.createElement(Grid, _extends({}, this.props.config, { select: this.selectFinal })) : React.createElement(Uploader, _extends({}, this.props.config, { select: this.selectFinal }))
-				)
+					React.createElement(
+						"div",
+						{
+							className: styles.closeBtn,
+							onClick: function onClick() {
+								return _this2.selectFinal();
+							}
+						},
+						React.createElement(
+							"svg",
+							{
+								fill: "none",
+								preserveAspectRatio: "xMidYMid meet",
+								height: "20",
+								width: "20"
+							},
+							React.createElement("path", {
+								fillRule: "evenodd",
+								clipRule: "evenodd",
+								d: "M15.8334 5.34175L14.6584 4.16675L10 8.82508L5.34169 4.16675L4.16669 5.34175L8.82502 10.0001L4.16669 14.6584L5.34169 15.8334L10 11.1751L14.6584 15.8334L15.8334 14.6584L11.175 10.0001L15.8334 5.34175Z",
+								fill: "#B4B7BC"
+							})
+						)
+					)
+				),
+				this.spriteNote(),
+				this.state.isGrid ? React.createElement(Grid, _extends({}, this.props.config, {
+					select: this.selectFinal
+				})) : React.createElement(Uploader, _extends({}, this.props.config, {
+					select: this.selectFinal
+				}))
 			);
 		}
 	}]);
@@ -1653,12 +1777,14 @@ var Gallery = function (_Component) {
 
 Gallery.propTypes = {
 	config: PropTypes.object,
+	isActive: PropTypes.bool,
 	uploaded: PropTypes.func
 };
 Gallery.defaultProps = {
 	config: {
 		size: "small"
-	}
+	},
+	isActive: false
 };
 
 export default Gallery;
