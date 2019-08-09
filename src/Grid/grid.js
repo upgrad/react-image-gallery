@@ -20,45 +20,12 @@ export default class Grid extends Component {
 		this.search = this.search.bind(this);
 	}
 	componentDidMount() {
-		this.freeSearch();
+		this.search();
 	}
 
-	freeSearch = () => {
-		// TODO: Need a delimiter that can do a default search
-		let query = "a";
-		axios
-			.post(
-				`${this.props.server}/search/${query}?disableCache=${
-					this.state.disableCache
-				}`,
-				{
-					s3Bucket: this.props.s3.bucket,
-					s3Path: this.props.s3.path
-				}
-			)
-			.then(response => {
-				let images = response.data.map(image => {
-					image.url = `${this.props.cdn}/${image.slug}`;
-					return image;
-				});
-
-				this.setState({
-					images,
-					isGrid: true,
-					disableCache: false
-				});
-			})
-			.catch(function(error) {
-				this.setState({
-					images: [],
-					isGrid: true
-				});
-			})
-			.finally(function() {});
-	}
 	search(event) {
-		if (event.key !== "Enter") return;
-		let query = event.target.value;
+		if (event && event.key !== "Enter") return;
+		let query = (event && event.target.value) || '__getDefaultImgs__';
 		axios
 			.post(
 				`${this.props.server}/search/${query}?disableCache=${
