@@ -1817,9 +1817,7 @@ Gallery.propTypes = {
 	uploaded: PropTypes.func
 };
 Gallery.defaultProps = {
-	config: {
-		size: "small"
-	},
+	config: {},
 	isActive: false
 };
 
