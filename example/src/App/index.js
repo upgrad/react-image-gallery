@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import Gallery from "awesome-react-gallery";
 import "./index.css";
 
-const CDN_URL = `https://ik.imagekit.io/upgrad1/marketing-platform-assets`;
-const S3_PATH = `sprites/images`;
-const S3_BUCKET = `upgrad-marketing-platform`;
-const SERVER_URL = `https://dev-mp.upgrad.com:7000/gallery`;
+const CDN_URL = ``;
+const S3_PATH = ``;
+const S3_BUCKET = ``;
+const SERVER_URL = `http://localhost:7000/gallery`;
 
 export default class App extends Component {
 	constructor(props) {

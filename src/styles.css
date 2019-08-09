@@ -150,3 +150,20 @@ input:focus {
 	border: 1px solid #298ee2;
 	outline: none;
 }
+
+button {
+		  border: none;
+	    background: #2FCB53;
+	    border-radius: 4px;
+	    color: white;
+	    cursor: pointer;
+	    font-style: normal;
+	    font-weight: bold;
+	    font-size: 14px;
+	    line-height: 19px;
+	    text-align: center;
+	    text-transform: uppercase;
+}
+button:focus {
+	outline: transparent;
+}

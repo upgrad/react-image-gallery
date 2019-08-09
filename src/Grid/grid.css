@@ -81,7 +81,6 @@
 					75%, #f1f1f1 75%, #f1f1f1 100%);
 	background-size: 20px 20px;
 	background-position: 0 0, 50px 50px;
-
 	border: 1px solid #e5e5e5;
 	box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
 	border-radius: 3px;
@@ -130,4 +129,20 @@
 	padding: 5px;
 	box-sizing: border-box;
 	height: auto;
+}
+
+.selectionBar{
+	position: fixed;
+	bottom:0;
+	display: flex;
+	align-items: center;
+ 	justify-content: space-between;
+	height: 5vh;
+	width: 100%;
+	background-color: #e6e6e6;
+	padding: 0px 20px;
+}
+
+.selectionButton{
+	padding: 5px 15px;
 }

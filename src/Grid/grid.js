@@ -15,10 +15,12 @@ export default class Grid extends Component {
 		super(props);
 		this.state = {
 			images: [],
-			disableCache: true
+			disableCache: true,
+			imageSelectedIndex: undefined
 		};
 		this.search = this.search.bind(this);
 	}
+
 	componentDidMount() {
 		this.search();
 	}
@@ -57,6 +59,16 @@ export default class Grid extends Component {
 			.finally(function() {});
 	}
 
+	selectionBar(){
+		if(this.state.imageSelectedIndex == undefined) return null
+		let imageSlug = this.state.images[this.state.imageSelectedIndex].slug
+		return(
+			<div className={ styles.selectionBar}>
+				<span>{imageSlug}</span>
+				<button className={styles.selectionButton} onClick={()=>this.props.select(imageSlug)}>SELECT</button>
+			</div>
+		)
+	}
 	render() {
 		return (
 			<div>
@@ -81,32 +93,21 @@ export default class Grid extends Component {
 				</div>
 				<div className={styles.grid}>
 					{this.state.images && this.state.images.length ? (
-						this.state.images.map(image => {
+						this.state.images.map((image,i) => {
 							return (
 								<div
 									key={image.slug}
+									style={{borderColor:`${this.state.imageSelectedIndex == i?'#ec454d':'#e5e5e5'}`}}
 									className={
-										styles.gridImageWrapper + " " +
-										(
-											/white/.test(image.url) ? styles.gridImageDarkWrapper : ""
-										)
+										`${styles.gridImageWrapper}
+										 ${/white/.test(image.url) ? styles.gridImageDarkWrapper : ''}`
 									}
-									onClick={() =>
-										this.props.select(
-											image.slug
-										)
-									}
+									onClick={() => this.setState({imageSelectedIndex: i})}
 								>
 									<img
-										alt={
-											image.url
-										}
-										className={
-											styles.gridImage
-										}
-										src={
-											image.url
-										}
+										alt={	image.url }
+										className={ styles.gridImage }
+										src={ image.url }
 									/>
 								</div>
 							);
@@ -115,6 +116,7 @@ export default class Grid extends Component {
 						<span>No images found</span>
 					)}
 				</div>
+				{this.selectionBar()}
 			</div>
 		);
 	}

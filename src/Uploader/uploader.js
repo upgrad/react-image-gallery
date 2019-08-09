@@ -11,8 +11,24 @@ export default class Uploader extends Component {
 		};
 	}
 
+	drop = e => {
+		e.stopPropagation();
+		e.preventDefault();
+		let file = e.dataTransfer.files && e.dataTransfer.files[0]
+		if(file)
+			this.setState({
+				imagePreviewSrc: URL.createObjectURL(file),
+				form: {
+					...this.state.form,
+					file
+				}
+			});
+		return false;
+	};
+
 	changeListener = e => {
 		this.setState({
+			imagePreviewSrc: URL.createObjectURL(e.target.files[0]),
 			form: {
 				...this.state.form,
 				[e.target.name]: (e.target.files && e.target.files[0]) || e.target.value
@@ -20,12 +36,21 @@ export default class Uploader extends Component {
 		});
 	};
 
+	clearImage = () => {
+		this.setState({
+			imagePreviewSrc:undefined,
+			form: {
+				...this.state.form,
+				file: undefined
+			}
+		});
+	}
+
 	upload = e => {
 		this.setState({ loading: true });
 		e.preventDefault();
 		let formData = new FormData();
 		formData.append("title", this.state.form.title);
-		formData.append("size", this.props.size);
 		formData.append("file", this.state.form.file);
 		formData.append("s3Bucket", this.props.s3.bucket);
 		formData.append("s3Path", this.props.s3.path);
@@ -43,13 +68,6 @@ export default class Uploader extends Component {
 			});
 	};
 
-	drop = event => {
-		event.stopPropagation();
-		event.preventDefault();
-		if (event.dataTransfer.files && event.dataTransfer.files[0]) this.state.form.file = event.dataTransfer.files[0];
-		return false;
-	};
-
 	dragOver(event) {
 		event.stopPropagation();
 		event.preventDefault();
@@ -60,24 +78,31 @@ export default class Uploader extends Component {
 		return (
 			<div className={styles.uploader}>
 				<form>
-					<label
-						onDrop={this.drop}
-						onDragOver={this.dragOver}
-						htmlFor="upload-file"
-						className={styles.fileUploader}
-					>
-						<span className={styles.info}>
-							Drop an image here or <a>choose a image</a>
-						</span>
-					</label>
-					<input
-						id="upload-file"
-						encType="multipart/form-data"
-						onChange={this.changeListener}
-						name="file"
-						className={styles.hide}
-						type="file"
-					/>
+					<div className={styles.imagePreview}>
+						{this.state.form.file && <span className={styles.clearImage} onClick={this.clearImage}>clear[x]</span>}
+						<img src={this.state.imagePreviewSrc} style={{width:'100%'}}></img>
+					</div>
+					{!this.state.form.file &&
+						<div>
+						<label
+							onDrop={this.drop}
+							onDragOver={this.dragOver}
+							htmlFor="upload-file"
+							className={styles.fileUploader}
+						>
+							<span className={styles.info}>
+								Drop an image here or <a>choose a image</a>
+							</span>
+						</label>
+						<input
+							id="upload-file"
+							encType="multipart/form-data"
+							onChange={this.changeListener}
+							name="file"
+							className={styles.hide}
+							type="file"
+						/>
+					</div>}
 					<label className={styles.titleLabel}>
 						Image Tag
 					</label>
