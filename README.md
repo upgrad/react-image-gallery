@@ -22,7 +22,6 @@ class Example extends Component {
       showGallery: true
     };
     this.config = {
-      size: "medium",
       server: "http://localhost:3000/gallery",
       style: {
         width: 60,

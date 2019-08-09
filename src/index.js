@@ -13,9 +13,7 @@ export default class Gallery extends Component {
 	};
 
 	static defaultProps = {
-		config: {
-			size: "small"
-		},
+		config: {},
 		isActive: false,
 	};
 

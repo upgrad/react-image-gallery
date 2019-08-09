@@ -15,7 +15,6 @@ export default class App extends Component {
 		};
 
 		this.config = {
-			size: "small",
 			server: SERVER_URL,
 			style: {
 				width: 30,
