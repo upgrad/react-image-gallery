@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styles from "./grid.css";
 import axios from "axios";
+import homeStyles from "./../styles.css"
 
 export default class Grid extends Component {
 	static propTypes = {
@@ -65,7 +66,7 @@ export default class Grid extends Component {
 		return(
 			<div className={ styles.selectionBar}>
 				<span>{imageSlug}</span>
-				<button className={styles.selectionButton} onClick={()=>this.props.select(imageSlug)}>SELECT</button>
+				<button className={`${homeStyles.galleryButton} ${styles.selectionButton}`} onClick={()=>this.props.select(imageSlug)}>SELECT</button>
 			</div>
 		)
 	}
@@ -87,7 +88,7 @@ export default class Grid extends Component {
 					</svg>
 					<input
 						placeholder="Search for an existing image"
-						className={styles.searchBar}
+						className={`${homeStyles.galleryInput} ${styles.searchBar}`}
 						onKeyUp={this.search}
 					/>
 				</div>

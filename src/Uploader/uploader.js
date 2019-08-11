@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import styles from "./uploader.css";
 import axios from "axios";
+import homeStyles from "./../styles.css"
 
 export default class Uploader extends Component {
 	constructor(props) {
@@ -109,12 +110,12 @@ export default class Uploader extends Component {
 					<input
 						onChange={this.changeListener}
 						name="title"
-						className={styles.title}
+						className={`${homeStyles.galleryInput} ${styles.title}`}
 						type="text"
 						placeholder="example, adidas_white_logo"
 					/>
 					<button
-						className={styles.submit}
+						className={`${homeStyles.galleryButton} ${styles.submit}`}
 						onClick={this.upload}
 					>
 						{this.state.loading
