@@ -1387,9 +1387,25 @@ var Grid = function (_Component) {
 	}
 
 	createClass(Grid, [{
-		key: "componentDidMount",
-		value: function componentDidMount() {
-			this.search();
+		key: "componentDidUpdate",
+		value: function componentDidUpdate(prevProps) {
+			if (this.props.defaultSearch && prevProps.defaultSearch != this.props.defaultSearch) {
+				if (window && this.props.s3.path) {
+					if (!window.react_S3_Gallery || !window.react_S3_Gallery[this.props.s3.path]) this.search();else this.updateGlobalDataLocally(window.react_S3_Gallery[this.props.s3.path]);
+				}
+			}
+		}
+	}, {
+		key: "updateGlobalDataLocally",
+		value: function updateGlobalDataLocally(images) {
+			this.setState({
+				images: images,
+				isGrid: true,
+				disableCache: false
+			});
+
+			if (!window.react_S3_Gallery) window.react_S3_Gallery = {};
+			window.react_S3_Gallery[this.props.s3.path] = images;
 		}
 	}, {
 		key: "search",
@@ -1407,11 +1423,7 @@ var Grid = function (_Component) {
 					return image;
 				});
 
-				_this2.setState({
-					images: images,
-					isGrid: true,
-					disableCache: false
-				});
+				_this2.updateGlobalDataLocally(images);
 			}).catch(function (error) {
 				this.setState({
 					images: [],
@@ -1796,6 +1808,7 @@ var Gallery = function (_Component) {
 				),
 				this.spriteNote(),
 				this.state.isGrid ? React.createElement(Grid, _extends({}, this.props.config, {
+					defaultSearch: this.props.isActive,
 					select: this.selectFinal
 				})) : React.createElement(Uploader, _extends({}, this.props.config, {
 					select: this.selectFinal

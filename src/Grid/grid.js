@@ -22,8 +22,26 @@ export default class Grid extends Component {
 		this.search = this.search.bind(this);
 	}
 
-	componentDidMount() {
-		this.search();
+	componentDidUpdate(prevProps){
+		if(this.props.defaultSearch && (prevProps.defaultSearch != this.props.defaultSearch)){
+			if(window && this.props.s3.path){
+				if(!window.react_S3_Gallery || !window.react_S3_Gallery[this.props.s3.path])
+					this.search();
+				else this.updateGlobalDataLocally(window.react_S3_Gallery[this.props.s3.path])
+			}
+		}
+	}
+
+	updateGlobalDataLocally(images){
+		this.setState({
+			images,
+			isGrid: true,
+			disableCache: false
+		});
+
+		if(!window.react_S3_Gallery)
+			window.react_S3_Gallery = {}
+		window.react_S3_Gallery[this.props.s3.path] = images
 	}
 
 	search(event) {
@@ -45,11 +63,7 @@ export default class Grid extends Component {
 					return image;
 				});
 
-				this.setState({
-					images,
-					isGrid: true,
-					disableCache: false
-				});
+				this.updateGlobalDataLocally(images)
 			})
 			.catch(function(error) {
 				this.setState({

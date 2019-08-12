@@ -137,6 +137,7 @@ export default class Gallery extends Component {
 				{this.state.isGrid ? (
 					<Grid
 						{...this.props.config}
+						defaultSearch={this.props.isActive}
 						select={this.selectFinal}
 					/>
 				) : (
