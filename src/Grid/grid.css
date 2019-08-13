@@ -1,6 +1,7 @@
 .searchWrapper {
 	position: relative;
-	height:40px
+	height:40px;
+	margin-top:16px;
 }
 .searchIcon {
 	position: absolute;
