@@ -17,9 +17,12 @@ export default class Grid extends Component {
 		this.state = {
 			images: [],
 			disableCache: true,
-			imageSelectedIndex: undefined
+			imageSelectedIndex: undefined,
+			loading: false
 		};
+		this.searchInputEle = React.createRef();
 		this.search = this.search.bind(this);
+		this.inputChange = this.inputChange.bind(this)
 	}
 
 	componentDidUpdate(prevProps){
@@ -36,7 +39,8 @@ export default class Grid extends Component {
 		this.setState({
 			images,
 			isGrid: true,
-			disableCache: false
+			disableCache: false,
+			loading: false
 		});
 
 		if(!window.react_S3_Gallery)
@@ -44,9 +48,15 @@ export default class Grid extends Component {
 		window.react_S3_Gallery[this.props.s3.path] = images
 	}
 
-	search(event) {
-		if (event && event.key !== "Enter") return;
-		let query = (event && event.target.value) || '__getDefaultImgs__';
+	inputChange(e){
+		if (e && e.key !== "Enter") return;
+		let query = (event && event.target.value);
+		this.search(query)
+	}
+
+	search(query) {
+		query = query || '__getDefaultImgs__'
+		this.setState({loading: true})
 		axios
 			.post(
 				`${this.props.server}/search/${query}?disableCache=${
@@ -68,7 +78,8 @@ export default class Grid extends Component {
 			.catch(function(error) {
 				this.setState({
 					images: [],
-					isGrid: true
+					isGrid: true,
+					loading: false
 				});
 			})
 			.finally(function() {});
@@ -103,11 +114,13 @@ export default class Grid extends Component {
 					<input
 						placeholder="Search for an existing image"
 						className={`${homeStyles.galleryInput} ${styles.searchBar}`}
-						onKeyUp={this.search}
+						onKeyUp={(this.inputChange)}
+						ref={this.searchInputEle}
 					/>
+					<button onClick={()=>this.search(this.searchInputEle.current.value)} className={`${homeStyles.galleryButton} ${styles.searchButton}`}>Search</button>
 				</div>
 				<div className={styles.grid}>
-					{this.state.images && this.state.images.length ? (
+					{!this.state.loading && this.state.images && this.state.images.length ? (
 						this.state.images.map((image,i) => {
 							return (
 								<div
@@ -128,7 +141,9 @@ export default class Grid extends Component {
 							);
 						})
 					) : (
-						<span>No images found</span>
+						<div className={styles.info}>
+							{this.state.loading?<div className={homeStyles.galleryLoading}></div>:<span>No images found</span>}
+						</div>
 					)}
 				</div>
 				{this.selectionBar()}

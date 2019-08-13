@@ -33,12 +33,12 @@ function styleInject(css, ref) {
   }
 }
 
-var css = "@import url(\"https://fonts.googleapis.com/css?family=Lato:400,700&display=swap\");\n\n* {\n\tbox-sizing: border-box;\n}\n\n.styles_overlay__CLSq- {\n\twidth: inherit;\n\theight: inherit;\n\tbackground-color: black;\n\topacity: 0.5;\n\tposition: absolute;\n\tz-index: 1;\n\tdisplay: none;\n}\n.styles_isOverlayActive__298UW {\n\tdisplay: block;\n}\n\n.styles_modal__gNwvD {\n\tposition: fixed;\n\tright: 0;\n\ttop: 0;\n\tz-index: 9999;\n\n\tletter-spacing: normal;\n\tfont-family: \"Lato\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial,\n\t\tsans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n\t-ms-text-size-adjust: 100%;\n\t-webkit-text-size-adjust: 100%;\n\t-moz-osx-font-smoothing: grayscale;\n\t-webkit-font-smoothing: antialiased;\n\ttext-rendering: geometricPrecision;\n\tfont-variant-ligatures: common-ligatures;\n\n\theight: 100vh;\n\tmin-width: 576px;\n\twidth: 30%;\n\topacity: 1;\n\tdisplay: flex;\n\tflex-direction: column;\n\tbackground: #fff;\n\tborder: 1px solid rgba(0, 0, 0, 0.0485734);\n\tbox-sizing: border-box;\n\tbox-shadow: -24px 16px 56px rgba(0, 0, 0, 0.239781);\n\ttransition: transform 200ms cubic-bezier(0.4, 0.14, 0.3, 1);\n\ttransform: translateX(720px);\n}\n.styles_isModalActive__3XSNX {\n\ttransform: translateX(0);\n}\n.styles_header__3PFGX {\n\tflex-direction: column;\n\twidth: 100%;\n\theight: 86px;\n\tbackground: #ffffff;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: space-between;\n\tpadding: 16px;\n\tbox-sizing: border-box;\n\n\tfont-weight: 600;\n\tfont-size: 18px;\n\tline-height: 24px;\n\n\tdisplay: flex;\n\talign-items: flex-start;\n\tletter-spacing: 0.168px;\n\n\tcolor: rgba(0, 0, 0, 0.7);\n\tborder-bottom: 1px solid #e7e8f0;\n}\n\n.styles_navList__33BO0 {\n\tmin-width: 400px;\n\tdisplay: flex;\n\tflex-direction: row;\n\tpadding: 0;\n\tmargin: 0;\n\tmargin-top: 12px;\n\tmargin-left: -16px;\n}\n.styles_navList__33BO0 li {\n\tlist-style: none;\n}\n.styles_navItem__XZgfa {\n\tlist-style: none;\n\tposition: relative;\n\tdisplay: inline-block;\n\theight: 34px;\n\ttext-align: center;\n\tfont-size: 14px;\n\tfont-weight: 600;\n\tcolor: #aaa;\n\tpadding: 4px 16px;\n\tborder-bottom: 2px solid transparent;\n\ttransition: all 200ms cubic-bezier(0.4, 0.14, 0.3, 1);\n\tcursor: pointer;\n}\n\n.styles_navItem__XZgfa:hover {\n\tcolor: #a1a1a1;\n}\n.styles_navItemActive__17Uio {\n\tborder-color: #298ee2;\n\tcolor: #4a4a4a;\n}\n\n.styles_closeBtn__1A6KW {\n\tposition: absolute;\n\tright: 16px;\n\ttop: 12px;\n\twidth: 32px;\n\theight: 32px;\n\tcursor: pointer;\n\tbackground-color: rgba(217, 217, 217, 0.4);\n\tborder-radius: 50%;\n\tpadding: 6px;\n}\n.styles_closeBtn__1A6KW svg path {\n\tfill: #b4b7bc;\n}\n\n.styles_note__2WdlX {\n\tfont-size: 12px;\n\tcolor: #ec454d;\n\tfont-weight: 600;\n\tmargin: 12px;\n\tborder-radius: 4px;\n\tpadding: 16px;\n\tbackground: rgba(236, 69, 77, 0.1);\n}\n\n/* Misc */\n\n.styles_galleryInput__6RZOY {\n\tborder: 1px solid #e0e0e0;\n\tborder-radius: 4px;\n\tpadding: 0 10px;\n\theight: 40px;\n\tcolor: #4c4c56;\n\tresize: none;\n\twidth: 100%;\n\tfont-size: 14px;\n\tmargin-bottom: 20px;\n\ttransition: 200ms cubic-bezier(0.4, 0.14, 0.3, 1) all;\n}\n.styles_galleryInput__6RZOY:focus {\n\tborder: 1px solid #298ee2;\n\toutline: none;\n}\n\n.styles_galleryButton__2bkqr {\n\t\t  border: none;\n\t    background: #2FCB53;\n\t    border-radius: 4px;\n\t    color: white;\n\t    cursor: pointer;\n\t    font-style: normal;\n\t    font-weight: bold;\n\t    font-size: 14px;\n\t    line-height: 19px;\n\t    text-align: center;\n\t    text-transform: uppercase;\n}\n.styles_galleryButton__2bkqr:focus {\n\toutline: transparent;\n}\n";
-var homeStyles = { "overlay": "styles_overlay__CLSq-", "isOverlayActive": "styles_isOverlayActive__298UW", "modal": "styles_modal__gNwvD", "isModalActive": "styles_isModalActive__3XSNX", "header": "styles_header__3PFGX", "navList": "styles_navList__33BO0", "navItem": "styles_navItem__XZgfa", "navItemActive": "styles_navItemActive__17Uio", "closeBtn": "styles_closeBtn__1A6KW", "note": "styles_note__2WdlX", "galleryInput": "styles_galleryInput__6RZOY", "galleryButton": "styles_galleryButton__2bkqr" };
+var css = "@import url(\"https://fonts.googleapis.com/css?family=Lato:400,700&display=swap\");\n\n* {\n\tbox-sizing: border-box;\n}\n\n.styles_overlay__CLSq- {\n\twidth: inherit;\n\theight: inherit;\n\tbackground-color: black;\n\topacity: 0.5;\n\tposition: absolute;\n\tz-index: 1;\n\tdisplay: none;\n}\n.styles_isOverlayActive__298UW {\n\tdisplay: block;\n}\n\n.styles_modal__gNwvD {\n\tposition: fixed;\n\tright: 0;\n\ttop: 0;\n\tz-index: 9999;\n\n\tletter-spacing: normal;\n\tfont-family: \"Lato\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial,\n\t\tsans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n\t-ms-text-size-adjust: 100%;\n\t-webkit-text-size-adjust: 100%;\n\t-moz-osx-font-smoothing: grayscale;\n\t-webkit-font-smoothing: antialiased;\n\ttext-rendering: geometricPrecision;\n\tfont-variant-ligatures: common-ligatures;\n\n\theight: 100vh;\n\tmin-width: 576px;\n\twidth: 30%;\n\topacity: 1;\n\tdisplay: flex;\n\tflex-direction: column;\n\tbackground: #fff;\n\tborder: 1px solid rgba(0, 0, 0, 0.0485734);\n\tbox-sizing: border-box;\n\tbox-shadow: -24px 16px 56px rgba(0, 0, 0, 0.239781);\n\ttransition: transform 200ms cubic-bezier(0.4, 0.14, 0.3, 1);\n\ttransform: translateX(720px);\n}\n.styles_isModalActive__3XSNX {\n\ttransform: translateX(0);\n}\n.styles_header__3PFGX {\n\tflex-direction: column;\n\twidth: 100%;\n\theight: 86px;\n\tbackground: #ffffff;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: space-between;\n\tpadding: 16px;\n\tbox-sizing: border-box;\n\n\tfont-weight: 600;\n\tfont-size: 18px;\n\tline-height: 24px;\n\n\tdisplay: flex;\n\talign-items: flex-start;\n\tletter-spacing: 0.168px;\n\n\tcolor: rgba(0, 0, 0, 0.7);\n\tborder-bottom: 1px solid #e7e8f0;\n}\n\n.styles_navList__33BO0 {\n\tmin-width: 400px;\n\tdisplay: flex;\n\tflex-direction: row;\n\tpadding: 0;\n\tmargin: 0;\n\tmargin-top: 12px;\n\tmargin-left: -16px;\n}\n.styles_navList__33BO0 li {\n\tlist-style: none;\n}\n.styles_navItem__XZgfa {\n\tlist-style: none;\n\tposition: relative;\n\tdisplay: inline-block;\n\theight: 34px;\n\ttext-align: center;\n\tfont-size: 14px;\n\tfont-weight: 600;\n\tcolor: #aaa;\n\tpadding: 4px 16px;\n\tborder-bottom: 2px solid transparent;\n\ttransition: all 200ms cubic-bezier(0.4, 0.14, 0.3, 1);\n\tcursor: pointer;\n}\n\n.styles_navItem__XZgfa:hover {\n\tcolor: #a1a1a1;\n}\n.styles_navItemActive__17Uio {\n\tborder-color: #298ee2;\n\tcolor: #4a4a4a;\n}\n\n.styles_closeBtn__1A6KW {\n\tposition: absolute;\n\tright: 16px;\n\ttop: 12px;\n\twidth: 32px;\n\theight: 32px;\n\tcursor: pointer;\n\tbackground-color: rgba(217, 217, 217, 0.4);\n\tborder-radius: 50%;\n\tpadding: 6px;\n}\n.styles_closeBtn__1A6KW svg path {\n\tfill: #b4b7bc;\n}\n\n.styles_note__2WdlX {\n\tfont-size: 12px;\n\tcolor: #ec454d;\n\tfont-weight: 600;\n\tmargin: 12px;\n\tborder-radius: 4px;\n\tpadding: 16px;\n\tbackground: rgba(236, 69, 77, 0.1);\n}\n\n/* Misc */\n\n.styles_galleryInput__6RZOY {\n\tborder: 1px solid #e0e0e0;\n\tborder-radius: 4px;\n\tpadding: 0 10px;\n\theight: 40px;\n\tcolor: #4c4c56;\n\tresize: none;\n\twidth: 100%;\n\tfont-size: 14px;\n\tmargin-bottom: 20px;\n\ttransition: 200ms cubic-bezier(0.4, 0.14, 0.3, 1) all;\n}\n.styles_galleryInput__6RZOY:focus {\n\tborder: 1px solid #298ee2;\n\toutline: none;\n}\n\n.styles_galleryButton__2bkqr {\n\t\t  border: none;\n\t    background: #2FCB53;\n\t    border-radius: 4px;\n\t    color: white;\n\t    cursor: pointer;\n\t    font-style: normal;\n\t    font-weight: bold;\n\t    font-size: 14px;\n\t    line-height: 19px;\n\t    text-align: center;\n\t    text-transform: uppercase;\n}\n.styles_galleryButton__2bkqr:focus {\n\toutline: transparent;\n}\n\n\n.styles_galleryLoading__3gL47 {\n  display: inline-block;\n  width: 64px;\n  height: 64px;\n}\n\n.styles_galleryLoading__3gL47:after {\n  content: \" \";\n  display: block;\n  width: 26px;\n  height: 26px;\n  margin: 1px;\n  border-radius: 50%;\n  border: 5px solid #ec454d;\n  border-color: #ec454d transparent #ec454d transparent;\n  animation: styles_galleryLoading__3gL47 1.2s linear infinite;\n}\n\n@keyframes styles_galleryLoading__3gL47 {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n";
+var homeStyles = { "overlay": "styles_overlay__CLSq-", "isOverlayActive": "styles_isOverlayActive__298UW", "modal": "styles_modal__gNwvD", "isModalActive": "styles_isModalActive__3XSNX", "header": "styles_header__3PFGX", "navList": "styles_navList__33BO0", "navItem": "styles_navItem__XZgfa", "navItemActive": "styles_navItemActive__17Uio", "closeBtn": "styles_closeBtn__1A6KW", "note": "styles_note__2WdlX", "galleryInput": "styles_galleryInput__6RZOY", "galleryButton": "styles_galleryButton__2bkqr", "galleryLoading": "styles_galleryLoading__3gL47" };
 styleInject(css);
 
-var css$1 = ".grid_searchWrapper__3-vIN {\n\tposition: relative;\n}\n.grid_searchIcon__SWJt1 {\n\tposition: absolute;\n\tleft: 26px;\n\ttop: 26px;\n}\n.grid_searchBar__1qck2 {\n\tmargin-top: 100px;\n\twidth: 95%;\n\tmargin: 16px 16px 0;\n\tpadding: 10px 36px;\n\tbackground: #ffffff;\n\tbox-sizing: border-box;\n\tborder: 1px solid #e7e8f0;\n\tbox-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0877491);\n\tborder-radius: 4px;\n\tfont-style: normal;\n\tfont-size: 13px;\n\tline-height: 19px;\n}\n\n.grid_grid__vYO3q {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\toverflow-x: scroll;\n\tjustify-content: center;\n\tmargin: 0;\n\theight: 73vh;\n\tpadding: 24px 0;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar {\n\twidth: 6px;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar-track {\n\tbackground-color: transparent;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar-thumb {\n\tbackground-color: rgba(74, 86, 96, 0.51);\n\tvisibility: visible;\n\tborder-radius: 7px;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar-thumb:hover {\n\tbackground-color: lighten(#262626, 15%);\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 {\n\tmargin: 5px;\n\twidth: 45%;\n\theight: 150px;\n\tborder: 1px solid grey;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n\tbackground-color: rgba(255, 255, 255, 1);\n\n\tbackground-image: -moz-linear-gradient(\n\t\t\t45deg,\n\t\t\t#f1f1f1 25%,\n\t\t\ttransparent 25%,\n\t\t\ttransparent 75%,\n\t\t\t#f1f1f1 75%,\n\t\t\t#f1f1f1 100%\n\t\t),\n\t\t-moz-linear-gradient(45deg, #f1f1f1 25%, transparent 25%, transparent\n\t\t\t\t\t75%, #f1f1f1 75%, #f1f1f1 100%);\n\tbackground-image: -webkit-linear-gradient(\n\t\t\t45deg,\n\t\t\t#f1f1f1 25%,\n\t\t\ttransparent 25%,\n\t\t\ttransparent 75%,\n\t\t\t#f1f1f1 75%,\n\t\t\t#f1f1f1 100%\n\t\t),\n\t\t-webkit-linear-gradient(45deg, #f1f1f1 25%, transparent 25%, transparent\n\t\t\t\t\t75%, #f1f1f1 75%, #f1f1f1 100%);\n\tbackground-size: 20px 20px;\n\tbackground-position: 0 0, 50px 50px;\n\tborder: 1px solid #e5e5e5;\n\tbox-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);\n\tborder-radius: 3px;\n\toverflow: hidden;\n}\n\n.grid_grid__vYO3q .grid_gridImageDarkWrapper__1for2 {\n\tbackground-size: 20px 20px;\n\tbackground-position: bottom;\n\tbackground-color: #ffffff;\n\tbackground-image: linear-gradient(\n\t\t\tto right,\n\t\t\trgba(0, 0, 0, 0.3) 50%,\n\t\t\ttransparent 50%,\n\t\t\ttransparent\n\t\t),\n\t\tlinear-gradient(\n\t\t\tto right,\n\t\t\ttransparent 0%,\n\t\t\ttransparent 50%,\n\t\t\trgba(0, 0, 0, 0) 50%\n\t\t),\n\t\tlinear-gradient(\n\t\t\tto bottom,\n\t\t\trgba(0, 0, 0, 0.3) 50%,\n\t\t\ttransparent 50%,\n\t\t\ttransparent\n\t\t),\n\t\tlinear-gradient(\n\t\t\tto bottom,\n\t\t\ttransparent 0%,\n\t\t\ttransparent 50%,\n\t\t\trgba(0, 0, 0, 0) 50%\n\t\t),\n\t\tlinear-gradient(to bottom, #ffffff 50%, transparent 50%, transparent),\n\t\tlinear-gradient(\n\t\t\tto right,\n\t\t\ttransparent 0%,\n\t\t\ttransparent 50%,\n\t\t\trgba(0, 0, 0, 0.5) 50%\n\t\t),\n\t\tnone;\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 .grid_gridImage__2ye62 {\n\tpadding: 5px;\n\tbox-sizing: border-box;\n\theight: auto;\n}\n\n.grid_selectionBar__3eafz{\n\tposition: fixed;\n\tbottom:0;\n\tdisplay: flex;\n\talign-items: center;\n \tjustify-content: space-between;\n\theight: 5vh;\n\twidth: 100%;\n\tbackground-color: #e6e6e6;\n\tpadding: 0px 20px;\n}\n\n.grid_selectionButton__17mvC{\n\tpadding: 5px 15px;\n}\n";
-var styles = { "searchWrapper": "grid_searchWrapper__3-vIN", "searchIcon": "grid_searchIcon__SWJt1", "searchBar": "grid_searchBar__1qck2", "grid": "grid_grid__vYO3q", "customScrollBar": "grid_customScrollBar__1V4bf", "gridImageWrapper": "grid_gridImageWrapper__SoCX8", "gridImageDarkWrapper": "grid_gridImageDarkWrapper__1for2", "gridImage": "grid_gridImage__2ye62", "selectionBar": "grid_selectionBar__3eafz", "selectionButton": "grid_selectionButton__17mvC" };
+var css$1 = ".grid_searchWrapper__3-vIN {\n\tposition: relative;\n\theight:40px\n}\n.grid_searchIcon__SWJt1 {\n\tposition: absolute;\n\tleft: 26px;\n\ttop: 26px;\n}\n.grid_searchBar__1qck2 {\n\tmargin-top: 100px;\n\twidth: 75%;\n\tmargin: 16px 16px 0;\n\theight: 100%;\n\tpadding: 10px 36px;\n\tbackground: #ffffff;\n\tbox-sizing: border-box;\n\tborder: 1px solid #e7e8f0;\n\tbox-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0877491);\n\tborder-radius: 4px;\n\tfont-style: normal;\n\tfont-size: 13px;\n\tline-height: 19px;\n}\n.grid_searchButton__K5Cqp{\n\theight:100%;\n\twidth:15%\n}\n\n.grid_grid__vYO3q {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\toverflow-x: scroll;\n\tjustify-content: center;\n\tmargin: 0;\n\theight: 73vh;\n\tpadding: 24px 0;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar {\n\twidth: 6px;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar-track {\n\tbackground-color: transparent;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar-thumb {\n\tbackground-color: rgba(74, 86, 96, 0.51);\n\tvisibility: visible;\n\tborder-radius: 7px;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar-thumb:hover {\n\tbackground-color: lighten(#262626, 15%);\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 {\n\tmargin: 5px;\n\twidth: 45%;\n\theight: 150px;\n\tborder: 1px solid grey;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n\tbackground-color: rgba(255, 255, 255, 1);\n\n\tbackground-image: -moz-linear-gradient(\n\t\t\t45deg,\n\t\t\t#f1f1f1 25%,\n\t\t\ttransparent 25%,\n\t\t\ttransparent 75%,\n\t\t\t#f1f1f1 75%,\n\t\t\t#f1f1f1 100%\n\t\t),\n\t\t-moz-linear-gradient(45deg, #f1f1f1 25%, transparent 25%, transparent\n\t\t\t\t\t75%, #f1f1f1 75%, #f1f1f1 100%);\n\tbackground-image: -webkit-linear-gradient(\n\t\t\t45deg,\n\t\t\t#f1f1f1 25%,\n\t\t\ttransparent 25%,\n\t\t\ttransparent 75%,\n\t\t\t#f1f1f1 75%,\n\t\t\t#f1f1f1 100%\n\t\t),\n\t\t-webkit-linear-gradient(45deg, #f1f1f1 25%, transparent 25%, transparent\n\t\t\t\t\t75%, #f1f1f1 75%, #f1f1f1 100%);\n\tbackground-size: 20px 20px;\n\tbackground-position: 0 0, 50px 50px;\n\tborder: 1px solid #e5e5e5;\n\tbox-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);\n\tborder-radius: 3px;\n\toverflow: hidden;\n}\n\n.grid_grid__vYO3q .grid_gridImageDarkWrapper__1for2 {\n\tbackground-size: 20px 20px;\n\tbackground-position: bottom;\n\tbackground-color: #ffffff;\n\tbackground-image: linear-gradient(\n\t\t\tto right,\n\t\t\trgba(0, 0, 0, 0.3) 50%,\n\t\t\ttransparent 50%,\n\t\t\ttransparent\n\t\t),\n\t\tlinear-gradient(\n\t\t\tto right,\n\t\t\ttransparent 0%,\n\t\t\ttransparent 50%,\n\t\t\trgba(0, 0, 0, 0) 50%\n\t\t),\n\t\tlinear-gradient(\n\t\t\tto bottom,\n\t\t\trgba(0, 0, 0, 0.3) 50%,\n\t\t\ttransparent 50%,\n\t\t\ttransparent\n\t\t),\n\t\tlinear-gradient(\n\t\t\tto bottom,\n\t\t\ttransparent 0%,\n\t\t\ttransparent 50%,\n\t\t\trgba(0, 0, 0, 0) 50%\n\t\t),\n\t\tlinear-gradient(to bottom, #ffffff 50%, transparent 50%, transparent),\n\t\tlinear-gradient(\n\t\t\tto right,\n\t\t\ttransparent 0%,\n\t\t\ttransparent 50%,\n\t\t\trgba(0, 0, 0, 0.5) 50%\n\t\t),\n\t\tnone;\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 .grid_gridImage__2ye62 {\n\tpadding: 5px;\n\tbox-sizing: border-box;\n\theight: auto;\n}\n\n.grid_selectionBar__3eafz{\n\tposition: fixed;\n\tbottom:0;\n\tdisplay: flex;\n\talign-items: center;\n \tjustify-content: space-between;\n\theight: 5vh;\n\twidth: 100%;\n\tbackground-color: #e6e6e6;\n\tpadding: 0px 20px;\n}\n\n.grid_selectionButton__17mvC{\n\tpadding: 5px 15px;\n}\n\n.grid_info__1aAKu{\n\tmargin-top: 100px;\n}\n";
+var styles = { "searchWrapper": "grid_searchWrapper__3-vIN", "searchIcon": "grid_searchIcon__SWJt1", "searchBar": "grid_searchBar__1qck2", "searchButton": "grid_searchButton__K5Cqp", "grid": "grid_grid__vYO3q", "customScrollBar": "grid_customScrollBar__1V4bf", "gridImageWrapper": "grid_gridImageWrapper__SoCX8", "gridImageDarkWrapper": "grid_gridImageDarkWrapper__1for2", "gridImage": "grid_gridImage__2ye62", "selectionBar": "grid_selectionBar__3eafz", "selectionButton": "grid_selectionButton__17mvC", "info": "grid_info__1aAKu" };
 styleInject(css$1);
 
 var bind = function bind(fn, thisArg) {
@@ -1385,9 +1385,12 @@ var Grid = function (_Component) {
 		_this.state = {
 			images: [],
 			disableCache: true,
-			imageSelectedIndex: undefined
+			imageSelectedIndex: undefined,
+			loading: false
 		};
+		_this.searchInputEle = React__default.createRef();
 		_this.search = _this.search.bind(_this);
+		_this.inputChange = _this.inputChange.bind(_this);
 		return _this;
 	}
 
@@ -1406,19 +1409,27 @@ var Grid = function (_Component) {
 			this.setState({
 				images: images,
 				isGrid: true,
-				disableCache: false
+				disableCache: false,
+				loading: false
 			});
 
 			if (!window.react_S3_Gallery) window.react_S3_Gallery = {};
 			window.react_S3_Gallery[this.props.s3.path] = images;
 		}
 	}, {
+		key: "inputChange",
+		value: function inputChange(e) {
+			if (e && e.key !== "Enter") return;
+			var query = event && event.target.value;
+			this.search(query);
+		}
+	}, {
 		key: "search",
-		value: function search(event) {
+		value: function search(query) {
 			var _this2 = this;
 
-			if (event && event.key !== "Enter") return;
-			var query = event && event.target.value || '__getDefaultImgs__';
+			query = query || '__getDefaultImgs__';
+			this.setState({ loading: true });
 			axios$1.post(this.props.server + "/search/" + query + "?disableCache=" + this.state.disableCache, {
 				s3Bucket: this.props.s3.bucket,
 				s3Path: this.props.s3.path
@@ -1432,7 +1443,8 @@ var Grid = function (_Component) {
 			}).catch(function (error) {
 				this.setState({
 					images: [],
-					isGrid: true
+					isGrid: true,
+					loading: false
 				});
 			}).finally(function () {});
 		}
@@ -1488,13 +1500,21 @@ var Grid = function (_Component) {
 					React__default.createElement("input", {
 						placeholder: "Search for an existing image",
 						className: homeStyles.galleryInput + " " + styles.searchBar,
-						onKeyUp: this.search
-					})
+						onKeyUp: this.inputChange,
+						ref: this.searchInputEle
+					}),
+					React__default.createElement(
+						"button",
+						{ onClick: function onClick() {
+								return _this4.search(_this4.searchInputEle.current.value);
+							}, className: homeStyles.galleryButton + " " + styles.searchButton },
+						"Search"
+					)
 				),
 				React__default.createElement(
 					"div",
 					{ className: styles.grid },
-					this.state.images && this.state.images.length ? this.state.images.map(function (image, i) {
+					!this.state.loading && this.state.images && this.state.images.length ? this.state.images.map(function (image, i) {
 						return React__default.createElement(
 							"div",
 							{
@@ -1512,9 +1532,13 @@ var Grid = function (_Component) {
 							})
 						);
 					}) : React__default.createElement(
-						"span",
-						null,
-						"No images found"
+						"div",
+						{ className: styles.info },
+						this.state.loading ? React__default.createElement("div", { className: homeStyles.galleryLoading }) : React__default.createElement(
+							"span",
+							null,
+							"No images found"
+						)
 					)
 				),
 				this.selectionBar()

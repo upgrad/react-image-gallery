@@ -167,3 +167,31 @@
 .galleryButton:focus {
 	outline: transparent;
 }
+
+
+.galleryLoading {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+}
+
+.galleryLoading:after {
+  content: " ";
+  display: block;
+  width: 26px;
+  height: 26px;
+  margin: 1px;
+  border-radius: 50%;
+  border: 5px solid #ec454d;
+  border-color: #ec454d transparent #ec454d transparent;
+  animation: galleryLoading 1.2s linear infinite;
+}
+
+@keyframes galleryLoading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

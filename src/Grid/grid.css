@@ -1,5 +1,6 @@
 .searchWrapper {
 	position: relative;
+	height:40px
 }
 .searchIcon {
 	position: absolute;
@@ -8,8 +9,9 @@
 }
 .searchBar {
 	margin-top: 100px;
-	width: 95%;
+	width: 75%;
 	margin: 16px 16px 0;
+	height: 100%;
 	padding: 10px 36px;
 	background: #ffffff;
 	box-sizing: border-box;
@@ -19,6 +21,10 @@
 	font-style: normal;
 	font-size: 13px;
 	line-height: 19px;
+}
+.searchButton{
+	height:100%;
+	width:15%
 }
 
 .grid {
@@ -145,4 +151,8 @@
 
 .selectionButton{
 	padding: 5px 15px;
+}
+
+.info{
+	margin-top: 100px;
 }
