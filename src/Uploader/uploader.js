@@ -102,6 +102,7 @@ export default class Uploader extends Component {
 							name="file"
 							className={styles.hide}
 							type="file"
+							accept=".png, .jpg, .jpeg"
 						/>
 					</div>}
 					<label className={styles.titleLabel}>
