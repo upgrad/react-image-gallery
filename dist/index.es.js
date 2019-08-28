@@ -1671,7 +1671,8 @@ var Uploader = function (_Component) {
 							onChange: this.changeListener,
 							name: "file",
 							className: styles$1.hide,
-							type: "file"
+							type: "file",
+							accept: ".png, .jpg, .jpeg"
 						})
 					),
 					React.createElement(
