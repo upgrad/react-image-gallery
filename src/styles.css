@@ -13,6 +13,7 @@
 	z-index: 1;
 	display: none;
 }
+
 .isOverlayActive {
 	display: block;
 }
@@ -46,9 +47,11 @@
 	transition: transform 200ms cubic-bezier(0.4, 0.14, 0.3, 1);
 	transform: translateX(720px);
 }
+
 .isModalActive {
 	transform: translateX(0);
 }
+
 .header {
 	flex-direction: column;
 	width: 100%;
@@ -81,9 +84,11 @@
 	margin-top: 12px;
 	margin-left: -16px;
 }
+
 .navList li {
 	list-style: none;
 }
+
 .navItem {
 	list-style: none;
 	position: relative;
@@ -102,6 +107,7 @@
 .navItem:hover {
 	color: #a1a1a1;
 }
+
 .navItemActive {
 	border-color: #298ee2;
 	color: #4a4a4a;
@@ -118,6 +124,7 @@
 	border-radius: 50%;
 	padding: 6px;
 }
+
 .closeBtn svg path {
 	fill: #b4b7bc;
 }
@@ -146,6 +153,7 @@
 	margin-bottom: 20px;
 	transition: 200ms cubic-bezier(0.4, 0.14, 0.3, 1) all;
 }
+
 .galleryInput:focus {
 	border: 1px solid #298ee2;
 	outline: none;
@@ -164,10 +172,10 @@
 	    text-align: center;
 	    text-transform: uppercase;
 }
+
 .galleryButton:focus {
 	outline: transparent;
 }
-
 
 .galleryLoading {
   display: inline-block;
