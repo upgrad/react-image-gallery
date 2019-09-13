@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import Gallery from "awesome-react-gallery";
 import "./index.css";
 
-const CDN_URL = ``;
-const S3_PATH = ``;
-const S3_BUCKET = ``;
-const SERVER_URL = `http://localhost:7000/gallery`;
+const CDN_URL = `https://ik.imagekit.io/upgrad1/marketing-platform-assets`;
+const S3_PATH = `sprites/images`;
+const S3_BUCKET = `upgrad-marketing-platform`;
+const SERVER_URL = `https://dev-mp.upgrad.com:7000/gallery`;
 
 export default class App extends Component {
 	constructor(props) {
@@ -37,31 +37,25 @@ export default class App extends Component {
 		});
 	};
 
+	showGallery = () => {
+		this.setState({gallery: true})
+	}
+
 	render() {
 		return (
 			<div>
-				<button
-					className="button"
-					onClick={() => {
-						this.setState({
-							gallery: true
-						});
-					}}
-				>
-					UPLOAD
-				</button>
-				<img
-					alt="Sample Image background"
-					src="https://sample-videos.com/img/Sample-jpg-image-2mb.jpg"
-					className="imageStyle"
-				/>
-				{this.state.image ? (
-					<img
-						alt="S3 Image"
-						src={this.state.image}
-						className="s3image"
-					/>
-				) : null}
+				<div className="bg" >
+					<h1>React Image Gallery</h1>
+					<p>A simple s3 based gallery component for react. To see the demo in action, press the button below.</p>
+					<button className="button" onClick={this.showGallery} >UPLOAD</button>
+					{this.state.image && (
+						<img
+							alt="S3 Image"
+							src={this.state.image}
+							className="s3image"
+						/>
+					)}
+				</div>
 				<Gallery
 					isActive={this.state.gallery}
 					onClose={this.onImageReceive}

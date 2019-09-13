@@ -32,8 +32,8 @@ var css = "@import url(\"https://fonts.googleapis.com/css?family=Lato:400,700&di
 var homeStyles = { "overlay": "styles_overlay__CLSq-", "isOverlayActive": "styles_isOverlayActive__298UW", "modal": "styles_modal__gNwvD", "isModalActive": "styles_isModalActive__3XSNX", "header": "styles_header__3PFGX", "navList": "styles_navList__33BO0", "navItem": "styles_navItem__XZgfa", "navItemActive": "styles_navItemActive__17Uio", "closeBtn": "styles_closeBtn__1A6KW", "note": "styles_note__2WdlX", "galleryInput": "styles_galleryInput__6RZOY", "galleryButton": "styles_galleryButton__2bkqr", "galleryLoading": "styles_galleryLoading__3gL47" };
 styleInject(css);
 
-var css$1 = ".grid_searchWrapper__3-vIN {\n\tposition: relative;\n\theight:40px;\n\tmargin-top:16px;\n}\n.grid_searchIcon__SWJt1 {\n\tposition: absolute;\n\tleft: 26px;\n\ttop: 12px;\n}\n.grid_searchBar__1qck2 {\n\tmargin-top: 100px;\n\twidth: 75%;\n\tmargin: 0px 16px;\n\theight: 100%;\n\tpadding: 10px 36px;\n\tbackground: #ffffff;\n\tbox-sizing: border-box;\n\tborder: 1px solid #e7e8f0;\n\tbox-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0877491);\n\tborder-radius: 4px;\n\tfont-style: normal;\n\tfont-size: 13px;\n\tline-height: 19px;\n}\n.grid_searchButton__K5Cqp{\n\theight:100%;\n\twidth:15%\n}\n\n.grid_grid__vYO3q {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\toverflow-x: scroll;\n\tjustify-content: center;\n\tmargin: 0;\n\theight: 73vh;\n\tpadding: 24px 0;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar {\n\twidth: 6px;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar-track {\n\tbackground-color: transparent;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar-thumb {\n\tbackground-color: rgba(74, 86, 96, 0.51);\n\tvisibility: visible;\n\tborder-radius: 7px;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar-thumb:hover {\n\tbackground-color: lighten(#262626, 15%);\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 {\n\tmargin: 5px;\n\twidth: 45%;\n\theight: 150px;\n\tborder: 1px solid grey;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n\tbackground-color: rgba(255, 255, 255, 1);\n\n\tbackground-image: -moz-linear-gradient(\n\t\t\t45deg,\n\t\t\t#f1f1f1 25%,\n\t\t\ttransparent 25%,\n\t\t\ttransparent 75%,\n\t\t\t#f1f1f1 75%,\n\t\t\t#f1f1f1 100%\n\t\t),\n\t\t-moz-linear-gradient(45deg, #f1f1f1 25%, transparent 25%, transparent\n\t\t\t\t\t75%, #f1f1f1 75%, #f1f1f1 100%);\n\tbackground-image: -webkit-linear-gradient(\n\t\t\t45deg,\n\t\t\t#f1f1f1 25%,\n\t\t\ttransparent 25%,\n\t\t\ttransparent 75%,\n\t\t\t#f1f1f1 75%,\n\t\t\t#f1f1f1 100%\n\t\t),\n\t\t-webkit-linear-gradient(45deg, #f1f1f1 25%, transparent 25%, transparent\n\t\t\t\t\t75%, #f1f1f1 75%, #f1f1f1 100%);\n\tbackground-size: 20px 20px;\n\tbackground-position: 0 0, 50px 50px;\n\tborder: 1px solid #e5e5e5;\n\tbox-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);\n\tborder-radius: 3px;\n\toverflow: hidden;\n}\n\n.grid_grid__vYO3q .grid_gridImageDarkWrapper__1for2 {\n\tbackground-size: 20px 20px;\n\tbackground-position: bottom;\n\tbackground-color: #ffffff;\n\tbackground-image: linear-gradient(\n\t\t\tto right,\n\t\t\trgba(0, 0, 0, 0.3) 50%,\n\t\t\ttransparent 50%,\n\t\t\ttransparent\n\t\t),\n\t\tlinear-gradient(\n\t\t\tto right,\n\t\t\ttransparent 0%,\n\t\t\ttransparent 50%,\n\t\t\trgba(0, 0, 0, 0) 50%\n\t\t),\n\t\tlinear-gradient(\n\t\t\tto bottom,\n\t\t\trgba(0, 0, 0, 0.3) 50%,\n\t\t\ttransparent 50%,\n\t\t\ttransparent\n\t\t),\n\t\tlinear-gradient(\n\t\t\tto bottom,\n\t\t\ttransparent 0%,\n\t\t\ttransparent 50%,\n\t\t\trgba(0, 0, 0, 0) 50%\n\t\t),\n\t\tlinear-gradient(to bottom, #ffffff 50%, transparent 50%, transparent),\n\t\tlinear-gradient(\n\t\t\tto right,\n\t\t\ttransparent 0%,\n\t\t\ttransparent 50%,\n\t\t\trgba(0, 0, 0, 0.5) 50%\n\t\t),\n\t\tnone;\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 .grid_gridImage__2ye62 {\n\tpadding: 5px;\n\tbox-sizing: border-box;\n\theight: auto;\n}\n\n.grid_selectionBar__3eafz{\n\tposition: fixed;\n\tbottom:0;\n\tdisplay: flex;\n\talign-items: center;\n \tjustify-content: space-between;\n\theight: 5vh;\n\twidth: 100%;\n\tbackground-color: #e6e6e6;\n\tpadding: 30px;\n}\n\n.grid_selectionButton__17mvC{\n\tpadding: 5px 15px;\n}\n\n.grid_info__1aAKu{\n\tmargin-top: 100px;\n}\n";
-var styles = { "searchWrapper": "grid_searchWrapper__3-vIN", "searchIcon": "grid_searchIcon__SWJt1", "searchBar": "grid_searchBar__1qck2", "searchButton": "grid_searchButton__K5Cqp", "grid": "grid_grid__vYO3q", "customScrollBar": "grid_customScrollBar__1V4bf", "gridImageWrapper": "grid_gridImageWrapper__SoCX8", "gridImageDarkWrapper": "grid_gridImageDarkWrapper__1for2", "gridImage": "grid_gridImage__2ye62", "selectionBar": "grid_selectionBar__3eafz", "selectionButton": "grid_selectionButton__17mvC", "info": "grid_info__1aAKu" };
+var css$1 = ".grid_searchWrapper__3-vIN {\n\tposition: relative;\n\theight:40px;\n\tmargin-top:16px;\n\tdisplay: flex;\n\tjustify-content: space-around;\n\tmargin-right: 16px;\n}\n.grid_searchIcon__SWJt1 {\n\tposition: absolute;\n\tleft: 26px;\n\ttop: 12px;\n}\n.grid_searchBar__1qck2 {\n\tmargin-top: 100px;\n\twidth: 60%;\n\tmargin: 0px 16px;\n\theight: 100%;\n\tpadding: 10px 36px;\n\tbackground: #ffffff;\n\tbox-sizing: border-box;\n\tborder: 1px solid #e7e8f0;\n\tbox-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0877491);\n\tborder-radius: 4px;\n\tfont-style: normal;\n\tfont-size: 13px;\n\tline-height: 19px;\n}\n.grid_searchButton__K5Cqp{\n\theight:100%;\n\twidth:15%\n}\n\n.grid_grid__vYO3q {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\toverflow-x: scroll;\n\tjustify-content: center;\n\tmargin: 0;\n\tmargin-top: 10px;\n\theight: 73vh;\n\tpadding: 24px 0;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar {\n\twidth: 6px;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar-track {\n\tbackground-color: transparent;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar-thumb {\n\tbackground-color: rgba(74, 86, 96, 0.51);\n\tvisibility: visible;\n\tborder-radius: 7px;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar-thumb:hover {\n\tbackground-color: lighten(#262626, 15%);\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 {\n\tposition: relative;\n\tmargin: 5px;\n\twidth: 45%;\n\theight: 150px;\n\tborder: 1px solid grey;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n\tbackground-color: rgba(255, 255, 255, 1);\n\n\tbackground-image: -moz-linear-gradient(\n\t\t\t45deg,\n\t\t\t#f1f1f1 25%,\n\t\t\ttransparent 25%,\n\t\t\ttransparent 75%,\n\t\t\t#f1f1f1 75%,\n\t\t\t#f1f1f1 100%\n\t\t),\n\t\t-moz-linear-gradient(45deg, #f1f1f1 25%, transparent 25%, transparent\n\t\t\t\t\t75%, #f1f1f1 75%, #f1f1f1 100%);\n\tbackground-image: -webkit-linear-gradient(\n\t\t\t45deg,\n\t\t\t#f1f1f1 25%,\n\t\t\ttransparent 25%,\n\t\t\ttransparent 75%,\n\t\t\t#f1f1f1 75%,\n\t\t\t#f1f1f1 100%\n\t\t),\n\t\t-webkit-linear-gradient(45deg, #f1f1f1 25%, transparent 25%, transparent\n\t\t\t\t\t75%, #f1f1f1 75%, #f1f1f1 100%);\n\tbackground-size: 20px 20px;\n\tbackground-position: 0 0, 50px 50px;\n\tborder: 1px solid #e5e5e5;\n\tbox-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);\n\tborder-radius: 3px;\n\toverflow: hidden;\n}\n\n.grid_grid__vYO3q .grid_gridImageDarkWrapper__1for2 {\n\tbackground-size: 20px 20px;\n\tbackground-position: bottom;\n\tbackground-color: #ffffff;\n\tbackground-image: linear-gradient(\n\t\t\tto right,\n\t\t\trgba(0, 0, 0, 0.3) 50%,\n\t\t\ttransparent 50%,\n\t\t\ttransparent\n\t\t),\n\t\tlinear-gradient(\n\t\t\tto right,\n\t\t\ttransparent 0%,\n\t\t\ttransparent 50%,\n\t\t\trgba(0, 0, 0, 0) 50%\n\t\t),\n\t\tlinear-gradient(\n\t\t\tto bottom,\n\t\t\trgba(0, 0, 0, 0.3) 50%,\n\t\t\ttransparent 50%,\n\t\t\ttransparent\n\t\t),\n\t\tlinear-gradient(\n\t\t\tto bottom,\n\t\t\ttransparent 0%,\n\t\t\ttransparent 50%,\n\t\t\trgba(0, 0, 0, 0) 50%\n\t\t),\n\t\tlinear-gradient(to bottom, #ffffff 50%, transparent 50%, transparent),\n\t\tlinear-gradient(\n\t\t\tto right,\n\t\t\ttransparent 0%,\n\t\t\ttransparent 50%,\n\t\t\trgba(0, 0, 0, 0.5) 50%\n\t\t),\n\t\tnone;\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 .grid_gridImage__2ye62 {\n\tpadding: 5px;\n\tbox-sizing: border-box;\n\theight: auto;\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 .grid_gridOverlay__15JFm{\n\tbackground-color: rgb(256,0,0,0.5);\n\tpadding: 5px;\n\tbox-sizing: border-box;\n\twidth: 100%;\n\theight:100%;\n\tposition: absolute;\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 .grid_gridFooter__2h9-r{\n\tbackground-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(0,0,0,0.1));\n\twidth: 100%;\n\theight: 20%;\n\tbottom: 0;\n\tposition: absolute;\n\tdisplay: flex;\n\talign-items: flex-end;\n\tpadding-left: 5px;\n\tpadding-bottom: 5px;\n}\n\n.grid_selectionBar__3eafz{\n\tposition: fixed;\n\tbottom:0;\n\tdisplay: flex;\n\talign-items: center;\n \tjustify-content: space-between;\n\theight: 5vh;\n\twidth: 100%;\n\tbackground-color: #e6e6e6;\n\tpadding: 30px;\n}\n\n.grid_selectionButton__17mvC{\n\tpadding: 5px 15px;\n}\n\n.grid_info__1aAKu{\n\tmargin-top: 100px;\n}\n";
+var styles = { "searchWrapper": "grid_searchWrapper__3-vIN", "searchIcon": "grid_searchIcon__SWJt1", "searchBar": "grid_searchBar__1qck2", "searchButton": "grid_searchButton__K5Cqp", "grid": "grid_grid__vYO3q", "customScrollBar": "grid_customScrollBar__1V4bf", "gridImageWrapper": "grid_gridImageWrapper__SoCX8", "gridImageDarkWrapper": "grid_gridImageDarkWrapper__1for2", "gridImage": "grid_gridImage__2ye62", "gridOverlay": "grid_gridOverlay__15JFm", "gridFooter": "grid_gridFooter__2h9-r", "selectionBar": "grid_selectionBar__3eafz", "selectionButton": "grid_selectionButton__17mvC", "info": "grid_info__1aAKu" };
 styleInject(css$1);
 
 var bind = function bind(fn, thisArg) {
@@ -1419,6 +1419,15 @@ var Grid = function (_Component) {
 			this.search(query);
 		}
 	}, {
+		key: "reset",
+		value: function reset() {
+			this.setState({
+				imageSelectedIndex: undefined
+			});
+			this.updateGlobalDataLocally([]);
+			this.searchInputEle.current.value = '';
+		}
+	}, {
 		key: "search",
 		value: function search(query) {
 			var _this2 = this;
@@ -1501,6 +1510,13 @@ var Grid = function (_Component) {
 					React.createElement(
 						"button",
 						{ onClick: function onClick() {
+								return _this4.reset();
+							}, className: homeStyles.galleryButton + " " + styles.searchButton, style: { backgroundColor: '#2d599c' } },
+						"Reset"
+					),
+					React.createElement(
+						"button",
+						{ onClick: function onClick() {
 								return _this4.search(_this4.searchInputEle.current.value);
 							}, className: homeStyles.galleryButton + " " + styles.searchButton },
 						"Search"
@@ -1520,11 +1536,17 @@ var Grid = function (_Component) {
 									return _this4.setState({ imageSelectedIndex: i });
 								}
 							},
+							_this4.state.imageSelectedIndex == i && React.createElement("div", { className: styles.gridOverlay }),
 							React.createElement("img", {
 								alt: image.url,
 								className: styles.gridImage,
 								src: image.url
-							})
+							}),
+							React.createElement(
+								"div",
+								{ className: styles.gridFooter },
+								image.slug
+							)
 						);
 					}) : React.createElement(
 						"div",
@@ -1532,7 +1554,7 @@ var Grid = function (_Component) {
 						this.state.loading ? React.createElement("div", { className: homeStyles.galleryLoading }) : React.createElement(
 							"span",
 							null,
-							"No images found"
+							"No images. Try searching for something."
 						)
 					)
 				),

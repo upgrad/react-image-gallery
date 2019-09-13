@@ -54,6 +54,14 @@ export default class Grid extends Component {
 		this.search(query)
 	}
 
+	reset(){
+		this.setState({
+			imageSelectedIndex: undefined
+		})
+		this.updateGlobalDataLocally([]);
+		this.searchInputEle.current.value = '';
+	}
+
 	search(query) {
 		query = query || '__getDefaultImgs__'
 		this.setState({loading: true})
@@ -117,6 +125,7 @@ export default class Grid extends Component {
 						onKeyUp={(this.inputChange)}
 						ref={this.searchInputEle}
 					/>
+					<button onClick={()=>this.reset()} className={`${homeStyles.galleryButton} ${styles.searchButton}`} style={{backgroundColor: '#2d599c'}}>Reset</button>
 					<button onClick={()=>this.search(this.searchInputEle.current.value)} className={`${homeStyles.galleryButton} ${styles.searchButton}`}>Search</button>
 				</div>
 				<div className={styles.grid}>
@@ -132,17 +141,20 @@ export default class Grid extends Component {
 									}
 									onClick={() => this.setState({imageSelectedIndex: i})}
 								>
+
+									{this.state.imageSelectedIndex == i && <div className={ styles.gridOverlay }></div>}
 									<img
 										alt={	image.url }
 										className={ styles.gridImage }
 										src={ image.url }
 									/>
+									<div className={ styles.gridFooter }>{image.slug}</div>
 								</div>
 							);
 						})
 					) : (
 						<div className={styles.info}>
-							{this.state.loading?<div className={homeStyles.galleryLoading}></div>:<span>No images found</span>}
+							{this.state.loading?<div className={homeStyles.galleryLoading}></div>:<span>No images. Try searching for something.</span>}
 						</div>
 					)}
 				</div>
