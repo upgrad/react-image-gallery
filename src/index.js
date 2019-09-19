@@ -21,7 +21,7 @@ export default class Gallery extends Component {
 		super(props);
 		this.state = {
 			images: [],
-			isGrid: true,
+			tab: 'grid',
 			style: {
 				...props.config.style,
 				width: this.props.config.style.width || 30,
@@ -39,7 +39,7 @@ export default class Gallery extends Component {
 			};
 		}
 		this.setState({
-			isGrid: true,
+			tab: 'grid',
 			style: {
 				...this.state.style,
 				width: 0,
@@ -58,6 +58,10 @@ export default class Gallery extends Component {
 				</span>
 			);
 		}
+	}
+
+	setImages = (images) => {
+		this.setState({ images })
 	}
 
 	render() {
@@ -81,13 +85,13 @@ export default class Gallery extends Component {
 							<div
 								onClick={() =>
 									this.setState({
-										isGrid: !this.state.isGrid
+										tab: 'grid'
 									})
 								}
 								className={
 									styles.navItem +
 									" " +
-									(this.state.isGrid
+									(this.state.tab === 'grid'
 										? styles.navItemActive
 										: "")
 								}
@@ -99,13 +103,13 @@ export default class Gallery extends Component {
 							<div
 								onClick={() =>
 									this.setState({
-										isGrid: !this.state.isGrid
+										tab: 'upload'
 									})
 								}
 								className={
 									styles.navItem +
 									" " +
-									(!this.state.isGrid
+									(this.state.tab === 'upload'
 										? styles.navItemActive
 										: "")
 								}
@@ -134,18 +138,19 @@ export default class Gallery extends Component {
 					</div>
 				</div>
 				{this.spriteNote()}
-				{this.state.isGrid ? (
-					<Grid
-						{...this.props.config}
-						defaultSearch={this.props.isActive}
-						select={this.selectFinal}
-					/>
-				) : (
-					<Uploader
-						{...this.props.config}
-						select={this.selectFinal}
-					/>
-				)}
+				<Grid
+					containerStyles={{ display: this.state.tab === 'grid' ? '' : 'none' }}
+					{...this.props.config}
+					defaultSearch={this.props.isActive}
+					select={this.selectFinal}
+					images={this.state.images}
+					setImages={this.setImages}
+				/>
+				<Uploader
+					containerStyles={{ display: this.state.tab === 'upload' ? '' : 'none' }}
+					{...this.props.config}
+					select={this.selectFinal}
+				/>
 			</div>
 		);
 	}

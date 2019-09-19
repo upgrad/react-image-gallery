@@ -9,13 +9,13 @@ export default class Grid extends Component {
 		cdn: PropTypes.string,
 		s3: PropTypes.object,
 		server: PropTypes.string,
-		select: PropTypes.func
+		select: PropTypes.func,
+		containerStyles: PropTypes.object
 	};
 
 	constructor(props) {
 		super(props);
 		this.state = {
-			images: [],
 			disableCache: true,
 			imageSelectedIndex: undefined,
 			loading: false
@@ -37,11 +37,12 @@ export default class Grid extends Component {
 
 	updateGlobalDataLocally(images){
 		this.setState({
-			images,
 			isGrid: true,
 			disableCache: false,
 			loading: false
 		});
+
+		this.props.setImages(images)
 
 		if(!window.react_S3_Gallery)
 			window.react_S3_Gallery = {}
@@ -95,7 +96,7 @@ export default class Grid extends Component {
 
 	selectionBar(){
 		if(this.state.imageSelectedIndex == undefined) return null
-		let imageSlug = this.state.images[this.state.imageSelectedIndex].slug
+		let imageSlug = this.props.images[this.state.imageSelectedIndex].slug
 		return(
 			<div className={ styles.selectionBar}>
 				<span>{imageSlug}</span>
@@ -105,7 +106,7 @@ export default class Grid extends Component {
 	}
 	render() {
 		return (
-			<div>
+			<div style={this.props.containerStyles}>
 				<div className={styles.searchWrapper}>
 					<svg
 						fill="none"
@@ -129,8 +130,8 @@ export default class Grid extends Component {
 					<button onClick={()=>this.search(this.searchInputEle.current.value)} className={`${homeStyles.galleryButton} ${styles.searchButton}`}>Search</button>
 				</div>
 				<div className={styles.grid}>
-					{!this.state.loading && this.state.images && this.state.images.length ? (
-						this.state.images.map((image,i) => {
+					{!this.state.loading && this.props.images && this.props.images.length ? (
+						this.props.images.map((image,i) => {
 							return (
 								<div
 									key={image.slug}

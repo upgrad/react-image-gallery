@@ -12,6 +12,13 @@ export default class Uploader extends Component {
 		};
 	}
 
+	static propTypes = {
+		s3: PropTypes.object,
+		server: PropTypes.string,
+		select: PropTypes.func,
+		containerStyles: PropTypes.object
+	}
+
 	drop = e => {
 		e.stopPropagation();
 		e.preventDefault();
@@ -77,7 +84,7 @@ export default class Uploader extends Component {
 
 	render() {
 		return (
-			<div className={styles.uploader}>
+			<div className={styles.uploader} style={this.props.containerStyles}>
 				<form>
 					<div className={styles.imagePreview}>
 						{this.state.form.file && <span className={styles.clearImage} onClick={this.clearImage}>clear[x]</span>}
