@@ -37,6 +37,10 @@
     line-height: 19px;
 }
 
+.uploader form .error {
+	border-color: #d33333;
+}
+
 .uploader form .fileUploader {
 	background: rgba(86, 204, 242, 0.1);
 	border: 2px dashed rgba(86, 204, 242, 0.5);
@@ -59,10 +63,10 @@
 }
 
 .clearImage{
-  font-size: 12px;
-  color: blue;
-  margin-bottom: 5px;
-  cursor: pointer;
+	font-size: 12px;
+	color: blue;
+	margin-bottom: 5px;
+	cursor: pointer;
 }
 
 .uploader form .fileUploader .info {
@@ -84,18 +88,22 @@
 
 .uploader form .submit {
     margin-top: 10px;
-	  height: 40px;
-	  width: 240px;
-	  margin: 20px auto 0;
+	height: 40px;
+	width: 240px;
+	margin: 20px auto 0;
     cursor: pointer;
+}
+
+.uploader form .submit:disabled {
+	opacity: 0.4;
 }
 
 .heading {
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
-	  line-height: 36px;
-	  margin-bottom: 15px;
+	line-height: 36px;
+	margin-bottom: 15px;
     text-align: justify;
     color: rgba(0, 0, 0, 0.4);
 }
@@ -104,4 +112,18 @@
     opacity: 0;
     position: absolute;
     z-index: -1;
+}
+
+.errors {
+	margin-top: 20px;
+}
+
+.errorMessage {
+	color: #d33333;
+	font-size: 0.8em;
+	margin: 5px 0;
+	background: #ffe4e4;
+	padding: 5px 10px;
+	margin-top: 5px;
+	border-radius: 4px;
 }

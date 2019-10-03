@@ -50,7 +50,7 @@ export default class App extends Component {
 					<button className="button" onClick={this.showGallery} >UPLOAD</button>
 					{this.state.image && (
 						<img
-							alt="S3 Image"
+							alt="S3"
 							src={this.state.image}
 							className="s3image"
 						/>
