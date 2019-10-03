@@ -3,12 +3,15 @@ import PropTypes from "prop-types";
 import styles from "./uploader.css";
 import axios from "axios";
 import homeStyles from "./../styles.css"
+import { validate } from "./../helpers/validators"
 
 export default class Uploader extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			form: {}
+			form: {},
+			errors: null,
+			titleValid: true
 		};
 	}
 
@@ -16,7 +19,8 @@ export default class Uploader extends Component {
 		s3: PropTypes.object,
 		server: PropTypes.string,
 		select: PropTypes.func,
-		containerStyles: PropTypes.object
+		containerStyles: PropTypes.object,
+		restrictions: PropTypes.object
 	}
 
 	drop = e => {
@@ -34,15 +38,39 @@ export default class Uploader extends Component {
 		return false;
 	};
 
-	changeListener = e => {
-		this.setState({
-			imagePreviewSrc: URL.createObjectURL(e.target.files[0]),
-			form: {
-				...this.state.form,
-				[e.target.name]: (e.target.files && e.target.files[0]) || e.target.value
-			}
-		});
+	fileChangeListener = e => {
+		let files = e.target.files
+		if(files && files[0]) {
+			validate(files[0], this.props.restrictions).then(() => {
+				this.setState({
+					imagePreviewSrc: files && files[0] && URL.createObjectURL(files[0]),
+					form: {
+						...this.state.form,
+						file: files[0]
+					},
+					errors: null
+				});
+			}).catch(errors => {
+				this.setState({
+					errors
+				})
+			})
+		}
 	};
+
+	titleChangeListener = e => {
+		if(!/[^\w\d-]/.test(e.target.value)) {
+			this.setState({
+				form: {
+					...this.state.form,
+					title: e.target.value
+				},
+				titleValid: true
+			});
+		} else {
+			this.setState({ titleValid: false })
+		}
+	}
 
 	clearImage = () => {
 		this.setState({
@@ -105,7 +133,7 @@ export default class Uploader extends Component {
 						<input
 							id="upload-file"
 							encType="multipart/form-data"
-							onChange={this.changeListener}
+							onChange={this.fileChangeListener}
 							name="file"
 							className={styles.hide}
 							type="file"
@@ -113,23 +141,28 @@ export default class Uploader extends Component {
 						/>
 					</div>}
 					<label className={styles.titleLabel}>
-						Image Tag
+						Image Tag{`*`}
 					</label>
 					<input
-						onChange={this.changeListener}
+						onChange={this.titleChangeListener}
 						name="title"
-						className={`${homeStyles.galleryInput} ${styles.title}`}
+						className={`${homeStyles.galleryInput} ${styles.title} ${!this.state.titleValid ? styles.error : ''}`}
 						type="text"
 						placeholder="example, adidas_white_logo"
 					/>
 					<button
 						className={`${homeStyles.galleryButton} ${styles.submit}`}
 						onClick={this.upload}
+						disabled={!this.state.form.file || !this.state.form.title || this.state.errors || !this.state.titleValid}
 					>
 						{this.state.loading
 							? "Uploading Image ..."
-							: "SUBMIT"}
+							: "UPLOAD"}
 					</button>
+					{this.state.errors && Array.isArray(this.state.errors) &&
+						<div className={styles.errors}>{this.state.errors.map(e =>
+							<p className={styles.errorMessage}>{e}</p>
+						)}</div>}
 				</form>
 			</div>
 		);

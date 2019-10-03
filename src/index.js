@@ -25,7 +25,7 @@ export default class Gallery extends Component {
 			style: {
 				...props.config.style,
 				width: this.props.config.style.width || 30,
-				align: `flex-${props.config.style.align || "right"}`,
+				align: `flex-${props.config.style.align || "right"}`
 			},
 		};
 	}
@@ -150,6 +150,10 @@ export default class Gallery extends Component {
 					containerStyles={{ display: this.state.tab === 'upload' ? '' : 'none' }}
 					{...this.props.config}
 					select={this.selectFinal}
+					restrictions={{
+						size: 5 * 1000 * 1000,
+						...this.props.config.uploadRestrictions
+					}}
 				/>
 			</div>
 		);

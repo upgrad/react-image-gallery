@@ -1321,21 +1321,6 @@ var createClass = function () {
   };
 }();
 
-var defineProperty = function (obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-};
-
 var _extends = Object.assign || function (target) {
   for (var i = 1; i < arguments.length; i++) {
     var source = arguments[i];
@@ -1578,9 +1563,32 @@ Grid.propTypes = {
 	containerStyles: PropTypes.object
 };
 
-var css$2 = ".uploader_uploader__1RhpY {\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    margin: 10px;\n    height: 80%;\n}\n\n.uploader_uploader__1RhpY form {\n    display: flex;\n    flex-direction: column;\n\tjustify-content: flex-start;\n\talign-items: left;\n    width: 340px;\n}\n\n.uploader_uploader__1RhpY form .uploader_titleLabel__3dNsX {\n    font-style: normal;\n    font-weight: bold;\n    font-size: 12px;\n    line-height: 24px;\n    letter-spacing: 1px;\n    text-transform: uppercase;\n\tcolor: #adb1b3;\n\tmargin-top: 24px;\n}\n\n.uploader_uploader__1RhpY form .uploader_title__6XJq_ {\n    padding: 10px 15px;\n    background: #ffffff;\n    box-sizing: border-box;\n    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0877491);\n    border-radius: 4px;\n    font-style: normal;\n    font-size: 13px;\n    line-height: 19px;\n}\n\n.uploader_uploader__1RhpY form .uploader_fileUploader__2jVN9 {\n\tbackground: rgba(86, 204, 242, 0.1);\n\tborder: 2px dashed rgba(86, 204, 242, 0.5);\n    box-sizing: border-box;\n    width: 100%;\n    height: 140px;\n    margin-top: 24px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n}\n\n.uploader_imagePreview__3VSdX{\n    width: 340px;\n    margin: 24px 0px;\n    display: flex;\n    flex-direction: column;\n    align-items: flex-end;\n}\n\n.uploader_clearImage__2rMOj{\n  font-size: 12px;\n  color: blue;\n  margin-bottom: 5px;\n  cursor: pointer;\n}\n\n.uploader_uploader__1RhpY form .uploader_fileUploader__2jVN9 .uploader_info__3NSEz {\n    font-style: normal;\n    font-size: 14px;\n    line-height: 21px;\n    text-align: justify;\n    color: #000000;\n}\n.uploader_uploader__1RhpY form .uploader_fileUploader__2jVN9 .uploader_info__3NSEz a {\n    text-decoration: underline;\n    color: #2F80ED;\n}\n\n\n.uploader_uploader__1RhpY form .uploader_file__1ekDC {\n    margin-top: 10px;\n}\n\n.uploader_uploader__1RhpY form .uploader_submit__2mAIq {\n    margin-top: 10px;\n\t  height: 40px;\n\t  width: 240px;\n\t  margin: 20px auto 0;\n    cursor: pointer;\n}\n\n.uploader_heading__1Ox1s {\n    font-style: normal;\n    font-weight: 600;\n    font-size: 24px;\n\t  line-height: 36px;\n\t  margin-bottom: 15px;\n    text-align: justify;\n    color: rgba(0, 0, 0, 0.4);\n}\n\n.uploader_hide__1T76k {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n}\n";
-var styles$1 = { "uploader": "uploader_uploader__1RhpY", "titleLabel": "uploader_titleLabel__3dNsX", "title": "uploader_title__6XJq_", "fileUploader": "uploader_fileUploader__2jVN9", "imagePreview": "uploader_imagePreview__3VSdX", "clearImage": "uploader_clearImage__2rMOj", "info": "uploader_info__3NSEz", "file": "uploader_file__1ekDC", "submit": "uploader_submit__2mAIq", "heading": "uploader_heading__1Ox1s", "hide": "uploader_hide__1T76k" };
+var css$2 = ".uploader_uploader__1RhpY {\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    margin: 10px;\n    height: 80%;\n}\n\n.uploader_uploader__1RhpY form {\n    display: flex;\n    flex-direction: column;\n\tjustify-content: flex-start;\n\talign-items: left;\n    width: 340px;\n}\n\n.uploader_uploader__1RhpY form .uploader_titleLabel__3dNsX {\n    font-style: normal;\n    font-weight: bold;\n    font-size: 12px;\n    line-height: 24px;\n    letter-spacing: 1px;\n    text-transform: uppercase;\n\tcolor: #adb1b3;\n\tmargin-top: 24px;\n}\n\n.uploader_uploader__1RhpY form .uploader_title__6XJq_ {\n    padding: 10px 15px;\n    background: #ffffff;\n    box-sizing: border-box;\n    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0877491);\n    border-radius: 4px;\n    font-style: normal;\n    font-size: 13px;\n    line-height: 19px;\n}\n\n.uploader_uploader__1RhpY form .uploader_error__WDlNo {\n\tborder-color: #d33333;\n}\n\n.uploader_uploader__1RhpY form .uploader_fileUploader__2jVN9 {\n\tbackground: rgba(86, 204, 242, 0.1);\n\tborder: 2px dashed rgba(86, 204, 242, 0.5);\n    box-sizing: border-box;\n    width: 100%;\n    height: 140px;\n    margin-top: 24px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n}\n\n.uploader_imagePreview__3VSdX{\n    width: 340px;\n    margin: 24px 0px;\n    display: flex;\n    flex-direction: column;\n    align-items: flex-end;\n}\n\n.uploader_clearImage__2rMOj{\n\tfont-size: 12px;\n\tcolor: blue;\n\tmargin-bottom: 5px;\n\tcursor: pointer;\n}\n\n.uploader_uploader__1RhpY form .uploader_fileUploader__2jVN9 .uploader_info__3NSEz {\n    font-style: normal;\n    font-size: 14px;\n    line-height: 21px;\n    text-align: justify;\n    color: #000000;\n}\n.uploader_uploader__1RhpY form .uploader_fileUploader__2jVN9 .uploader_info__3NSEz a {\n    text-decoration: underline;\n    color: #2F80ED;\n}\n\n\n.uploader_uploader__1RhpY form .uploader_file__1ekDC {\n    margin-top: 10px;\n}\n\n.uploader_uploader__1RhpY form .uploader_submit__2mAIq {\n    margin-top: 10px;\n\theight: 40px;\n\twidth: 240px;\n\tmargin: 20px auto 0;\n    cursor: pointer;\n}\n\n.uploader_uploader__1RhpY form .uploader_submit__2mAIq:disabled {\n\topacity: 0.4;\n}\n\n.uploader_heading__1Ox1s {\n    font-style: normal;\n    font-weight: 600;\n    font-size: 24px;\n\tline-height: 36px;\n\tmargin-bottom: 15px;\n    text-align: justify;\n    color: rgba(0, 0, 0, 0.4);\n}\n\n.uploader_hide__1T76k {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n}\n\n.uploader_errors__306yx {\n\tmargin-top: 20px;\n}\n\n.uploader_errorMessage__KwtDp {\n\tcolor: #d33333;\n\tfont-size: 0.8em;\n\tmargin: 5px 0;\n\tbackground: #ffe4e4;\n\tpadding: 5px 10px;\n\tmargin-top: 5px;\n\tborder-radius: 4px;\n}\n";
+var styles$1 = { "uploader": "uploader_uploader__1RhpY", "titleLabel": "uploader_titleLabel__3dNsX", "title": "uploader_title__6XJq_", "error": "uploader_error__WDlNo", "fileUploader": "uploader_fileUploader__2jVN9", "imagePreview": "uploader_imagePreview__3VSdX", "clearImage": "uploader_clearImage__2rMOj", "info": "uploader_info__3NSEz", "file": "uploader_file__1ekDC", "submit": "uploader_submit__2mAIq", "heading": "uploader_heading__1Ox1s", "hide": "uploader_hide__1T76k", "errors": "uploader_errors__306yx", "errorMessage": "uploader_errorMessage__KwtDp" };
 styleInject(css$2);
+
+var validate = function validate(file, restrictions) {
+	var errors = [];
+	return new Promise(function (resolve, reject) {
+		if (!restrictions || !Object.keys(restrictions).length) return resolve();
+		if (restrictions.size && file.size > restrictions.size) errors.push("Uploaded image's size exceeds the accepted limit of " + Math.ceil(restrictions.size / 1000000) + " MB.");
+		if (restrictions.dimensions) {
+			var reader = new FileReader();
+			reader.onload = function (e) {
+				var img = new Image();
+				img.src = e.target.result;
+				img.onload = function () {
+					if (restrictions.dimensions.width !== 0 && this.width !== restrictions.dimensions.width) errors.push("Uploaded image's width does not match required value of " + restrictions.dimensions.width + " pixels.");
+					if (restrictions.dimensions.height !== 0 && this.height !== restrictions.dimensions.height) errors.push("Uploaded image's height does not match required value of " + restrictions.dimensions.height + " pixels.");
+					if (errors.length) reject(errors);else resolve();
+				};
+			};
+			reader.readAsDataURL(file);
+		} else {
+			if (errors.length) reject(errors);else resolve();
+		}
+	});
+};
 
 var Uploader = function (_Component) {
 	inherits(Uploader, _Component);
@@ -1603,11 +1611,36 @@ var Uploader = function (_Component) {
 			return false;
 		};
 
-		_this.changeListener = function (e) {
-			_this.setState({
-				imagePreviewSrc: URL.createObjectURL(e.target.files[0]),
-				form: _extends({}, _this.state.form, defineProperty({}, e.target.name, e.target.files && e.target.files[0] || e.target.value))
-			});
+		_this.fileChangeListener = function (e) {
+			var files = e.target.files;
+			if (files && files[0]) {
+				validate(files[0], _this.props.restrictions).then(function () {
+					_this.setState({
+						imagePreviewSrc: files && files[0] && URL.createObjectURL(files[0]),
+						form: _extends({}, _this.state.form, {
+							file: files[0]
+						}),
+						errors: null
+					});
+				}).catch(function (errors) {
+					_this.setState({
+						errors: errors
+					});
+				});
+			}
+		};
+
+		_this.titleChangeListener = function (e) {
+			if (!/[^\w\d-]/.test(e.target.value)) {
+				_this.setState({
+					form: _extends({}, _this.state.form, {
+						title: e.target.value
+					}),
+					titleValid: true
+				});
+			} else {
+				_this.setState({ titleValid: false });
+			}
 		};
 
 		_this.clearImage = function () {
@@ -1640,7 +1673,9 @@ var Uploader = function (_Component) {
 		};
 
 		_this.state = {
-			form: {}
+			form: {},
+			errors: null,
+			titleValid: true
 		};
 		return _this;
 	}
@@ -1696,7 +1731,7 @@ var Uploader = function (_Component) {
 						React__default.createElement("input", {
 							id: "upload-file",
 							encType: "multipart/form-data",
-							onChange: this.changeListener,
+							onChange: this.fileChangeListener,
 							name: "file",
 							className: styles$1.hide,
 							type: "file",
@@ -1706,12 +1741,13 @@ var Uploader = function (_Component) {
 					React__default.createElement(
 						"label",
 						{ className: styles$1.titleLabel },
-						"Image Tag"
+						"Image Tag",
+						"*"
 					),
 					React__default.createElement("input", {
-						onChange: this.changeListener,
+						onChange: this.titleChangeListener,
 						name: "title",
-						className: homeStyles.galleryInput + " " + styles$1.title,
+						className: homeStyles.galleryInput + " " + styles$1.title + " " + (!this.state.titleValid ? styles$1.error : ''),
 						type: "text",
 						placeholder: "example, adidas_white_logo"
 					}),
@@ -1719,9 +1755,21 @@ var Uploader = function (_Component) {
 						"button",
 						{
 							className: homeStyles.galleryButton + " " + styles$1.submit,
-							onClick: this.upload
+							onClick: this.upload,
+							disabled: !this.state.form.file || !this.state.form.title || this.state.errors || !this.state.titleValid
 						},
-						this.state.loading ? "Uploading Image ..." : "SUBMIT"
+						this.state.loading ? "Uploading Image ..." : "UPLOAD"
+					),
+					this.state.errors && Array.isArray(this.state.errors) && React__default.createElement(
+						"div",
+						{ className: styles$1.errors },
+						this.state.errors.map(function (e) {
+							return React__default.createElement(
+								"p",
+								{ className: styles$1.errorMessage },
+								e
+							);
+						})
 					)
 				)
 			);
@@ -1734,7 +1782,8 @@ Uploader.propTypes = {
 	s3: PropTypes.object,
 	server: PropTypes.string,
 	select: PropTypes.func,
-	containerStyles: PropTypes.object
+	containerStyles: PropTypes.object,
+	restrictions: PropTypes.object
 };
 
 var Gallery = function (_Component) {
@@ -1882,7 +1931,10 @@ var Gallery = function (_Component) {
 				React__default.createElement(Uploader, _extends({
 					containerStyles: { display: this.state.tab === 'upload' ? '' : 'none' }
 				}, this.props.config, {
-					select: this.selectFinal
+					select: this.selectFinal,
+					restrictions: _extends({
+						size: 5 * 1000 * 1000
+					}, this.props.config.uploadRestrictions)
 				}))
 			);
 		}
