@@ -5,6 +5,7 @@
     align-items: center;
     margin: 10px;
     height: 80%;
+    overflow-y: scroll;
 }
 
 .uploader form {
