@@ -1,11 +1,3 @@
-export const size = () => {
-
-}
-
-export const dimensions = () => {
-
-}
-
 export const validate = (file, restrictions) => {
 	let errors = []
 	return new Promise((resolve, reject) => {
