@@ -20,7 +20,8 @@ export default class Uploader extends Component {
 		server: PropTypes.string,
 		select: PropTypes.func,
 		containerStyles: PropTypes.object,
-		restrictions: PropTypes.object
+		restrictions: PropTypes.object,
+		accept: PropTypes.string
 	}
 
 	drop = e => {
@@ -137,7 +138,7 @@ export default class Uploader extends Component {
 							name="file"
 							className={styles.hide}
 							type="file"
-							accept=".png, .jpg, .jpeg"
+							accept={this.props.accept}
 						/>
 					</div>}
 					<label className={styles.titleLabel}>
