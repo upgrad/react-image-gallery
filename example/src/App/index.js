@@ -20,6 +20,14 @@ export default class App extends Component {
 				width: 30,
 				align: "right"
 			},
+			"uploadRestrictions": {
+				// "dimensions": {
+				// 	"width": 280,
+				// 	"height": 162
+				// },
+				"aspectRatio": '5:4',
+				"errorAllowed":50
+			},
 			s3: {
 				bucket: S3_BUCKET,
 				path: S3_PATH
@@ -38,7 +46,7 @@ export default class App extends Component {
 	};
 
 	showGallery = () => {
-		this.setState({gallery: true})
+		this.setState({ gallery: true })
 	}
 
 	render() {
