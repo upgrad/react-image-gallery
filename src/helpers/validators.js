@@ -43,7 +43,6 @@ const validateDimensions = (file, dimensions) => {
 
 const validateAspectRatio = (file, aspectRatio, errorAllowed) => {
 	return new Promise((resolve) => {
-		console.log("inside")
 		if (!aspectRatio) return resolve()
 		let errors = []
 		let reader = new FileReader()
