@@ -1600,10 +1600,10 @@ function findClosest(arrSorted, value) {
 }
 
 /*
-Estimate the aspect ratio based on width x height (order doesn't matter)
+Estimate the aspect ratio based on width x height
 */
-function estimateAspectRatio(dim1, dim2, errorAllowed, aspectRatio) {
-  var ratio = Math.max(dim1, dim2) / Math.min(dim1, dim2);
+function estimateAspectRatio(width, height, errorAllowed, aspectRatio) {
+  var ratio = Math.max(width, height) / Math.min(width, height);
   if (ratio in LOOKUP) {
     return LOOKUP[ratio] === aspectRatio;
   }
@@ -1617,11 +1617,24 @@ function estimateAspectRatio(dim1, dim2, errorAllowed, aspectRatio) {
   return false;
 }
 
+/*
+Estimate the approximate width x height with error buffer
+*/
+function approximateDimensions(dimensions, requiredDimensions, errorAllowed) {
+  return new Promise(function (resolve) {
+    var approxMinWidth = errorAllowed / 100 * requiredDimensions.width - requiredDimensions.width;
+    var approxMinHeight = errorAllowed / 100 * requiredDimensions.height - requiredDimensions.height;
+    var approxMaxWidth = errorAllowed / 100 * requiredDimensions.width + requiredDimensions.width;
+    var approxMaxHeight = errorAllowed / 100 * requiredDimensions.height + requiredDimensions.height;
+    resolve({ widthError: dimensions.width < approxMaxWidth && dimensions.width > approxMinWidth, heightError: dimensions.height < approxMaxHeight && dimensions.height > approxMinHeight });
+  });
+}
+
 var validate = function validate(file, restrictions) {
 	var errors = [];
 	return new Promise(function (resolve, reject) {
 		if (!restrictions || !Object.keys(restrictions).length) return resolve();
-		if (restrictions.size && file.size > restrictions.size) errors.push("Uploaded image's size exceeds the accepted limit of " + Math.ceil(restrictions.size / 1000000) + " MB.");
+		if (restrictions.size && file.size > restrictions.size) errors.push('Uploaded image\'s size exceeds the accepted limit of ' + Math.ceil(restrictions.size / 1000000) + ' MB.');
 		if (!restrictions.dimensions) {
 			validateAspectRatio(file, restrictions.aspectRatio, restrictions.errorAllowed).then(function (err) {
 				if (err && err.length) errors.push.apply(errors, toConsumableArray(err));
@@ -1629,7 +1642,7 @@ var validate = function validate(file, restrictions) {
 				if (errors.length) reject(errors);else resolve();
 			});
 		} else {
-			validateDimensions(file, restrictions.dimensions).then(function (err) {
+			validateDimensions(file, restrictions.dimensions, restrictions.errorAllowed).then(function (err) {
 				if (err && err.length) errors.push.apply(errors, toConsumableArray(err));
 			}).then(function () {
 				if (errors.length) reject(errors);else resolve();
@@ -1638,7 +1651,7 @@ var validate = function validate(file, restrictions) {
 	});
 };
 
-var validateDimensions = function validateDimensions(file, dimensions) {
+var validateDimensions = function validateDimensions(file, dimensions, errorAllowed) {
 	return new Promise(function (resolve) {
 		if (!dimensions) return resolve();
 		var errors = [];
@@ -1647,8 +1660,18 @@ var validateDimensions = function validateDimensions(file, dimensions) {
 			var img = new Image();
 			img.src = e.target.result;
 			img.onload = function () {
-				if (dimensions.width !== 0 && this.width !== dimensions.width) errors.push("Uploaded image's width does not match required value of " + dimensions.width + " pixels.");
-				if (dimensions.height !== 0 && this.height !== dimensions.height) errors.push("Uploaded image's height does not match required value of " + dimensions.height + " pixels.");
+				if (errorAllowed) {
+					approximateDimensions({ width: this.width, height: this.height }, { width: dimensions.width, height: dimensions.height }, errorAllowed).then(function (_ref) {
+						var widthError = _ref.widthError,
+						    heightError = _ref.heightError;
+
+						if (!widthError) errors.push('Uploaded image\'s width does not match required value of ' + dimensions.width + ' pixels.');
+						if (!heightError) errors.push('Uploaded image\'s height does not match required value of ' + dimensions.height + ' pixels.');
+					});
+				} else {
+					if (dimensions.width !== 0 && this.width !== dimensions.width) errors.push('Uploaded image\'s width does not match required value of ' + dimensions.width + ' pixels.');
+					if (dimensions.height !== 0 && this.height !== dimensions.height) errors.push('Uploaded image\'s height does not match required value of ' + dimensions.height + ' pixels.');
+				}
 				resolve(errors);
 			};
 		};
@@ -1656,9 +1679,8 @@ var validateDimensions = function validateDimensions(file, dimensions) {
 	});
 };
 
-var validateAspectRatio = function validateAspectRatio(file, aspectRatio, errorAllowed) {
+var validateAspectRatio = function validateAspectRatio(file, aspectRatio, errorAllowed, orientation) {
 	return new Promise(function (resolve) {
-		console.log("inside");
 		if (!aspectRatio) return resolve();
 		var errors = [];
 		var reader = new FileReader();
@@ -1666,7 +1688,10 @@ var validateAspectRatio = function validateAspectRatio(file, aspectRatio, errorA
 			var img = new Image();
 			img.src = e.target.result;
 			img.onload = function () {
-				if (!estimateAspectRatio(this.width, this.height, errorAllowed, aspectRatio)) errors.push("Uploaded image's ratio does not match required Aspect Ratio of " + aspectRatio + ".");
+				var defaultOrientation = 'portrait';
+				defaultOrientation = Math.floor(this.width / this.height) === 0 ? 'portrait' : 'landscape';
+				if (defaultOrientation !== orientation) errors.push('Uploaded image\'s orientation should be in ' + orientation + '.');
+				if (!estimateAspectRatio(this.width, this.height, errorAllowed, aspectRatio)) errors.push('Uploaded image\'s ratio does not match required Aspect Ratio of ' + aspectRatio + '.');
 				resolve(errors);
 			};
 		};

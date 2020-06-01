@@ -33,10 +33,10 @@ function findClosest(arrSorted, value) {
 }
 
 /*
-Estimate the aspect ratio based on width x height (order doesn't matter)
+Estimate the aspect ratio based on width x height
 */
-export function estimateAspectRatio(dim1, dim2, errorAllowed, aspectRatio) {
-  let ratio = Math.max(dim1, dim2) / Math.min(dim1, dim2)
+export function estimateAspectRatio(width, height, errorAllowed, aspectRatio) {
+  let ratio = Math.max(width, height) / Math.min(width, height)
   if (ratio in LOOKUP) {
     return LOOKUP[ratio] === aspectRatio
   }
@@ -48,4 +48,17 @@ export function estimateAspectRatio(dim1, dim2, errorAllowed, aspectRatio) {
   }
 
   return false
+}
+
+/*
+Estimate the approximate width x height with error buffer
+*/
+export function approximateDimensions(dimensions, requiredDimensions, errorAllowed) {
+	return new Promise((resolve) => {
+		let approxMinWidth = errorAllowed / 100 * requiredDimensions.width - requiredDimensions.width 
+		let approxMinHeight = errorAllowed / 100 * requiredDimensions.height - requiredDimensions.height
+		let approxMaxWidth = errorAllowed / 100 * requiredDimensions.width + requiredDimensions.width 
+		let approxMaxHeight = errorAllowed / 100 * requiredDimensions.height + requiredDimensions.height
+		resolve({ widthError: dimensions.width < approxMaxWidth && dimensions.width > approxMinWidth , heightError: dimensions.height < approxMaxHeight && dimensions.height > approxMinHeight })
+	})
 }

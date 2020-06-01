@@ -73,7 +73,8 @@ class Example extends Component {
 | ------------- | ------------- | ------------- |
 | dimensions | width , height | ```{"width": 1600, "height": 900 }```|
 | aspectRatio | [ '1:1', '4:3', '5:4', '3:2', '16:10', '16:9', '21:9', '32:9' ] | "16:9"|
-| errorAllowed (only applicable on aspectRatio) | 1-100 | 50
+| errorAllowed | 1-100 | 50
+| orientation | portrait, landscape | portrait (default value)
 
 
 

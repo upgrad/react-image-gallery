@@ -21,12 +21,12 @@ export default class App extends Component {
 				align: "right"
 			},
 			"uploadRestrictions": {
-				// "dimensions": {
-				// 	"width": 280,
-				// 	"height": 162
-				// },
-				"aspectRatio": '5:4',
-				"errorAllowed":50
+				"dimensions": {
+					"width": 1600,
+					"height": 900
+				},
+				// "aspectRatio": '16:9',
+				"errorAllowed":5
 			},
 			s3: {
 				bucket: S3_BUCKET,
