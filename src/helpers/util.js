@@ -36,7 +36,7 @@ function findClosest(arrSorted, value) {
 Estimate the aspect ratio based on width x height
 */
 export function estimateAspectRatio(width, height, errorAllowed, aspectRatio) {
-  let ratio = Math.max(width, height) / Math.min(width, height)
+  let ratio = width / height; 
   if (ratio in LOOKUP) {
     return LOOKUP[ratio] === aspectRatio
   }
