@@ -1753,7 +1753,7 @@ var Uploader = function (_Component) {
 							name: "file",
 							className: styles$1.hide,
 							type: "file",
-							accept: ".png, .jpg, .jpeg"
+							accept: this.props.accept
 						})
 					),
 					React__default.createElement(
@@ -1801,7 +1801,8 @@ Uploader.propTypes = {
 	server: PropTypes.string,
 	select: PropTypes.func,
 	containerStyles: PropTypes.object,
-	restrictions: PropTypes.object
+	restrictions: PropTypes.object,
+	accept: PropTypes.string
 };
 
 var Gallery = function (_Component) {
@@ -1952,7 +1953,8 @@ var Gallery = function (_Component) {
 					select: this.selectFinal,
 					restrictions: _extends({
 						size: 5 * 1000 * 1000
-					}, this.props.config.uploadRestrictions)
+					}, this.props.config.uploadRestrictions),
+					accept: this.props.uploaderConfig.accept
 				}))
 			);
 		}
@@ -1963,11 +1965,15 @@ var Gallery = function (_Component) {
 Gallery.propTypes = {
 	config: PropTypes.object,
 	isActive: PropTypes.bool,
-	uploaded: PropTypes.func
+	uploaded: PropTypes.func,
+	uploaderConfig: PropTypes.object
 };
 Gallery.defaultProps = {
 	config: {},
-	isActive: false
+	isActive: false,
+	uploaderConfig: {
+		accept: '.png, .jpg, .jpeg'
+	}
 };
 
 module.exports = Gallery;
