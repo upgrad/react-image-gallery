@@ -1483,12 +1483,12 @@ var Grid = function (_Component) {
 
 				_this2.updateGlobalDataLocally(images);
 			}).catch(function (error) {
-				this.setState({
+				_this2.setState({
 					images: [],
 					isGrid: true,
 					loading: false
 				});
-			}).finally(function () {});
+			});
 		}
 	}, {
 		key: "selectionBar",
@@ -1692,7 +1692,7 @@ var Uploader = function (_Component) {
 			}).then(function (response) {
 				_this.props.select(response.data.slug);
 			}).catch(function (error) {
-				alert("Sorry couldn't upload the image. Try again");
+				alert("Sorry couldn't upload the file. Try again");
 			}).finally(function () {
 				_this.setState({ loading: false });
 			});

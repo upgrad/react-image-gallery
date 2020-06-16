@@ -85,14 +85,13 @@ export default class Grid extends Component {
 
 				this.updateGlobalDataLocally(images)
 			})
-			.catch(function(error) {
+			.catch((error) => {
 				this.setState({
 					images: [],
 					isGrid: true,
 					loading: false
 				});
 			})
-			.finally(function() {});
 	}
 
 	openPreview = (url) => () => {
