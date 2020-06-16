@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import Gallery from "awesome-react-gallery";
 import "./index.css";
 
-const CDN_URL = `https://ik.imagekit.io/upgrad1/marketing-platform-assets`;
-const S3_PATH = `brochures`;
-const S3_BUCKET = `upgrad-marketing-platform`;
+const CDN_URL = ``;
+const S3_PATH = ``;
+const S3_BUCKET = ``;
 const SERVER_URL = `http://localhost:7000/gallery`;
 
 export default class App extends Component {
@@ -60,7 +60,6 @@ export default class App extends Component {
 					isActive={this.state.gallery}
 					onClose={this.onImageReceive}
 					config={this.config}
-					uploaderConfig={{accept: '.pdf'}}
 				/>
 			</div>
 		);
