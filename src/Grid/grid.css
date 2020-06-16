@@ -176,11 +176,22 @@
 	height: 5vh;
 	width: 100%;
 	background-color: #e6e6e6;
-	padding: 30px;
+	padding: 30px 20px;
+}
+
+.selectionBarButtons {
+	display: flex;
+}
+
+.previewButton {
+	padding: 5px 15px;
+	margin-left: 10px;
+	background: rgb(45, 89, 156);
 }
 
 .selectionButton{
 	padding: 5px 15px;
+	margin-left: 10px;
 }
 
 .info{

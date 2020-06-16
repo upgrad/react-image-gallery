@@ -4,6 +4,7 @@ import styles from "./uploader.css";
 import axios from "axios";
 import homeStyles from "./../styles.css"
 import { validate } from "./../helpers/validators"
+import SafeImage from "../components/SafeImage";
 
 export default class Uploader extends Component {
 	constructor(props) {
@@ -24,40 +25,27 @@ export default class Uploader extends Component {
 		accept: PropTypes.string
 	}
 
-	drop = e => {
-		e.stopPropagation();
-		e.preventDefault();
-		let file = e.dataTransfer.files && e.dataTransfer.files[0]
-		if(file)
-			this.setState({
-				imagePreviewSrc: URL.createObjectURL(file),
-				form: {
-					...this.state.form,
-					file
-				}
-			});
-		return false;
-	};
-
 	fileChangeListener = e => {
 		let files = e.target.files
 		if(files && files[0]) {
-			validate(files[0], this.props.restrictions).then(() => {
-				this.setState({
-					imagePreviewSrc: files && files[0] && URL.createObjectURL(files[0]),
-					form: {
-						...this.state.form,
-						file: files[0]
-					},
-					errors: null
-				});
-			}).catch(errors => {
-				this.setState({
-					errors
-				})
-			})
+			this.setFile(files[0])
 		}
 	};
+
+	setFile = file => {
+		this.setState({
+			imagePreviewSrc: this.getFilePreviewUrl(file),
+			form: {
+				...this.state.form,
+				file
+			},
+			errors: null
+		})
+	}
+
+	getFilePreviewUrl = file => {
+		return file.type && file.type.startsWith('image/') ? URL.createObjectURL(file) : null
+	}
 
 	titleChangeListener = e => {
 		if(!/[^\w\d-]/.test(e.target.value)) {
@@ -75,10 +63,10 @@ export default class Uploader extends Component {
 
 	clearImage = () => {
 		this.setState({
-			imagePreviewSrc:undefined,
+			imagePreviewSrc: null,
 			form: {
 				...this.state.form,
-				file: undefined
+				file: null
 			}
 		});
 	}
@@ -102,47 +90,38 @@ export default class Uploader extends Component {
 			})
 			.catch(function(error) {
 				alert(`Sorry couldn't upload the image. Try again`)
+			}).finally(() => {
+				this.setState({ loading: false })
 			});
 	};
-
-	dragOver(event) {
-		event.stopPropagation();
-		event.preventDefault();
-		return false;
-	}
 
 	render() {
 		return (
 			<div className={styles.uploader} style={this.props.containerStyles}>
 				<form>
-					<div className={styles.imagePreview}>
-						{this.state.form.file && <span className={styles.clearImage} onClick={this.clearImage}>clear[x]</span>}
-						<img src={this.state.imagePreviewSrc} style={{width:'100%'}}></img>
-					</div>
+					{this.state.form.file &&
+						<div className={styles.imagePreview}>
+							<span className={styles.clearImage} onClick={this.clearImage}>clear[x]</span>
+							<SafeImage className={styles.previewImage} src={this.state.imagePreviewSrc} />
+						</div>
+					}
 					{!this.state.form.file &&
-						<div>
-						<label
-							onDrop={this.drop}
-							onDragOver={this.dragOver}
-							htmlFor="upload-file"
-							className={styles.fileUploader}
-						>
-							<span className={styles.info}>
-								Drop an image here or <a>choose a image</a>
-							</span>
-						</label>
+						<div className={styles.fileUploader}>
 						<input
 							id="upload-file"
 							encType="multipart/form-data"
 							onChange={this.fileChangeListener}
 							name="file"
-							className={styles.hide}
+							className={styles.fileUploaderInput}
 							type="file"
 							accept={this.props.accept}
 						/>
+						<span className={styles.info}>
+							Drop a file here or <a>choose one by clicking here</a>
+						</span>
 					</div>}
 					<label className={styles.titleLabel}>
-						Image Tag{`*`}
+						File Tag{`*`}
 					</label>
 					<input
 						onChange={this.titleChangeListener}
@@ -157,7 +136,7 @@ export default class Uploader extends Component {
 						disabled={!this.state.form.file || !this.state.form.title || this.state.errors || !this.state.titleValid}
 					>
 						{this.state.loading
-							? "Uploading Image ..."
+							? "Uploading..."
 							: "UPLOAD"}
 					</button>
 					{this.state.errors && Array.isArray(this.state.errors) &&
