@@ -89,7 +89,7 @@ export default class Uploader extends Component {
 				this.props.select(response.data.slug);
 			})
 			.catch(function(error) {
-				alert(`Sorry couldn't upload the image. Try again`)
+				alert(`Sorry couldn't upload the file. Try again`)
 			}).finally(() => {
 				this.setState({ loading: false })
 			});
