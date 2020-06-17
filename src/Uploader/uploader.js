@@ -79,6 +79,7 @@ export default class Uploader extends Component {
 		formData.append("file", this.state.form.file);
 		formData.append("s3Bucket", this.props.s3.bucket);
 		formData.append("s3Path", this.props.s3.path);
+		formData.append("accept", this.props.accept);
 		axios({
 			method: "post",
 			url: `${this.props.server}/upload`,
