@@ -86,7 +86,8 @@ export default class Uploader extends Component {
 			config: { headers: { "Content-Type": "multipart/form-data" } }
 		})
 			.then(response => {
-				this.props.select(response.data.slug);
+				this.props.select(response.data.slug)
+				this.setState({ form: {} })
 			})
 			.catch(function(error) {
 				alert(`Sorry couldn't upload the file. Try again`)

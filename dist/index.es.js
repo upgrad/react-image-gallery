@@ -1686,6 +1686,7 @@ var Uploader = function (_Component) {
 				config: { headers: { "Content-Type": "multipart/form-data" } }
 			}).then(function (response) {
 				_this.props.select(response.data.slug);
+				_this.setState({ form: {} });
 			}).catch(function (error) {
 				alert("Sorry couldn't upload the file. Try again");
 			}).finally(function () {
