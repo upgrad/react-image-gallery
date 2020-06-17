@@ -1679,6 +1679,7 @@ var Uploader = function (_Component) {
 			formData.append("file", _this.state.form.file);
 			formData.append("s3Bucket", _this.props.s3.bucket);
 			formData.append("s3Path", _this.props.s3.path);
+			formData.append("accept", _this.props.accept);
 			axios$1({
 				method: "post",
 				url: _this.props.server + "/upload",
