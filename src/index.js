@@ -10,7 +10,8 @@ export default class Gallery extends Component {
 		config: PropTypes.object,
 		isActive: PropTypes.bool,
 		uploaded: PropTypes.func,
-		uploaderConfig: PropTypes.object
+		uploaderConfig: PropTypes.object,
+		showDimensions: PropTypes.bool
 	};
 
 	static defaultProps = {
@@ -18,7 +19,8 @@ export default class Gallery extends Component {
 		isActive: false,
 		uploaderConfig: {
 			accept: '.png, .jpg, .jpeg'
-		}
+		},
+		showDimensions: false
 	};
 
 	constructor(props) {
@@ -149,6 +151,7 @@ export default class Gallery extends Component {
 					select={this.selectFinal}
 					images={this.state.images}
 					setImages={this.setImages}
+					showDimensions={this.props.showDimensions}
 				/>
 				<Uploader
 					containerStyles={{ display: this.state.tab === 'upload' ? '' : 'none' }}
