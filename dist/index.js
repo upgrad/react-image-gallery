@@ -33,12 +33,12 @@ function styleInject(css, ref) {
   }
 }
 
-var css = "@import url(\"https://fonts.googleapis.com/css?family=Lato:400,700&display=swap\");\n\n* {\n\tbox-sizing: border-box;\n}\n\n.styles_overlay__CLSq- {\n\twidth: inherit;\n\theight: inherit;\n\tbackground-color: black;\n\topacity: 0.5;\n\tposition: absolute;\n\tz-index: 1;\n\tdisplay: none;\n}\n\n.styles_isOverlayActive__298UW {\n\tdisplay: block;\n}\n\n.styles_modal__gNwvD {\n\tposition: fixed;\n\tright: 0;\n\ttop: 0;\n\tz-index: 9999;\n\n\tletter-spacing: normal;\n\tfont-family: \"Lato\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial,\n\t\tsans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n\t-ms-text-size-adjust: 100%;\n\t-webkit-text-size-adjust: 100%;\n\t-moz-osx-font-smoothing: grayscale;\n\t-webkit-font-smoothing: antialiased;\n\ttext-rendering: geometricPrecision;\n\tfont-variant-ligatures: common-ligatures;\n\n\theight: 100vh;\n\tmin-width: 576px;\n\twidth: 30%;\n\topacity: 1;\n\tdisplay: flex;\n\tflex-direction: column;\n\tbackground: #fff;\n\tborder: 1px solid rgba(0, 0, 0, 0.0485734);\n\tbox-sizing: border-box;\n\tbox-shadow: -24px 16px 56px rgba(0, 0, 0, 0.239781);\n\ttransition: transform 200ms cubic-bezier(0.4, 0.14, 0.3, 1);\n\ttransform: translateX(720px);\n}\n\n.styles_isModalActive__3XSNX {\n\ttransform: translateX(0);\n}\n\n.styles_header__3PFGX {\n\tflex-direction: column;\n\twidth: 100%;\n\theight: 86px;\n\tbackground: #ffffff;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: space-between;\n\tpadding: 16px;\n\tbox-sizing: border-box;\n\n\tfont-weight: 600;\n\tfont-size: 18px;\n\tline-height: 24px;\n\n\tdisplay: flex;\n\talign-items: flex-start;\n\tletter-spacing: 0.168px;\n\n\tcolor: rgba(0, 0, 0, 0.7);\n\tborder-bottom: 1px solid #e7e8f0;\n}\n\n.styles_navList__33BO0 {\n\tmin-width: 400px;\n\tdisplay: flex;\n\tflex-direction: row;\n\tpadding: 0;\n\tmargin: 0;\n\tmargin-top: 12px;\n\tmargin-left: -16px;\n}\n\n.styles_navList__33BO0 li {\n\tlist-style: none;\n}\n\n.styles_navItem__XZgfa {\n\tlist-style: none;\n\tposition: relative;\n\tdisplay: inline-block;\n\theight: 34px;\n\ttext-align: center;\n\tfont-size: 14px;\n\tfont-weight: 600;\n\tcolor: #aaa;\n\tpadding: 4px 16px;\n\tborder-bottom: 2px solid transparent;\n\ttransition: all 200ms cubic-bezier(0.4, 0.14, 0.3, 1);\n\tcursor: pointer;\n}\n\n.styles_navItem__XZgfa:hover {\n\tcolor: #a1a1a1;\n}\n\n.styles_navItemActive__17Uio {\n\tborder-color: #298ee2;\n\tcolor: #4a4a4a;\n}\n\n.styles_closeBtn__1A6KW {\n\tposition: absolute;\n\tright: 16px;\n\ttop: 12px;\n\twidth: 32px;\n\theight: 32px;\n\tcursor: pointer;\n\tbackground-color: rgba(217, 217, 217, 0.4);\n\tborder-radius: 50%;\n\tpadding: 6px;\n}\n\n.styles_closeBtn__1A6KW svg path {\n\tfill: #b4b7bc;\n}\n\n.styles_note__2WdlX {\n\tfont-size: 12px;\n\tcolor: #ec454d;\n\tfont-weight: 600;\n\tmargin: 12px;\n\tborder-radius: 4px;\n\tpadding: 16px;\n\tbackground: rgba(236, 69, 77, 0.1);\n}\n\n/* Misc */\n\n.styles_galleryInput__6RZOY {\n\tborder: 1px solid #e0e0e0;\n\tborder-radius: 4px;\n\tpadding: 0 10px;\n\theight: 40px;\n\tcolor: #4c4c56;\n\tresize: none;\n\twidth: 100%;\n\tfont-size: 14px;\n\tmargin-bottom: 20px;\n\ttransition: 200ms cubic-bezier(0.4, 0.14, 0.3, 1) all;\n}\n\n.styles_galleryInput__6RZOY:focus {\n\tborder: 1px solid #298ee2;\n\toutline: none;\n}\n\n.styles_galleryButton__2bkqr {\n\t\t  border: none;\n\t    background: #2FCB53;\n\t    border-radius: 4px;\n\t    color: white;\n\t    cursor: pointer;\n\t    font-style: normal;\n\t    font-weight: bold;\n\t    font-size: 14px;\n\t    line-height: 19px;\n\t    text-align: center;\n\t    text-transform: uppercase;\n}\n\n.styles_galleryButton__2bkqr:focus {\n\toutline: transparent;\n}\n\n.styles_galleryLoading__3gL47 {\n  display: inline-block;\n  width: 64px;\n  height: 64px;\n}\n\n.styles_galleryLoading__3gL47:after {\n  content: \" \";\n  display: block;\n  width: 26px;\n  height: 26px;\n  margin: 1px;\n  border-radius: 50%;\n  border: 5px solid #ec454d;\n  border-color: #ec454d transparent #ec454d transparent;\n  animation: styles_galleryLoading__3gL47 1.2s linear infinite;\n}\n\n@keyframes styles_galleryLoading__3gL47 {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n";
+var css = "@import url(\"https://fonts.googleapis.com/css?family=Lato:400,700&display=swap\");\n\n* {\n\tbox-sizing: border-box;\n}\n\n.styles_overlay__CLSq- {\n\twidth: inherit;\n\theight: inherit;\n\tbackground-color: black;\n\topacity: 0.5;\n\tposition: absolute;\n\tz-index: 1;\n\tdisplay: none;\n}\n\n.styles_isOverlayActive__298UW {\n\tdisplay: block;\n}\n\n.styles_modal__gNwvD {\n\tposition: fixed;\n\tright: 0;\n\ttop: 0;\n\tz-index: 9999;\n\n\tletter-spacing: normal;\n\tfont-family: \"Lato\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial,\n\t\tsans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n\t-ms-text-size-adjust: 100%;\n\t-webkit-text-size-adjust: 100%;\n\t-moz-osx-font-smoothing: grayscale;\n\t-webkit-font-smoothing: antialiased;\n\ttext-rendering: geometricPrecision;\n\tfont-variant-ligatures: common-ligatures;\n\n\theight: 100vh;\n\tmin-width: 576px;\n\twidth: 30%;\n\topacity: 1;\n\tdisplay: flex;\n\tflex-direction: column;\n\tbackground: #fff;\n\tborder: 1px solid rgba(0, 0, 0, 0.0485734);\n\tbox-sizing: border-box;\n\tbox-shadow: -24px 16px 56px rgba(0, 0, 0, 0.239781);\n\ttransition: transform 200ms cubic-bezier(0.4, 0.14, 0.3, 1);\n\ttransform: translateX(720px);\n}\n\n.styles_isModalActive__3XSNX {\n\ttransform: translateX(0);\n}\n\n.styles_header__3PFGX {\n\tflex-direction: column;\n\twidth: 100%;\n\theight: 86px;\n\tbackground: #ffffff;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: space-between;\n\tpadding: 16px;\n\tbox-sizing: border-box;\n\n\tfont-weight: 600;\n\tfont-size: 18px;\n\tline-height: 24px;\n\n\tdisplay: flex;\n\talign-items: flex-start;\n\tletter-spacing: 0.168px;\n\n\tcolor: rgba(0, 0, 0, 0.7);\n\tborder-bottom: 1px solid #e7e8f0;\n}\n\n.styles_navList__33BO0 {\n\tmin-width: 400px;\n\tdisplay: flex;\n\tflex-direction: row;\n\tpadding: 0;\n\tmargin: 0;\n\tmargin-top: 12px;\n\tmargin-left: -16px;\n}\n\n.styles_navList__33BO0 li {\n\tlist-style: none;\n}\n\n.styles_navItem__XZgfa {\n\tlist-style: none;\n\tposition: relative;\n\tdisplay: inline-block;\n\theight: 34px;\n\ttext-align: center;\n\tfont-size: 14px;\n\tfont-weight: 600;\n\tcolor: #aaa;\n\tpadding: 4px 16px;\n\tborder-bottom: 2px solid transparent;\n\ttransition: all 200ms cubic-bezier(0.4, 0.14, 0.3, 1);\n\tcursor: pointer;\n}\n\n.styles_navItem__XZgfa:hover {\n\tcolor: #a1a1a1;\n}\n\n.styles_navItemActive__17Uio {\n\tborder-color: #298ee2;\n\tcolor: #4a4a4a;\n}\n\n.styles_closeBtn__1A6KW {\n\tposition: absolute;\n\tright: 16px;\n\ttop: 12px;\n\twidth: 32px;\n\theight: 32px;\n\tcursor: pointer;\n\tbackground-color: rgba(217, 217, 217, 0.4);\n\tborder-radius: 50%;\n\tpadding: 6px;\n}\n\n.styles_closeBtn__1A6KW svg path {\n\tfill: #b4b7bc;\n}\n\n.styles_note__2WdlX {\n\tfont-size: 12px;\n\tcolor: #ec454d;\n\tfont-weight: 600;\n\tmargin: 12px;\n\tborder-radius: 4px;\n\tpadding: 16px;\n\tbackground: rgba(236, 69, 77, 0.1);\n}\n\n/* Misc */\n\n.styles_galleryInput__6RZOY {\n\tborder: 1px solid #e0e0e0;\n\tborder-radius: 4px;\n\tpadding: 0 10px;\n\theight: 40px;\n\tcolor: #4c4c56;\n\tresize: none;\n\twidth: 100%;\n\tfont-size: 14px;\n\tmargin-bottom: 20px;\n\ttransition: 200ms cubic-bezier(0.4, 0.14, 0.3, 1) all;\n}\n\n.styles_galleryInput__6RZOY:focus {\n\tborder: 1px solid #298ee2;\n\toutline: none;\n}\n\n.styles_galleryButton__2bkqr {\n\t\tborder: none;\n\t    background: #2FCB53;\n\t    border-radius: 2px;\n\t    color: white;\n\t    cursor: pointer;\n\t    font-style: normal;\n\t    font-weight: bold;\n\t    font-size: 14px;\n\t    line-height: 19px;\n\t    text-align: center;\n\t    text-transform: uppercase;\n}\n\n.styles_galleryButton__2bkqr:focus {\n\toutline: transparent;\n}\n\n.styles_galleryLoading__3gL47 {\n  display: inline-block;\n  width: 64px;\n  height: 64px;\n}\n\n.styles_galleryLoading__3gL47:after {\n  content: \" \";\n  display: block;\n  width: 26px;\n  height: 26px;\n  margin: 1px;\n  border-radius: 50%;\n  border: 5px solid #ec454d;\n  border-color: #ec454d transparent #ec454d transparent;\n  animation: styles_galleryLoading__3gL47 1.2s linear infinite;\n}\n\n@keyframes styles_galleryLoading__3gL47 {\n  0% {\n    transform: rotate(0deg);\n  }\n  100% {\n    transform: rotate(360deg);\n  }\n}\n";
 var homeStyles = { "overlay": "styles_overlay__CLSq-", "isOverlayActive": "styles_isOverlayActive__298UW", "modal": "styles_modal__gNwvD", "isModalActive": "styles_isModalActive__3XSNX", "header": "styles_header__3PFGX", "navList": "styles_navList__33BO0", "navItem": "styles_navItem__XZgfa", "navItemActive": "styles_navItemActive__17Uio", "closeBtn": "styles_closeBtn__1A6KW", "note": "styles_note__2WdlX", "galleryInput": "styles_galleryInput__6RZOY", "galleryButton": "styles_galleryButton__2bkqr", "galleryLoading": "styles_galleryLoading__3gL47" };
 styleInject(css);
 
-var css$1 = ".grid_searchWrapper__3-vIN {\n\tposition: relative;\n\theight:40px;\n\tmargin-top:16px;\n\tdisplay: flex;\n\tjustify-content: space-around;\n\tmargin-right: 16px;\n}\n\n.grid_searchIcon__SWJt1 {\n\tposition: absolute;\n\tleft: 26px;\n\ttop: 12px;\n}\n\n.grid_searchBar__1qck2 {\n\tmargin-top: 100px;\n\twidth: 60%;\n\tmargin: 0px 16px;\n\theight: 100%;\n\tpadding: 10px 36px;\n\tbackground: #ffffff;\n\tbox-sizing: border-box;\n\tborder: 1px solid #e7e8f0;\n\tbox-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0877491);\n\tborder-radius: 4px;\n\tfont-style: normal;\n\tfont-size: 13px;\n\tline-height: 19px;\n}\n\n.grid_searchButton__K5Cqp{\n\theight:100%;\n\twidth:15%\n}\n\n.grid_grid__vYO3q {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\toverflow-x: scroll;\n\tjustify-content: center;\n\tmargin: 0;\n\tmargin-top: 10px;\n\theight: 73vh;\n\tpadding: 24px 0;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar {\n\twidth: 6px;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar-track {\n\tbackground-color: transparent;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar-thumb {\n\tbackground-color: rgba(74, 86, 96, 0.51);\n\tvisibility: visible;\n\tborder-radius: 7px;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar-thumb:hover {\n\tbackground-color: lighten(#262626, 15%);\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 {\n\tposition: relative;\n\tmargin: 5px;\n\twidth: 45%;\n\theight: 150px;\n\tborder: 1px solid grey;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n\tbackground-color: rgba(255, 255, 255, 1);\n\n\tbackground-image: -moz-linear-gradient(\n\t\t\t45deg,\n\t\t\t#f1f1f1 25%,\n\t\t\ttransparent 25%,\n\t\t\ttransparent 75%,\n\t\t\t#f1f1f1 75%,\n\t\t\t#f1f1f1 100%\n\t\t),\n\t\t-moz-linear-gradient(45deg, #f1f1f1 25%, transparent 25%, transparent\n\t\t\t\t\t75%, #f1f1f1 75%, #f1f1f1 100%);\n\tbackground-image: -webkit-linear-gradient(\n\t\t\t45deg,\n\t\t\t#f1f1f1 25%,\n\t\t\ttransparent 25%,\n\t\t\ttransparent 75%,\n\t\t\t#f1f1f1 75%,\n\t\t\t#f1f1f1 100%\n\t\t),\n\t\t-webkit-linear-gradient(45deg, #f1f1f1 25%, transparent 25%, transparent\n\t\t\t\t\t75%, #f1f1f1 75%, #f1f1f1 100%);\n\tbackground-size: 20px 20px;\n\tbackground-position: 0 0, 50px 50px;\n\tborder: 1px solid #e5e5e5;\n\tbox-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);\n\tborder-radius: 3px;\n\toverflow: hidden;\n}\n\n.grid_grid__vYO3q .grid_gridImageDarkWrapper__1for2 {\n\tbackground-size: 20px 20px;\n\tbackground-position: bottom;\n\tbackground-color: #ffffff;\n\tbackground-image: linear-gradient(\n\t\t\tto right,\n\t\t\trgba(0, 0, 0, 0.3) 50%,\n\t\t\ttransparent 50%,\n\t\t\ttransparent\n\t\t),\n\t\tlinear-gradient(\n\t\t\tto right,\n\t\t\ttransparent 0%,\n\t\t\ttransparent 50%,\n\t\t\trgba(0, 0, 0, 0) 50%\n\t\t),\n\t\tlinear-gradient(\n\t\t\tto bottom,\n\t\t\trgba(0, 0, 0, 0.3) 50%,\n\t\t\ttransparent 50%,\n\t\t\ttransparent\n\t\t),\n\t\tlinear-gradient(\n\t\t\tto bottom,\n\t\t\ttransparent 0%,\n\t\t\ttransparent 50%,\n\t\t\trgba(0, 0, 0, 0) 50%\n\t\t),\n\t\tlinear-gradient(to bottom, #ffffff 50%, transparent 50%, transparent),\n\t\tlinear-gradient(\n\t\t\tto right,\n\t\t\ttransparent 0%,\n\t\t\ttransparent 50%,\n\t\t\trgba(0, 0, 0, 0.5) 50%\n\t\t),\n\t\tnone;\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 .grid_gridImage__2ye62 {\n\tpadding: 5px;\n\tbox-sizing: border-box;\n\theight: auto;\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 .grid_gridOverlay__15JFm{\n\tbackground-color: rgb(256,0,0,0.5);\n\tpadding: 5px;\n\tbox-sizing: border-box;\n\twidth: 100%;\n\theight:100%;\n\tposition: absolute;\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 .grid_gridFooter__2h9-r{\n\tbackground-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(0,0,0,0.1));\n\twidth: 100%;\n\theight: 20%;\n\tbottom: 0;\n\tposition: absolute;\n\tdisplay: flex;\n\talign-items: flex-end;\n\tpadding-left: 5px;\n\tpadding-bottom: 5px;\n}\n\n.grid_selectionBar__3eafz{\n\tposition: fixed;\n\tbottom:0;\n\tdisplay: flex;\n\talign-items: center;\n \tjustify-content: space-between;\n\theight: 5vh;\n\twidth: 100%;\n\tbackground-color: #e6e6e6;\n\tpadding: 30px;\n}\n\n.grid_selectionButton__17mvC{\n\tpadding: 5px 15px;\n}\n\n.grid_info__1aAKu{\n\tmargin-top: 100px;\n}\n";
-var styles = { "searchWrapper": "grid_searchWrapper__3-vIN", "searchIcon": "grid_searchIcon__SWJt1", "searchBar": "grid_searchBar__1qck2", "searchButton": "grid_searchButton__K5Cqp", "grid": "grid_grid__vYO3q", "customScrollBar": "grid_customScrollBar__1V4bf", "gridImageWrapper": "grid_gridImageWrapper__SoCX8", "gridImageDarkWrapper": "grid_gridImageDarkWrapper__1for2", "gridImage": "grid_gridImage__2ye62", "gridOverlay": "grid_gridOverlay__15JFm", "gridFooter": "grid_gridFooter__2h9-r", "selectionBar": "grid_selectionBar__3eafz", "selectionButton": "grid_selectionButton__17mvC", "info": "grid_info__1aAKu" };
+var css$1 = ".grid_searchWrapper__3-vIN {\n\tposition: relative;\n\theight:40px;\n\tmargin-top:16px;\n\tdisplay: flex;\n\tjustify-content: space-around;\n\tmargin-right: 16px;\n}\n\n.grid_searchIcon__SWJt1 {\n\tposition: absolute;\n\tleft: 26px;\n\ttop: 12px;\n}\n\n.grid_searchBar__1qck2 {\n\tmargin-top: 100px;\n\twidth: 60%;\n\tmargin: 0px 16px;\n\theight: 100%;\n\tpadding: 10px 36px;\n\tbackground: #ffffff;\n\tbox-sizing: border-box;\n\tborder: 1px solid #e7e8f0;\n\tbox-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0877491);\n\tborder-radius: 4px;\n\tfont-style: normal;\n\tfont-size: 13px;\n\tline-height: 19px;\n}\n\n.grid_searchButton__K5Cqp{\n\theight:100%;\n\twidth:15%\n}\n\n.grid_grid__vYO3q {\n\tdisplay: flex;\n\tflex-wrap: wrap;\n\toverflow-x: scroll;\n\tjustify-content: center;\n\tmargin: 0;\n\tmargin-top: 10px;\n\theight: 73vh;\n\tpadding: 24px 0;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar {\n\twidth: 6px;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar-track {\n\tbackground-color: transparent;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar-thumb {\n\tbackground-color: rgba(74, 86, 96, 0.51);\n\tvisibility: visible;\n\tborder-radius: 7px;\n}\n\n.grid_customScrollBar__1V4bf::-webkit-scrollbar-thumb:hover {\n\tbackground-color: lighten(#262626, 15%);\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 {\n\tposition: relative;\n\tmargin: 5px;\n\twidth: 45%;\n\theight: 150px;\n\tborder: 1px solid grey;\n\tdisplay: flex;\n\talign-items: center;\n\tjustify-content: center;\n\tbackground-color: rgba(255, 255, 255, 1);\n\n\tbackground-image: -moz-linear-gradient(\n\t\t\t45deg,\n\t\t\t#f1f1f1 25%,\n\t\t\ttransparent 25%,\n\t\t\ttransparent 75%,\n\t\t\t#f1f1f1 75%,\n\t\t\t#f1f1f1 100%\n\t\t),\n\t\t-moz-linear-gradient(45deg, #f1f1f1 25%, transparent 25%, transparent\n\t\t\t\t\t75%, #f1f1f1 75%, #f1f1f1 100%);\n\tbackground-image: -webkit-linear-gradient(\n\t\t\t45deg,\n\t\t\t#f1f1f1 25%,\n\t\t\ttransparent 25%,\n\t\t\ttransparent 75%,\n\t\t\t#f1f1f1 75%,\n\t\t\t#f1f1f1 100%\n\t\t),\n\t\t-webkit-linear-gradient(45deg, #f1f1f1 25%, transparent 25%, transparent\n\t\t\t\t\t75%, #f1f1f1 75%, #f1f1f1 100%);\n\tbackground-size: 20px 20px;\n\tbackground-position: 0 0, 50px 50px;\n\tborder: 1px solid #e5e5e5;\n\tbox-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);\n\tborder-radius: 3px;\n\toverflow: hidden;\n}\n\n.grid_grid__vYO3q .grid_gridImageDarkWrapper__1for2 {\n\tbackground-size: 20px 20px;\n\tbackground-position: bottom;\n\tbackground-color: #ffffff;\n\tbackground-image: linear-gradient(\n\t\t\tto right,\n\t\t\trgba(0, 0, 0, 0.3) 50%,\n\t\t\ttransparent 50%,\n\t\t\ttransparent\n\t\t),\n\t\tlinear-gradient(\n\t\t\tto right,\n\t\t\ttransparent 0%,\n\t\t\ttransparent 50%,\n\t\t\trgba(0, 0, 0, 0) 50%\n\t\t),\n\t\tlinear-gradient(\n\t\t\tto bottom,\n\t\t\trgba(0, 0, 0, 0.3) 50%,\n\t\t\ttransparent 50%,\n\t\t\ttransparent\n\t\t),\n\t\tlinear-gradient(\n\t\t\tto bottom,\n\t\t\ttransparent 0%,\n\t\t\ttransparent 50%,\n\t\t\trgba(0, 0, 0, 0) 50%\n\t\t),\n\t\tlinear-gradient(to bottom, #ffffff 50%, transparent 50%, transparent),\n\t\tlinear-gradient(\n\t\t\tto right,\n\t\t\ttransparent 0%,\n\t\t\ttransparent 50%,\n\t\t\trgba(0, 0, 0, 0.5) 50%\n\t\t),\n\t\tnone;\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 .grid_gridImage__2ye62 {\n\tpadding: 5px;\n\tbox-sizing: border-box;\n\theight: auto;\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 .grid_gridOverlay__15JFm{\n\tbackground-color: rgb(256,0,0,0.5);\n\tpadding: 5px;\n\tbox-sizing: border-box;\n\twidth: 100%;\n\theight:100%;\n\tposition: absolute;\n}\n\n.grid_grid__vYO3q .grid_gridImageWrapper__SoCX8 .grid_gridFooter__2h9-r{\n\tbackground-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(0,0,0,0.1));\n\twidth: 100%;\n\theight: 20%;\n\tbottom: 0;\n\tposition: absolute;\n\tdisplay: flex;\n\talign-items: flex-end;\n\tpadding-left: 5px;\n\tpadding-bottom: 5px;\n}\n\n.grid_selectionBar__3eafz{\n\tposition: fixed;\n\tbottom:0;\n\tdisplay: flex;\n\talign-items: center;\n \tjustify-content: space-between;\n\theight: 5vh;\n\twidth: 100%;\n\tbackground-color: #e6e6e6;\n\tpadding: 30px 20px;\n}\n\n.grid_selectionBarButtons__33Utj {\n\tdisplay: flex;\n}\n\n.grid_previewButton__s1mn2 {\n\tpadding: 5px 15px;\n\tmargin-left: 10px;\n\tbackground: rgb(45, 89, 156);\n}\n\n.grid_selectionButton__17mvC{\n\tpadding: 5px 15px;\n\tmargin-left: 10px;\n}\n\n.grid_info__1aAKu{\n\tmargin-top: 100px;\n}\n";
+var styles = { "searchWrapper": "grid_searchWrapper__3-vIN", "searchIcon": "grid_searchIcon__SWJt1", "searchBar": "grid_searchBar__1qck2", "searchButton": "grid_searchButton__K5Cqp", "grid": "grid_grid__vYO3q", "customScrollBar": "grid_customScrollBar__1V4bf", "gridImageWrapper": "grid_gridImageWrapper__SoCX8", "gridImageDarkWrapper": "grid_gridImageDarkWrapper__1for2", "gridImage": "grid_gridImage__2ye62", "gridOverlay": "grid_gridOverlay__15JFm", "gridFooter": "grid_gridFooter__2h9-r", "selectionBar": "grid_selectionBar__3eafz", "selectionBarButtons": "grid_selectionBarButtons__33Utj", "previewButton": "grid_previewButton__s1mn2", "selectionButton": "grid_selectionButton__17mvC", "info": "grid_info__1aAKu" };
 styleInject(css$1);
 
 var bind = function bind(fn, thisArg) {
@@ -1297,6 +1297,8 @@ axios_1.default = default_1;
 
 var axios$1 = axios_1;
 
+var defaultIcon = "data:image/png;base64,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";
+
 var classCallCheck = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -1359,14 +1361,44 @@ var possibleConstructorReturn = function (self, call) {
   return call && (typeof call === "object" || typeof call === "function") ? call : self;
 };
 
-var toConsumableArray = function (arr) {
-  if (Array.isArray(arr)) {
-    for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i];
+var SafeImage = function (_React$Component) {
+	inherits(SafeImage, _React$Component);
 
-    return arr2;
-  } else {
-    return Array.from(arr);
-  }
+	function SafeImage(props) {
+		classCallCheck(this, SafeImage);
+
+		var _this = possibleConstructorReturn(this, (SafeImage.__proto__ || Object.getPrototypeOf(SafeImage)).call(this, props));
+
+		_this.onError = function () {
+			_this.setState({
+				url: defaultIcon
+			});
+		};
+
+		_this.state = {
+			url: props.src || defaultIcon
+		};
+		return _this;
+	}
+
+	createClass(SafeImage, [{
+		key: 'render',
+		value: function render() {
+			return React__default.createElement('img', {
+				alt: this.props.alt,
+				src: this.state.url,
+				onError: this.onError,
+				className: this.props.className
+			});
+		}
+	}]);
+	return SafeImage;
+}(React__default.Component);
+
+SafeImage.propTypes = {
+	src: PropTypes.string,
+	alt: PropTypes.string,
+	className: PropTypes.string
 };
 
 var Grid = function (_Component) {
@@ -1376,6 +1408,12 @@ var Grid = function (_Component) {
 		classCallCheck(this, Grid);
 
 		var _this = possibleConstructorReturn(this, (Grid.__proto__ || Object.getPrototypeOf(Grid)).call(this, props));
+
+		_this.openPreview = function (url) {
+			return function () {
+				window.open(url, '_blank');
+			};
+		};
 
 		_this.state = {
 			disableCache: true,
@@ -1445,12 +1483,12 @@ var Grid = function (_Component) {
 
 				_this2.updateGlobalDataLocally(images);
 			}).catch(function (error) {
-				this.setState({
+				_this2.setState({
 					images: [],
 					isGrid: true,
 					loading: false
 				});
-			}).finally(function () {});
+			});
 		}
 	}, {
 		key: "selectionBar",
@@ -1459,6 +1497,7 @@ var Grid = function (_Component) {
 
 			if (this.state.imageSelectedIndex == undefined) return null;
 			var imageSlug = this.props.images[this.state.imageSelectedIndex].slug;
+			var url = this.props.images[this.state.imageSelectedIndex].url;
 			return React__default.createElement(
 				"div",
 				{ className: styles.selectionBar },
@@ -1468,11 +1507,20 @@ var Grid = function (_Component) {
 					imageSlug
 				),
 				React__default.createElement(
-					"button",
-					{ className: homeStyles.galleryButton + " " + styles.selectionButton, onClick: function onClick() {
-							return _this3.props.select(imageSlug);
-						} },
-					"SELECT"
+					"span",
+					{ className: styles.selectionBarButtons },
+					React__default.createElement(
+						"button",
+						{ className: homeStyles.galleryButton + " " + styles.previewButton, onClick: this.openPreview(url) },
+						"Preview"
+					),
+					React__default.createElement(
+						"button",
+						{ className: homeStyles.galleryButton + " " + styles.selectionButton, onClick: function onClick() {
+								return _this3.props.select(imageSlug);
+							} },
+						"SELECT"
+					)
 				)
 			);
 		}
@@ -1537,7 +1585,7 @@ var Grid = function (_Component) {
 								}
 							},
 							_this4.state.imageSelectedIndex == i && React__default.createElement("div", { className: styles.gridOverlay }),
-							React__default.createElement("img", {
+							React__default.createElement(SafeImage, {
 								alt: image.url,
 								className: styles.gridImage,
 								src: image.url
@@ -1554,7 +1602,7 @@ var Grid = function (_Component) {
 						this.state.loading ? React__default.createElement("div", { className: homeStyles.galleryLoading }) : React__default.createElement(
 							"span",
 							null,
-							"No images. Try searching for something."
+							"No files. Try searching for something."
 						)
 					)
 				),
@@ -1573,8 +1621,8 @@ Grid.propTypes = {
 	containerStyles: PropTypes.object
 };
 
-var css$2 = ".uploader_uploader__1RhpY {\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    margin: 10px;\n    height: 80%;\n    overflow-y: scroll;\n}\n\n.uploader_uploader__1RhpY form {\n    display: flex;\n    flex-direction: column;\n\tjustify-content: flex-start;\n\talign-items: left;\n    width: 340px;\n}\n\n.uploader_uploader__1RhpY form .uploader_titleLabel__3dNsX {\n    font-style: normal;\n    font-weight: bold;\n    font-size: 12px;\n    line-height: 24px;\n    letter-spacing: 1px;\n    text-transform: uppercase;\n\tcolor: #adb1b3;\n\tmargin-top: 24px;\n}\n\n.uploader_uploader__1RhpY form .uploader_title__6XJq_ {\n    padding: 10px 15px;\n    background: #ffffff;\n    box-sizing: border-box;\n    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0877491);\n    border-radius: 4px;\n    font-style: normal;\n    font-size: 13px;\n    line-height: 19px;\n}\n\n.uploader_uploader__1RhpY form .uploader_error__WDlNo {\n\tborder-color: #d33333;\n}\n\n.uploader_uploader__1RhpY form .uploader_fileUploader__2jVN9 {\n\tbackground: rgba(86, 204, 242, 0.1);\n\tborder: 2px dashed rgba(86, 204, 242, 0.5);\n    box-sizing: border-box;\n    width: 100%;\n    height: 140px;\n    margin-top: 24px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n}\n\n.uploader_imagePreview__3VSdX{\n    width: 340px;\n    margin: 24px 0px;\n    display: flex;\n    flex-direction: column;\n    align-items: flex-end;\n}\n\n.uploader_clearImage__2rMOj{\n\tfont-size: 12px;\n\tcolor: blue;\n\tmargin-bottom: 5px;\n\tcursor: pointer;\n}\n\n.uploader_uploader__1RhpY form .uploader_fileUploader__2jVN9 .uploader_info__3NSEz {\n    font-style: normal;\n    font-size: 14px;\n    line-height: 21px;\n    text-align: justify;\n    color: #000000;\n}\n.uploader_uploader__1RhpY form .uploader_fileUploader__2jVN9 .uploader_info__3NSEz a {\n    text-decoration: underline;\n    color: #2F80ED;\n}\n\n\n.uploader_uploader__1RhpY form .uploader_file__1ekDC {\n    margin-top: 10px;\n}\n\n.uploader_uploader__1RhpY form .uploader_submit__2mAIq {\n    margin-top: 10px;\n\theight: 40px;\n\twidth: 240px;\n\tmargin: 20px auto 0;\n    cursor: pointer;\n}\n\n.uploader_uploader__1RhpY form .uploader_submit__2mAIq:disabled {\n\topacity: 0.4;\n}\n\n.uploader_heading__1Ox1s {\n    font-style: normal;\n    font-weight: 600;\n    font-size: 24px;\n\tline-height: 36px;\n\tmargin-bottom: 15px;\n    text-align: justify;\n    color: rgba(0, 0, 0, 0.4);\n}\n\n.uploader_hide__1T76k {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n}\n\n.uploader_errors__306yx {\n\tmargin-top: 20px;\n}\n\n.uploader_errorMessage__KwtDp {\n\tcolor: #d33333;\n\tfont-size: 0.8em;\n\tmargin: 5px 0;\n\tbackground: #ffe4e4;\n\tpadding: 5px 10px;\n\tmargin-top: 5px;\n\tborder-radius: 4px;\n}\n";
-var styles$1 = { "uploader": "uploader_uploader__1RhpY", "titleLabel": "uploader_titleLabel__3dNsX", "title": "uploader_title__6XJq_", "error": "uploader_error__WDlNo", "fileUploader": "uploader_fileUploader__2jVN9", "imagePreview": "uploader_imagePreview__3VSdX", "clearImage": "uploader_clearImage__2rMOj", "info": "uploader_info__3NSEz", "file": "uploader_file__1ekDC", "submit": "uploader_submit__2mAIq", "heading": "uploader_heading__1Ox1s", "hide": "uploader_hide__1T76k", "errors": "uploader_errors__306yx", "errorMessage": "uploader_errorMessage__KwtDp" };
+var css$2 = ".uploader_uploader__1RhpY {\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    margin: 10px;\n    height: 80%;\n    overflow-y: scroll;\n}\n\n.uploader_uploader__1RhpY form {\n    display: flex;\n    flex-direction: column;\n\tjustify-content: flex-start;\n\talign-items: left;\n    width: 340px;\n}\n\n.uploader_uploader__1RhpY form .uploader_titleLabel__3dNsX {\n    font-style: normal;\n    font-weight: bold;\n    font-size: 12px;\n    line-height: 24px;\n    letter-spacing: 1px;\n    text-transform: uppercase;\n\tcolor: #adb1b3;\n\tmargin-top: 24px;\n}\n\n.uploader_uploader__1RhpY form .uploader_title__6XJq_ {\n    padding: 10px 15px;\n    background: #ffffff;\n    box-sizing: border-box;\n    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0877491);\n    border-radius: 4px;\n    font-style: normal;\n    font-size: 13px;\n    line-height: 19px;\n}\n\n.uploader_uploader__1RhpY form .uploader_error__WDlNo {\n\tborder-color: #d33333;\n}\n\n.uploader_uploader__1RhpY form .uploader_fileUploader__2jVN9 {\n\tbackground: rgba(86, 204, 242, 0.1);\n\tborder: 2px dashed rgba(86, 204, 242, 0.5);\n    box-sizing: border-box;\n    width: 100%;\n    height: 140px;\n    margin-top: 24px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n}\n\n.uploader_fileUploaderInput__1_Aev {\n\tbox-sizing: border-box;\n    width: 100%;\n\theight: 140px;\n\topacity: 0;\n\tz-index: 2;\n}\n\n.uploader_imagePreview__3VSdX{\n    width: 340px;\n    margin: 24px 0px;\n    display: flex;\n    flex-direction: column;\n}\n\n.uploader_clearImage__2rMOj{\n\tfont-size: 12px;\n\tcolor: blue;\n\tmargin-bottom: 5px;\n\tcursor: pointer;\n\talign-self: flex-end;\n}\n\n.uploader_previewImage__3fqi2 {\n\tdisplay: block;\n\tmargin: auto;\n\tmargin-top: 10px;\n\tmax-width: 100%;\n}\n\n.uploader_uploader__1RhpY form .uploader_fileUploader__2jVN9 .uploader_info__3NSEz {\n    font-style: normal;\n    font-size: 14px;\n    position: absolute;\n    color: #000000;\n}\n.uploader_uploader__1RhpY form .uploader_fileUploader__2jVN9 .uploader_info__3NSEz a {\n    text-decoration: underline;\n    color: #2F80ED;\n}\n\n\n.uploader_uploader__1RhpY form .uploader_file__1ekDC {\n    margin-top: 10px;\n}\n\n.uploader_uploader__1RhpY form .uploader_submit__2mAIq {\n    margin-top: 10px;\n\theight: 40px;\n\twidth: 240px;\n\tmargin: 20px auto 0;\n    cursor: pointer;\n}\n\n.uploader_uploader__1RhpY form .uploader_submit__2mAIq:disabled {\n\topacity: 0.4;\n}\n\n.uploader_heading__1Ox1s {\n    font-style: normal;\n    font-weight: 600;\n    font-size: 24px;\n\tline-height: 36px;\n\tmargin-bottom: 15px;\n    text-align: justify;\n    color: rgba(0, 0, 0, 0.4);\n}\n\n.uploader_hide__1T76k {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n}\n\n.uploader_errors__306yx {\n\tmargin-top: 20px;\n}\n\n.uploader_errorMessage__KwtDp {\n\tcolor: #d33333;\n\tfont-size: 0.8em;\n\tmargin: 5px 0;\n\tbackground: #ffe4e4;\n\tpadding: 5px 10px;\n\tmargin-top: 5px;\n\tborder-radius: 4px;\n}\n";
+var styles$1 = { "uploader": "uploader_uploader__1RhpY", "titleLabel": "uploader_titleLabel__3dNsX", "title": "uploader_title__6XJq_", "error": "uploader_error__WDlNo", "fileUploader": "uploader_fileUploader__2jVN9", "fileUploaderInput": "uploader_fileUploaderInput__1_Aev", "imagePreview": "uploader_imagePreview__3VSdX", "clearImage": "uploader_clearImage__2rMOj", "previewImage": "uploader_previewImage__3fqi2", "info": "uploader_info__3NSEz", "file": "uploader_file__1ekDC", "submit": "uploader_submit__2mAIq", "heading": "uploader_heading__1Ox1s", "hide": "uploader_hide__1T76k", "errors": "uploader_errors__306yx", "errorMessage": "uploader_errorMessage__KwtDp" };
 styleInject(css$2);
 
 var STANDARD_ASPECT_RATIOS = [[1, '1:1'], [4 / 3, '4:3'], [5 / 4, '5:4'], [3 / 2, '3:2'], [16 / 10, '16:10'], [16 / 9, '16:9'], [21 / 9, '21:9'], [32 / 9, '32:9']];
@@ -1586,124 +1634,6 @@ for (var i = 0; i < STANDARD_ASPECT_RATIOS.length; i++) {
   LOOKUP[STANDARD_ASPECT_RATIOS[i][0]] = STANDARD_ASPECT_RATIOS[i][1];
 }
 
-/*
-Find the closest value in a sorted array
-*/
-function findClosest(arrSorted, value) {
-  var closest = arrSorted[0];
-  var closestDiff = Math.abs(arrSorted[0] - value);
-  for (var _i = 1; _i < arrSorted.length; _i++) {
-    var diff = Math.abs(arrSorted[_i] - value);
-    if (diff < closestDiff) {
-      closestDiff = diff;
-      closest = arrSorted[_i];
-    } else {
-      return closest;
-    }
-  }
-  return arrSorted[arrSorted.length - 1];
-}
-
-/*
-Estimate the aspect ratio based on width x height
-*/
-function estimateAspectRatio(width, height, errorAllowed, aspectRatio) {
-  var ratio = Math.max(width, height) / Math.min(width, height);
-  if (ratio in LOOKUP) {
-    return LOOKUP[ratio] === aspectRatio;
-  }
-
-  // Look by approximation
-  var closest = findClosest(RATIOS, ratio);
-  if (Math.abs(closest - ratio) <= errorAllowed / 100) {
-    return LOOKUP[closest] === aspectRatio;
-  }
-
-  return false;
-}
-
-/*
-Estimate the approximate width x height with error buffer
-*/
-function approximateDimensions(dimensions, requiredDimensions, errorAllowed) {
-  return new Promise(function (resolve) {
-    var approxMinWidth = errorAllowed / 100 * requiredDimensions.width - requiredDimensions.width;
-    var approxMinHeight = errorAllowed / 100 * requiredDimensions.height - requiredDimensions.height;
-    var approxMaxWidth = errorAllowed / 100 * requiredDimensions.width + requiredDimensions.width;
-    var approxMaxHeight = errorAllowed / 100 * requiredDimensions.height + requiredDimensions.height;
-    resolve({ widthError: dimensions.width < approxMaxWidth && dimensions.width > approxMinWidth, heightError: dimensions.height < approxMaxHeight && dimensions.height > approxMinHeight });
-  });
-}
-
-var validate = function validate(file, restrictions) {
-	var errors = [];
-	return new Promise(function (resolve, reject) {
-		if (!restrictions || !Object.keys(restrictions).length) return resolve();
-		if (restrictions.size && file.size > restrictions.size) errors.push('Uploaded image\'s size exceeds the accepted limit of ' + Math.ceil(restrictions.size / 1000000) + ' MB.');
-		if (!restrictions.dimensions) {
-			validateAspectRatio(file, restrictions.aspectRatio, restrictions.errorAllowed).then(function (err) {
-				if (err && err.length) errors.push.apply(errors, toConsumableArray(err));
-			}).then(function () {
-				if (errors.length) reject(errors);else resolve();
-			});
-		} else {
-			validateDimensions(file, restrictions.dimensions, restrictions.errorAllowed).then(function (err) {
-				if (err && err.length) errors.push.apply(errors, toConsumableArray(err));
-			}).then(function () {
-				if (errors.length) reject(errors);else resolve();
-			});
-		}
-	});
-};
-
-var validateDimensions = function validateDimensions(file, dimensions, errorAllowed) {
-	return new Promise(function (resolve) {
-		if (!dimensions) return resolve();
-		var errors = [];
-		var reader = new FileReader();
-		reader.onload = function (e) {
-			var img = new Image();
-			img.src = e.target.result;
-			img.onload = function () {
-				if (errorAllowed) {
-					approximateDimensions({ width: this.width, height: this.height }, { width: dimensions.width, height: dimensions.height }, errorAllowed).then(function (_ref) {
-						var widthError = _ref.widthError,
-						    heightError = _ref.heightError;
-
-						if (!widthError) errors.push('Uploaded image\'s width does not match required value of ' + dimensions.width + ' pixels.');
-						if (!heightError) errors.push('Uploaded image\'s height does not match required value of ' + dimensions.height + ' pixels.');
-					});
-				} else {
-					if (dimensions.width !== 0 && this.width !== dimensions.width) errors.push('Uploaded image\'s width does not match required value of ' + dimensions.width + ' pixels.');
-					if (dimensions.height !== 0 && this.height !== dimensions.height) errors.push('Uploaded image\'s height does not match required value of ' + dimensions.height + ' pixels.');
-				}
-				resolve(errors);
-			};
-		};
-		reader.readAsDataURL(file);
-	});
-};
-
-var validateAspectRatio = function validateAspectRatio(file, aspectRatio, errorAllowed, orientation) {
-	return new Promise(function (resolve) {
-		if (!aspectRatio) return resolve();
-		var errors = [];
-		var reader = new FileReader();
-		reader.onload = function (e) {
-			var img = new Image();
-			img.src = e.target.result;
-			img.onload = function () {
-				var defaultOrientation = 'portrait';
-				defaultOrientation = Math.floor(this.width / this.height) === 0 ? 'portrait' : 'landscape';
-				if (defaultOrientation !== orientation) errors.push('Uploaded image\'s orientation should be in ' + orientation + '.');
-				if (!estimateAspectRatio(this.width, this.height, errorAllowed, aspectRatio)) errors.push('Uploaded image\'s ratio does not match required Aspect Ratio of ' + aspectRatio + '.');
-				resolve(errors);
-			};
-		};
-		reader.readAsDataURL(file);
-	});
-};
-
 var Uploader = function (_Component) {
 	inherits(Uploader, _Component);
 
@@ -1712,36 +1642,25 @@ var Uploader = function (_Component) {
 
 		var _this = possibleConstructorReturn(this, (Uploader.__proto__ || Object.getPrototypeOf(Uploader)).call(this, props));
 
-		_this.drop = function (e) {
-			e.stopPropagation();
-			e.preventDefault();
-			var file = e.dataTransfer.files && e.dataTransfer.files[0];
-			if (file) _this.setState({
-				imagePreviewSrc: URL.createObjectURL(file),
-				form: _extends({}, _this.state.form, {
-					file: file
-				})
-			});
-			return false;
-		};
-
 		_this.fileChangeListener = function (e) {
 			var files = e.target.files;
 			if (files && files[0]) {
-				validate(files[0], _this.props.restrictions).then(function () {
-					_this.setState({
-						imagePreviewSrc: files && files[0] && URL.createObjectURL(files[0]),
-						form: _extends({}, _this.state.form, {
-							file: files[0]
-						}),
-						errors: null
-					});
-				}).catch(function (errors) {
-					_this.setState({
-						errors: errors
-					});
-				});
+				_this.setFile(files[0]);
 			}
+		};
+
+		_this.setFile = function (file) {
+			_this.setState({
+				imagePreviewSrc: _this.getFilePreviewUrl(file),
+				form: _extends({}, _this.state.form, {
+					file: file
+				}),
+				errors: null
+			});
+		};
+
+		_this.getFilePreviewUrl = function (file) {
+			return file.type && file.type.startsWith('image/') ? URL.createObjectURL(file) : null;
 		};
 
 		_this.titleChangeListener = function (e) {
@@ -1759,9 +1678,9 @@ var Uploader = function (_Component) {
 
 		_this.clearImage = function () {
 			_this.setState({
-				imagePreviewSrc: undefined,
+				imagePreviewSrc: null,
 				form: _extends({}, _this.state.form, {
-					file: undefined
+					file: null
 				})
 			});
 		};
@@ -1774,6 +1693,7 @@ var Uploader = function (_Component) {
 			formData.append("file", _this.state.form.file);
 			formData.append("s3Bucket", _this.props.s3.bucket);
 			formData.append("s3Path", _this.props.s3.path);
+			formData.append("accept", _this.props.accept);
 			axios$1({
 				method: "post",
 				url: _this.props.server + "/upload",
@@ -1781,8 +1701,11 @@ var Uploader = function (_Component) {
 				config: { headers: { "Content-Type": "multipart/form-data" } }
 			}).then(function (response) {
 				_this.props.select(response.data.slug);
+				_this.setState({ form: {} });
 			}).catch(function (error) {
-				alert("Sorry couldn't upload the image. Try again");
+				alert("Sorry couldn't upload the file. Try again");
+			}).finally(function () {
+				_this.setState({ loading: false });
 			});
 		};
 
@@ -1795,13 +1718,6 @@ var Uploader = function (_Component) {
 	}
 
 	createClass(Uploader, [{
-		key: "dragOver",
-		value: function dragOver(event) {
-			event.stopPropagation();
-			event.preventDefault();
-			return false;
-		}
-	}, {
 		key: "render",
 		value: function render() {
 			return React__default.createElement(
@@ -1810,52 +1726,43 @@ var Uploader = function (_Component) {
 				React__default.createElement(
 					"form",
 					null,
-					React__default.createElement(
+					this.state.form.file && React__default.createElement(
 						"div",
 						{ className: styles$1.imagePreview },
-						this.state.form.file && React__default.createElement(
+						React__default.createElement(
 							"span",
 							{ className: styles$1.clearImage, onClick: this.clearImage },
 							"clear[x]"
 						),
-						React__default.createElement("img", { src: this.state.imagePreviewSrc, style: { width: '100%' } })
+						React__default.createElement(SafeImage, { className: styles$1.previewImage, src: this.state.imagePreviewSrc })
 					),
 					!this.state.form.file && React__default.createElement(
 						"div",
-						null,
-						React__default.createElement(
-							"label",
-							{
-								onDrop: this.drop,
-								onDragOver: this.dragOver,
-								htmlFor: "upload-file",
-								className: styles$1.fileUploader
-							},
-							React__default.createElement(
-								"span",
-								{ className: styles$1.info },
-								"Drop an image here or ",
-								React__default.createElement(
-									"a",
-									null,
-									"choose a image"
-								)
-							)
-						),
+						{ className: styles$1.fileUploader },
 						React__default.createElement("input", {
 							id: "upload-file",
 							encType: "multipart/form-data",
 							onChange: this.fileChangeListener,
 							name: "file",
-							className: styles$1.hide,
+							className: styles$1.fileUploaderInput,
 							type: "file",
-							accept: ".png, .jpg, .jpeg"
-						})
+							accept: this.props.accept
+						}),
+						React__default.createElement(
+							"span",
+							{ className: styles$1.info },
+							"Drop a file here or ",
+							React__default.createElement(
+								"a",
+								null,
+								"choose one by clicking here"
+							)
+						)
 					),
 					React__default.createElement(
 						"label",
 						{ className: styles$1.titleLabel },
-						"Image Tag",
+						"File Tag",
 						"*"
 					),
 					React__default.createElement("input", {
@@ -1872,7 +1779,7 @@ var Uploader = function (_Component) {
 							onClick: this.upload,
 							disabled: !this.state.form.file || !this.state.form.title || this.state.errors || !this.state.titleValid
 						},
-						this.state.loading ? "Uploading Image ..." : "UPLOAD"
+						this.state.loading ? "Uploading..." : "UPLOAD"
 					),
 					this.state.errors && Array.isArray(this.state.errors) && React__default.createElement(
 						"div",
@@ -1897,7 +1804,8 @@ Uploader.propTypes = {
 	server: PropTypes.string,
 	select: PropTypes.func,
 	containerStyles: PropTypes.object,
-	restrictions: PropTypes.object
+	restrictions: PropTypes.object,
+	accept: PropTypes.string
 };
 
 var Gallery = function (_Component) {
@@ -1970,7 +1878,7 @@ var Gallery = function (_Component) {
 					React__default.createElement(
 						"div",
 						{ className: homeStyles.title },
-						"Image Gallery"
+						"Gallery"
 					),
 					React__default.createElement(
 						"ul",
@@ -2048,7 +1956,8 @@ var Gallery = function (_Component) {
 					select: this.selectFinal,
 					restrictions: _extends({
 						size: 5 * 1000 * 1000
-					}, this.props.config.uploadRestrictions)
+					}, this.props.config.uploadRestrictions),
+					accept: this.props.uploaderConfig.accept
 				}))
 			);
 		}
@@ -2059,11 +1968,15 @@ var Gallery = function (_Component) {
 Gallery.propTypes = {
 	config: PropTypes.object,
 	isActive: PropTypes.bool,
-	uploaded: PropTypes.func
+	uploaded: PropTypes.func,
+	uploaderConfig: PropTypes.object
 };
 Gallery.defaultProps = {
 	config: {},
-	isActive: false
+	isActive: false,
+	uploaderConfig: {
+		accept: '.png, .jpg, .jpeg'
+	}
 };
 
 module.exports = Gallery;

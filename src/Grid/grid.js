@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styles from "./grid.css";
 import axios from "axios";
 import homeStyles from "./../styles.css"
+import SafeImage from "../components/SafeImage"
 
 export default class Grid extends Component {
 	static propTypes = {
@@ -84,23 +85,30 @@ export default class Grid extends Component {
 
 				this.updateGlobalDataLocally(images)
 			})
-			.catch(function(error) {
+			.catch((error) => {
 				this.setState({
 					images: [],
 					isGrid: true,
 					loading: false
 				});
 			})
-			.finally(function() {});
+	}
+
+	openPreview = (url) => () => {
+		window.open(url, '_blank')
 	}
 
 	selectionBar(){
 		if(this.state.imageSelectedIndex == undefined) return null
 		let imageSlug = this.props.images[this.state.imageSelectedIndex].slug
+		let url = this.props.images[this.state.imageSelectedIndex].url
 		return(
 			<div className={ styles.selectionBar}>
 				<span>{imageSlug}</span>
-				<button className={`${homeStyles.galleryButton} ${styles.selectionButton}`} onClick={()=>this.props.select(imageSlug)}>SELECT</button>
+				<span className={styles.selectionBarButtons}>
+					<button className={`${homeStyles.galleryButton} ${styles.previewButton}`} onClick={this.openPreview(url)}>Preview</button>
+					<button className={`${homeStyles.galleryButton} ${styles.selectionButton}`} onClick={()=>this.props.select(imageSlug)}>SELECT</button>
+				</span>
 			</div>
 		)
 	}
@@ -144,8 +152,8 @@ export default class Grid extends Component {
 								>
 
 									{this.state.imageSelectedIndex == i && <div className={ styles.gridOverlay }></div>}
-									<img
-										alt={	image.url }
+									<SafeImage
+										alt={ image.url }
 										className={ styles.gridImage }
 										src={ image.url }
 									/>
@@ -155,7 +163,7 @@ export default class Grid extends Component {
 						})
 					) : (
 						<div className={styles.info}>
-							{this.state.loading?<div className={homeStyles.galleryLoading}></div>:<span>No images. Try searching for something.</span>}
+							{this.state.loading?<div className={homeStyles.galleryLoading}></div>:<span>No files. Try searching for something.</span>}
 						</div>
 					)}
 				</div>

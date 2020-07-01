@@ -9,12 +9,16 @@ export default class Gallery extends Component {
 	static propTypes = {
 		config: PropTypes.object,
 		isActive: PropTypes.bool,
-		uploaded: PropTypes.func
+		uploaded: PropTypes.func,
+		uploaderConfig: PropTypes.object
 	};
 
 	static defaultProps = {
 		config: {},
 		isActive: false,
+		uploaderConfig: {
+			accept: '.png, .jpg, .jpeg'
+		}
 	};
 
 	constructor(props) {
@@ -77,7 +81,7 @@ export default class Gallery extends Component {
 			>
 				<div className={styles.header}>
 					<div className={styles.title}>
-						Image Gallery
+						Gallery
 					</div>
 
 					<ul className={styles.navList}>
@@ -154,6 +158,7 @@ export default class Gallery extends Component {
 						size: 5 * 1000 * 1000,
 						...this.props.config.uploadRestrictions
 					}}
+					accept={this.props.uploaderConfig.accept}
 				/>
 			</div>
 		);
