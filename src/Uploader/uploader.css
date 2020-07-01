@@ -55,12 +55,19 @@
     justify-content: center;
 }
 
+.fileUploaderInput {
+	box-sizing: border-box;
+    width: 100%;
+	height: 140px;
+	opacity: 0;
+	z-index: 2;
+}
+
 .imagePreview{
     width: 340px;
     margin: 24px 0px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
 }
 
 .clearImage{
@@ -68,13 +75,20 @@
 	color: blue;
 	margin-bottom: 5px;
 	cursor: pointer;
+	align-self: flex-end;
+}
+
+.previewImage {
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+	max-width: 100%;
 }
 
 .uploader form .fileUploader .info {
     font-style: normal;
     font-size: 14px;
-    line-height: 21px;
-    text-align: justify;
+    position: absolute;
     color: #000000;
 }
 .uploader form .fileUploader .info a {

@@ -81,7 +81,7 @@ export default class Gallery extends Component {
 			>
 				<div className={styles.header}>
 					<div className={styles.title}>
-						Image Gallery
+						Gallery
 					</div>
 
 					<ul className={styles.navList}>
