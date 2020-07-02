@@ -1645,6 +1645,15 @@ var css$2 = ".uploader_uploader__1RhpY {\n    display: flex;\n    flex-direction
 var styles$1 = { "uploader": "uploader_uploader__1RhpY", "titleLabel": "uploader_titleLabel__3dNsX", "title": "uploader_title__6XJq_", "error": "uploader_error__WDlNo", "fileUploader": "uploader_fileUploader__2jVN9", "fileUploaderInput": "uploader_fileUploaderInput__1_Aev", "imagePreview": "uploader_imagePreview__3VSdX", "clearImage": "uploader_clearImage__2rMOj", "previewImage": "uploader_previewImage__3fqi2", "info": "uploader_info__3NSEz", "file": "uploader_file__1ekDC", "submit": "uploader_submit__2mAIq", "heading": "uploader_heading__1Ox1s", "hide": "uploader_hide__1T76k", "errors": "uploader_errors__306yx", "errorMessage": "uploader_errorMessage__KwtDp" };
 styleInject(css$2);
 
+var STANDARD_ASPECT_RATIOS = [[1, '1:1'], [4 / 3, '4:3'], [5 / 4, '5:4'], [3 / 2, '3:2'], [16 / 10, '16:10'], [16 / 9, '16:9'], [21 / 9, '21:9'], [32 / 9, '32:9']];
+var RATIOS = STANDARD_ASPECT_RATIOS.map(function (tpl) {
+  return tpl[0];
+}).sort();
+var LOOKUP = Object();
+for (var i = 0; i < STANDARD_ASPECT_RATIOS.length; i++) {
+  LOOKUP[STANDARD_ASPECT_RATIOS[i][0]] = STANDARD_ASPECT_RATIOS[i][1];
+}
+
 var Uploader = function (_Component) {
 	inherits(Uploader, _Component);
 
@@ -1795,10 +1804,10 @@ var Uploader = function (_Component) {
 					this.state.errors && Array.isArray(this.state.errors) && React.createElement(
 						"div",
 						{ className: styles$1.errors },
-						this.state.errors.map(function (e) {
+						this.state.errors.map(function (e, i) {
 							return React.createElement(
 								"p",
-								{ className: styles$1.errorMessage },
+								{ key: i, className: styles$1.errorMessage },
 								e
 							);
 						})

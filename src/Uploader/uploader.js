@@ -142,8 +142,8 @@ export default class Uploader extends Component {
 							: "UPLOAD"}
 					</button>
 					{this.state.errors && Array.isArray(this.state.errors) &&
-						<div className={styles.errors}>{this.state.errors.map(e =>
-							<p className={styles.errorMessage}>{e}</p>
+						<div className={styles.errors}>{this.state.errors.map((e , i) =>
+							<p key={i} className={styles.errorMessage}>{e}</p>
 						)}</div>}
 				</form>
 			</div>
