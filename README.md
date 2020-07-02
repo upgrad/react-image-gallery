@@ -64,6 +64,19 @@ class Example extends Component {
 | s3.path  | A path in the bucket from which the images are to be fetched and rendered |
 | cdn  | A path to the cdn which needs to suffixed along with the image that gets selected  |
 | style  | A object which contains normal UI options like width and alignment of gallery component  |
+| uploadRestrictions  | Set of rules for image | 
+
+
+### uploadRestrictions
+
+| Key  | parameters | examples |
+| ------------- | ------------- | ------------- |
+| dimensions | width , height | ```{"width": 1600, "height": 900 }```|
+| aspectRatio | [ '1:1', '4:3', '5:4', '3:2', '16:10', '16:9', '21:9', '32:9' ] | "16:9"|
+| errorAllowed | 1-100 | 50
+| orientation | portrait, landscape | portrait (default value)
+
+
 
 The s3 Path and s3 Bucket parameters will be used on server side by the [express-s3-image-resources middleware](https://github.com/upgrad/express-s3-image-resources/) to fetch the images from aws. This NPM doesn't require you to pass any aws credentials.
 
