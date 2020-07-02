@@ -1759,7 +1759,11 @@ var Uploader = function (_Component) {
 							{ className: styles$1.clearImage, onClick: this.clearImage },
 							"clear[x]"
 						),
-						React__default.createElement(SafeImage, { className: styles$1.previewImage, src: this.state.imagePreviewSrc })
+						React__default.createElement(
+							"div",
+							{ style: { position: 'relative' } },
+							React__default.createElement(SafeImage, { className: styles$1.previewImage, src: this.state.imagePreviewSrc, showDimensions: true })
+						)
 					),
 					!this.state.form.file && React__default.createElement(
 						"div",

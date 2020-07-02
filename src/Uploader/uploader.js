@@ -104,7 +104,9 @@ export default class Uploader extends Component {
 					{this.state.form.file &&
 						<div className={styles.imagePreview}>
 							<span className={styles.clearImage} onClick={this.clearImage}>clear[x]</span>
-							<SafeImage className={styles.previewImage} src={this.state.imagePreviewSrc} />
+							<div style={{ position: 'relative' }}>
+								<SafeImage className={styles.previewImage} src={this.state.imagePreviewSrc} showDimensions={true} />
+							</div>
 						</div>
 					}
 					{!this.state.form.file &&

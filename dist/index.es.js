@@ -1754,7 +1754,11 @@ var Uploader = function (_Component) {
 							{ className: styles$1.clearImage, onClick: this.clearImage },
 							"clear[x]"
 						),
-						React.createElement(SafeImage, { className: styles$1.previewImage, src: this.state.imagePreviewSrc })
+						React.createElement(
+							"div",
+							{ style: { position: 'relative' } },
+							React.createElement(SafeImage, { className: styles$1.previewImage, src: this.state.imagePreviewSrc, showDimensions: true })
+						)
 					),
 					!this.state.form.file && React.createElement(
 						"div",
