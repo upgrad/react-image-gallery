@@ -11,7 +11,8 @@ export default class Grid extends Component {
 		s3: PropTypes.object,
 		server: PropTypes.string,
 		select: PropTypes.func,
-		containerStyles: PropTypes.object
+		containerStyles: PropTypes.object,
+		showDimensions: PropTypes.bool
 	};
 
 	constructor(props) {
@@ -137,6 +138,7 @@ export default class Grid extends Component {
 					<button onClick={()=>this.reset()} className={`${homeStyles.galleryButton} ${styles.searchButton}`} style={{backgroundColor: '#2d599c'}}>Reset</button>
 					<button onClick={()=>this.search(this.searchInputEle.current.value)} className={`${homeStyles.galleryButton} ${styles.searchButton}`}>Search</button>
 				</div>
+				{this.props.showDimensions && <p style={{ fontSize: 12, marginLeft: 20, opacity: 0.6 }}>Dimensions mentioned as width x height in pixels.</p>}
 				<div className={styles.grid}>
 					{!this.state.loading && this.props.images && this.props.images.length ? (
 						this.props.images.map((image,i) => {
@@ -156,6 +158,7 @@ export default class Grid extends Component {
 										alt={ image.url }
 										className={ styles.gridImage }
 										src={ image.url }
+										showDimensions={this.props.showDimensions}
 									/>
 									<div className={ styles.gridFooter }>{image.slug}</div>
 								</div>

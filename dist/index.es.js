@@ -1366,12 +1366,19 @@ var SafeImage = function (_React$Component) {
 
 		_this.onError = function () {
 			_this.setState({
-				url: defaultIcon
+				url: defaultIcon,
+				errored: true
 			});
 		};
 
+		_this.onLoad = function (e) {
+			_this.setState({ dimensions: e.target.clientWidth + ' x ' + e.target.clientHeight });
+		};
+
 		_this.state = {
-			url: props.src || defaultIcon
+			url: props.src || defaultIcon,
+			dimensions: '',
+			errored: false
 		};
 		return _this;
 	}
@@ -1379,12 +1386,22 @@ var SafeImage = function (_React$Component) {
 	createClass(SafeImage, [{
 		key: 'render',
 		value: function render() {
-			return React.createElement('img', {
-				alt: this.props.alt,
-				src: this.state.url,
-				onError: this.onError,
-				className: this.props.className
-			});
+			return React.createElement(
+				React.Fragment,
+				null,
+				this.props.showDimensions && !this.state.errored && React.createElement(
+					'span',
+					{ style: { position: 'absolute', right: '7%', top: '7%', fontSize: 12, background: 'white', padding: '2px 4px', borderRadius: 4 } },
+					this.state.dimensions
+				),
+				React.createElement('img', {
+					alt: this.props.alt,
+					src: this.state.url,
+					onError: this.onError,
+					className: this.props.className,
+					onLoad: this.onLoad
+				})
+			);
 		}
 	}]);
 	return SafeImage;
@@ -1393,7 +1410,8 @@ var SafeImage = function (_React$Component) {
 SafeImage.propTypes = {
 	src: PropTypes.string,
 	alt: PropTypes.string,
-	className: PropTypes.string
+	className: PropTypes.string,
+	showDimensions: PropTypes.bool
 };
 
 var Grid = function (_Component) {
@@ -1565,6 +1583,11 @@ var Grid = function (_Component) {
 						"Search"
 					)
 				),
+				this.props.showDimensions && React.createElement(
+					"p",
+					{ style: { fontSize: 12, marginLeft: 20, opacity: 0.6 } },
+					"Dimensions mentioned as width x height in pixels."
+				),
 				React.createElement(
 					"div",
 					{ className: styles.grid },
@@ -1583,7 +1606,8 @@ var Grid = function (_Component) {
 							React.createElement(SafeImage, {
 								alt: image.url,
 								className: styles.gridImage,
-								src: image.url
+								src: image.url,
+								showDimensions: _this4.props.showDimensions
 							}),
 							React.createElement(
 								"div",
@@ -1613,7 +1637,8 @@ Grid.propTypes = {
 	s3: PropTypes.object,
 	server: PropTypes.string,
 	select: PropTypes.func,
-	containerStyles: PropTypes.object
+	containerStyles: PropTypes.object,
+	showDimensions: PropTypes.bool
 };
 
 var css$2 = ".uploader_uploader__1RhpY {\n    display: flex;\n    flex-direction: column;\n    justify-content: flex-start;\n    align-items: center;\n    margin: 10px;\n    height: 80%;\n    overflow-y: scroll;\n}\n\n.uploader_uploader__1RhpY form {\n    display: flex;\n    flex-direction: column;\n\tjustify-content: flex-start;\n\talign-items: left;\n    width: 340px;\n}\n\n.uploader_uploader__1RhpY form .uploader_titleLabel__3dNsX {\n    font-style: normal;\n    font-weight: bold;\n    font-size: 12px;\n    line-height: 24px;\n    letter-spacing: 1px;\n    text-transform: uppercase;\n\tcolor: #adb1b3;\n\tmargin-top: 24px;\n}\n\n.uploader_uploader__1RhpY form .uploader_title__6XJq_ {\n    padding: 10px 15px;\n    background: #ffffff;\n    box-sizing: border-box;\n    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0877491);\n    border-radius: 4px;\n    font-style: normal;\n    font-size: 13px;\n    line-height: 19px;\n}\n\n.uploader_uploader__1RhpY form .uploader_error__WDlNo {\n\tborder-color: #d33333;\n}\n\n.uploader_uploader__1RhpY form .uploader_fileUploader__2jVN9 {\n\tbackground: rgba(86, 204, 242, 0.1);\n\tborder: 2px dashed rgba(86, 204, 242, 0.5);\n    box-sizing: border-box;\n    width: 100%;\n    height: 140px;\n    margin-top: 24px;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n}\n\n.uploader_fileUploaderInput__1_Aev {\n\tbox-sizing: border-box;\n    width: 100%;\n\theight: 140px;\n\topacity: 0;\n\tz-index: 2;\n}\n\n.uploader_imagePreview__3VSdX{\n    width: 340px;\n    margin: 24px 0px;\n    display: flex;\n    flex-direction: column;\n}\n\n.uploader_clearImage__2rMOj{\n\tfont-size: 12px;\n\tcolor: blue;\n\tmargin-bottom: 5px;\n\tcursor: pointer;\n\talign-self: flex-end;\n}\n\n.uploader_previewImage__3fqi2 {\n\tdisplay: block;\n\tmargin: auto;\n\tmargin-top: 10px;\n\tmax-width: 100%;\n}\n\n.uploader_uploader__1RhpY form .uploader_fileUploader__2jVN9 .uploader_info__3NSEz {\n    font-style: normal;\n    font-size: 14px;\n    position: absolute;\n    color: #000000;\n}\n.uploader_uploader__1RhpY form .uploader_fileUploader__2jVN9 .uploader_info__3NSEz a {\n    text-decoration: underline;\n    color: #2F80ED;\n}\n\n\n.uploader_uploader__1RhpY form .uploader_file__1ekDC {\n    margin-top: 10px;\n}\n\n.uploader_uploader__1RhpY form .uploader_submit__2mAIq {\n    margin-top: 10px;\n\theight: 40px;\n\twidth: 240px;\n\tmargin: 20px auto 0;\n    cursor: pointer;\n}\n\n.uploader_uploader__1RhpY form .uploader_submit__2mAIq:disabled {\n\topacity: 0.4;\n}\n\n.uploader_heading__1Ox1s {\n    font-style: normal;\n    font-weight: 600;\n    font-size: 24px;\n\tline-height: 36px;\n\tmargin-bottom: 15px;\n    text-align: justify;\n    color: rgba(0, 0, 0, 0.4);\n}\n\n.uploader_hide__1T76k {\n    opacity: 0;\n    position: absolute;\n    z-index: -1;\n}\n\n.uploader_errors__306yx {\n\tmargin-top: 20px;\n}\n\n.uploader_errorMessage__KwtDp {\n\tcolor: #d33333;\n\tfont-size: 0.8em;\n\tmargin: 5px 0;\n\tbackground: #ffe4e4;\n\tpadding: 5px 10px;\n\tmargin-top: 5px;\n\tborder-radius: 4px;\n}\n";
@@ -1729,7 +1754,11 @@ var Uploader = function (_Component) {
 							{ className: styles$1.clearImage, onClick: this.clearImage },
 							"clear[x]"
 						),
-						React.createElement(SafeImage, { className: styles$1.previewImage, src: this.state.imagePreviewSrc })
+						React.createElement(
+							"div",
+							{ style: { position: 'relative' } },
+							React.createElement(SafeImage, { className: styles$1.previewImage, src: this.state.imagePreviewSrc, showDimensions: true })
+						)
 					),
 					!this.state.form.file && React.createElement(
 						"div",
@@ -1943,7 +1972,8 @@ var Gallery = function (_Component) {
 					defaultSearch: this.props.isActive,
 					select: this.selectFinal,
 					images: this.state.images,
-					setImages: this.setImages
+					setImages: this.setImages,
+					showDimensions: this.props.showDimensions
 				})),
 				React.createElement(Uploader, _extends({
 					containerStyles: { display: this.state.tab === 'upload' ? '' : 'none' }
@@ -1964,14 +1994,16 @@ Gallery.propTypes = {
 	config: PropTypes.object,
 	isActive: PropTypes.bool,
 	uploaded: PropTypes.func,
-	uploaderConfig: PropTypes.object
+	uploaderConfig: PropTypes.object,
+	showDimensions: PropTypes.bool
 };
 Gallery.defaultProps = {
 	config: {},
 	isActive: false,
 	uploaderConfig: {
 		accept: '.png, .jpg, .jpeg'
-	}
+	},
+	showDimensions: false
 };
 
 export default Gallery;
