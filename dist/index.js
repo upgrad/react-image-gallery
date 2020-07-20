@@ -1849,7 +1849,8 @@ var Gallery = function (_Component) {
 			if (slug) {
 				data = {
 					imageUrl: _this.props.config.cdn + "/" + slug,
-					imageSlug: slug.substr(0, slug.lastIndexOf(".")) || slug
+					imageSlug: slug.substr(0, slug.lastIndexOf(".")) || slug,
+					filename: slug
 				};
 			}
 			_this.setState({

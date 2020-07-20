@@ -41,7 +41,8 @@ export default class Gallery extends Component {
 		if (slug) {
 			data = {
 				imageUrl: `${this.props.config.cdn}/${slug}`,
-				imageSlug: slug.substr(0, slug.lastIndexOf(".")) || slug
+				imageSlug: slug.substr(0, slug.lastIndexOf(".")) || slug,
+				filename: slug
 			};
 		}
 		this.setState({
