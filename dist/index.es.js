@@ -1430,7 +1430,7 @@ var Grid = function (_Component) {
 
 		_this.state = {
 			disableCache: true,
-			imageSelectedIndex: undefined,
+			imageSelectedIndex: null,
 			loading: false
 		};
 		_this.searchInputEle = React.createRef();
@@ -1473,7 +1473,7 @@ var Grid = function (_Component) {
 		key: "reset",
 		value: function reset() {
 			this.setState({
-				imageSelectedIndex: undefined
+				imageSelectedIndex: null
 			});
 			this.updateGlobalDataLocally([]);
 			this.searchInputEle.current.value = '';
@@ -1484,7 +1484,7 @@ var Grid = function (_Component) {
 			var _this2 = this;
 
 			query = query || '__getDefaultImgs__';
-			this.setState({ loading: true });
+			this.setState({ loading: true, imageSelectedIndex: null });
 			axios$1.post(this.props.server + "/search/" + query + "?disableCache=" + this.state.disableCache, {
 				s3Bucket: this.props.s3.bucket,
 				s3Path: this.props.s3.path
@@ -1493,7 +1493,6 @@ var Grid = function (_Component) {
 					image.url = _this2.props.cdn + "/" + image.slug;
 					return image;
 				});
-
 				_this2.updateGlobalDataLocally(images);
 			}).catch(function (error) {
 				_this2.setState({
@@ -1508,7 +1507,7 @@ var Grid = function (_Component) {
 		value: function selectionBar() {
 			var _this3 = this;
 
-			if (this.state.imageSelectedIndex == undefined) return null;
+			if (this.state.imageSelectedIndex == null) return null;
 			var imageSlug = this.props.images[this.state.imageSelectedIndex].slug;
 			var url = this.props.images[this.state.imageSelectedIndex].url;
 			return React.createElement(

@@ -19,7 +19,7 @@ export default class Grid extends Component {
 		super(props);
 		this.state = {
 			disableCache: true,
-			imageSelectedIndex: undefined,
+			imageSelectedIndex: null,
 			loading: false
 		};
 		this.searchInputEle = React.createRef();
@@ -59,7 +59,7 @@ export default class Grid extends Component {
 
 	reset(){
 		this.setState({
-			imageSelectedIndex: undefined
+			imageSelectedIndex: null
 		})
 		this.updateGlobalDataLocally([]);
 		this.searchInputEle.current.value = '';
@@ -67,7 +67,7 @@ export default class Grid extends Component {
 
 	search(query) {
 		query = query || '__getDefaultImgs__'
-		this.setState({loading: true})
+		this.setState({loading: true, imageSelectedIndex: null})
 		axios
 			.post(
 				`${this.props.server}/search/${query}?disableCache=${
@@ -83,7 +83,6 @@ export default class Grid extends Component {
 					image.url = `${this.props.cdn}/${image.slug}`;
 					return image;
 				});
-
 				this.updateGlobalDataLocally(images)
 			})
 			.catch((error) => {
@@ -100,7 +99,7 @@ export default class Grid extends Component {
 	}
 
 	selectionBar(){
-		if(this.state.imageSelectedIndex == undefined) return null
+		if(this.state.imageSelectedIndex == null) return null
 		let imageSlug = this.props.images[this.state.imageSelectedIndex].slug
 		let url = this.props.images[this.state.imageSelectedIndex].url
 		return(
