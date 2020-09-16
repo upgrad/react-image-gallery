@@ -40,6 +40,7 @@ export default class SafeImage extends React.Component {
 					onError={this.onError}
 					className={this.props.className}
 					onLoad={this.onLoad}
+					loading={'lazy'}
 				/>
 			</React.Fragment>
 		)
