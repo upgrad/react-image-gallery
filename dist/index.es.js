@@ -1399,7 +1399,8 @@ var SafeImage = function (_React$Component) {
 					src: this.state.url,
 					onError: this.onError,
 					className: this.props.className,
-					onLoad: this.onLoad
+					onLoad: this.onLoad,
+					loading: 'lazy'
 				})
 			);
 		}
@@ -1439,16 +1440,17 @@ var Grid = function (_Component) {
 		return _this;
 	}
 
+	// componentDidUpdate(prevProps){
+	// 	if(this.props.defaultSearch && (prevProps.defaultSearch != this.props.defaultSearch)){
+	// 		if(window && this.props.s3.path){
+	// 			if(!window.react_S3_Gallery || !window.react_S3_Gallery[this.props.s3.path])
+	// 				this.search();
+	// 			else this.updateGlobalDataLocally(window.react_S3_Gallery[this.props.s3.path])
+	// 		}
+	// 	}
+	// }
+
 	createClass(Grid, [{
-		key: "componentDidUpdate",
-		value: function componentDidUpdate(prevProps) {
-			if (this.props.defaultSearch && prevProps.defaultSearch != this.props.defaultSearch) {
-				if (window && this.props.s3.path) {
-					if (!window.react_S3_Gallery || !window.react_S3_Gallery[this.props.s3.path]) this.search();else this.updateGlobalDataLocally(window.react_S3_Gallery[this.props.s3.path]);
-				}
-			}
-		}
-	}, {
 		key: "updateGlobalDataLocally",
 		value: function updateGlobalDataLocally(images) {
 			this.setState({
@@ -1483,6 +1485,9 @@ var Grid = function (_Component) {
 		value: function search(query) {
 			var _this2 = this;
 
+			// Temporary --
+			if (!query || !query.trim()) return;
+			// --
 			query = query || '__getDefaultImgs__';
 			this.setState({ loading: true, imageSelectedIndex: null });
 			axios$1.post(this.props.server + "/search/" + query + "?disableCache=" + this.state.disableCache, {
@@ -1620,7 +1625,7 @@ var Grid = function (_Component) {
 						this.state.loading ? React.createElement("div", { className: homeStyles.galleryLoading }) : React.createElement(
 							"span",
 							null,
-							"No files. Try searching for something."
+							"Try searching for something."
 						)
 					)
 				),
@@ -1875,18 +1880,6 @@ var Gallery = function (_Component) {
 	}
 
 	createClass(Gallery, [{
-		key: "spriteNote",
-		value: function spriteNote() {
-			var SPRITE_PATH = "sprites/images";
-			if (this.props.config.s3.path == SPRITE_PATH) {
-				return React.createElement(
-					"span",
-					{ className: homeStyles.note },
-					"Note: Image slug you select would be reflected only after save."
-				);
-			}
-		}
-	}, {
 		key: "render",
 		value: function render() {
 			var _this2 = this;
@@ -1965,7 +1958,6 @@ var Gallery = function (_Component) {
 						)
 					)
 				),
-				this.spriteNote(),
 				React.createElement(Grid, _extends({
 					containerStyles: { display: this.state.tab === 'grid' ? '' : 'none' }
 				}, this.props.config, {

@@ -27,15 +27,15 @@ export default class Grid extends Component {
 		this.inputChange = this.inputChange.bind(this)
 	}
 
-	componentDidUpdate(prevProps){
-		if(this.props.defaultSearch && (prevProps.defaultSearch != this.props.defaultSearch)){
-			if(window && this.props.s3.path){
-				if(!window.react_S3_Gallery || !window.react_S3_Gallery[this.props.s3.path])
-					this.search();
-				else this.updateGlobalDataLocally(window.react_S3_Gallery[this.props.s3.path])
-			}
-		}
-	}
+	// componentDidUpdate(prevProps){
+	// 	if(this.props.defaultSearch && (prevProps.defaultSearch != this.props.defaultSearch)){
+	// 		if(window && this.props.s3.path){
+	// 			if(!window.react_S3_Gallery || !window.react_S3_Gallery[this.props.s3.path])
+	// 				this.search();
+	// 			else this.updateGlobalDataLocally(window.react_S3_Gallery[this.props.s3.path])
+	// 		}
+	// 	}
+	// }
 
 	updateGlobalDataLocally(images){
 		this.setState({
@@ -66,6 +66,9 @@ export default class Grid extends Component {
 	}
 
 	search(query) {
+		// Temporary --
+		if(!query || !query.trim()) return;
+		// --
 		query = query || '__getDefaultImgs__'
 		this.setState({loading: true, imageSelectedIndex: null})
 		axios
@@ -165,7 +168,7 @@ export default class Grid extends Component {
 						})
 					) : (
 						<div className={styles.info}>
-							{this.state.loading?<div className={homeStyles.galleryLoading}></div>:<span>No files. Try searching for something.</span>}
+							{this.state.loading?<div className={homeStyles.galleryLoading}></div>:<span>Try searching for something.</span>}
 						</div>
 					)}
 				</div>

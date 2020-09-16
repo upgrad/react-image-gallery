@@ -55,18 +55,6 @@ export default class Gallery extends Component {
 		setTimeout(() => this.props.onClose(data), 200);
 	};
 
-	spriteNote() {
-		const SPRITE_PATH = "sprites/images";
-		if (this.props.config.s3.path == SPRITE_PATH) {
-			return (
-				<span className={styles.note}>
-					Note: Image slug you select would be reflected only after
-					save.
-				</span>
-			);
-		}
-	}
-
 	setImages = (images) => {
 		this.setState({ images })
 	}
@@ -144,7 +132,6 @@ export default class Gallery extends Component {
 						</svg>
 					</div>
 				</div>
-				{this.spriteNote()}
 				<Grid
 					containerStyles={{ display: this.state.tab === 'grid' ? '' : 'none' }}
 					{...this.props.config}
